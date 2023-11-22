@@ -36,7 +36,7 @@ permalink: /journals/
 <body class=""><div class="container header-container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-      <h1><a href="dangeloandrea14.github.io">Andrea D&#39;Angelo</a></h1>
+      <h1><a href="https://dangeloandrea14.github.io/journals">Andrea D&#39;Angelo</a></h1>
       <h2>PhD Student in Computer Science @ University of L&#39;Aquila</h2>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
@@ -69,7 +69,7 @@ permalink: /journals/
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="super-awesome-project">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
+      <h4 id="j1">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
 <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
           
@@ -84,7 +84,7 @@ permalink: /journals/
 
  <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="super-awesome-project">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
+      <h4 id="j2">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
 <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
           
@@ -105,7 +105,7 @@ permalink: /journals/
   </main><div class="container footer-container">
   <p>
     Andrea D&#39;Angelo -
-    <a href="mailto:andrea.dangelo6@graduate.univaq.it" target="_blank">andrea.dangelo6@graduate.univaq.it</a>&nbsp;- References on request</p>
+    <a href="mailto:andrea.dangelo6@graduate.univaq.it" target="_blank">andrea.dangelo6@graduate.univaq.it</a></p>
 </div>
     <script src="/assets/js/index.js"></script>
   
