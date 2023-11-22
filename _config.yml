@@ -47,9 +47,8 @@ linkedin_username: andrea-d-angelo-02569319a
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
-
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  Hello, my name's Andrea and I'm a second year Ph.D. Student at University of L'Aquila.
+  My main research topics include <mark>Natural Language Processing</mark>, <mark>Data Mining</mark> and <mark>Large Language Models</mark>.
 
 content:
   - title: Projects # Title for the section
