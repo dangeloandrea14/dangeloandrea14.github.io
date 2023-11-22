@@ -56,6 +56,10 @@ permalink: /publications/
             <a target="_blank" href="https://twitter.com/_ad1411" class="button button--sacnite button--round-l">
               <i class="fab fa-twitter" title="Twitter link"></i>
             </a>
+          </li><li>
+            <a target="_blank" href="https://www.researchgate.net/profile/Andrea-Dangelo-5" class="button button--sacnite button--round-l">
+              <i class="fab fa-researchgate" title="ResearchGate"></i>
+            </a>
           </li>
       </ul><p>
           Email: <a href="mailto:andrea.dangelo6@graduate.univaq.it" target="_blank">andrea.dangelo6@graduate.univaq.it</a>
