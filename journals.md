@@ -15,7 +15,7 @@ permalink: /journals/
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Andrea D'Angelo | PhD Student in Computer Science @ University of L'Aquila</title><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title> <a href="dangeloandrea14.github.io">Andrea D'Angelo | PhD Student in Computer Science @ University of L'Aquila </a></title><!-- Begin Jekyll SEO tag v2.8.0 -->
 
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="PhD Student in Computer Science @ University of L’Aquila" />
@@ -74,7 +74,6 @@ permalink: /journals/
         
           
 <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
-            <i class="fa-solid fa-book-open" title="sproogen/modern-resume-theme"></i>
           </a>
         
       </p>
@@ -90,7 +89,6 @@ permalink: /journals/
         
           
 <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="">
-            <i class="fa-solid fa-book-open" title="sproogen/modern-resume-theme"></i>
           </a>
         
       </p>
@@ -102,14 +100,6 @@ permalink: /journals/
 </div>
 </div>
         
-
-
-
-
-  </div>
-</div>
-
-          </div>
         
       </div>
   </main><div class="container footer-container">
