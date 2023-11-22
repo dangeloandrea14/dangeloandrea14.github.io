@@ -52,7 +52,7 @@ I previously earned his Bachelor’s and Master’s degrees in Computer Science 
 My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
 
 content:
-  - title: My Research
+  - title: [<mark>Journals></mark>](https://dangeloandrea14.github.io/journals/)
     layout: text
     content: | # this will include new lines to allow paragraphs
           [<mark>Journals</mark>](https://dangeloandrea14.github.io/journals/) | [<mark>Conferences</mark>](https://dangeloandrea14.github.io/conferences/) | [<mark>Workshops</mark>](https://dangeloandrea14.github.io/workshops/) | [<mark>Talks</mark>](https://dangeloandrea14.github.io/talks/) | [<mark>Lectures</mark>](https://dangeloandrea14.github.io/lectures/) 
