@@ -5,9 +5,9 @@
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
-layout: journals
-title: Journals
-permalink: /journals/
+layout: conferences
+title: Conferences
+permalink: /conferences/
 ---
 
 <html lang="en"><head>
