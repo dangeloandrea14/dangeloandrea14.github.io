@@ -36,7 +36,7 @@ permalink: /conferences/
 <body class=""><div class="container header-container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-      <h1><a href="https://dangeloandrea14.github.io/journals">Andrea D&#39;Angelo</a></h1>
+      <h1><a href="https://dangeloandrea14.github.io">Andrea D&#39;Angelo</a></h1>
       <h2>PhD Student in Computer Science @ University of L&#39;Aquila</h2>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
@@ -70,7 +70,7 @@ permalink: /conferences/
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       <h4 id="c1">Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape</h4>
-
+        <h4>Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco</h4>
 <a href="https://arxiv.org/abs/2309.11239" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
         
@@ -83,7 +83,7 @@ permalink: /conferences/
  <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       <h4 id="c2">Enhancing Fairness in Classification Tasks with Multiple Variables: A Data-and Model-Agnostic Approach</h4>
-      <h5> Giordano d'Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D'Angelo </h5>
+      <h4> Giordano d'Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D'Angelo </h4>
 <a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
       </p>

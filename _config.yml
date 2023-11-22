@@ -11,7 +11,7 @@ title: PhD Student in Computer Science @ University of L'Aquila
 email: andrea.dangelo6@graduate.univaq.it
 
 # Dark Mode (true/false/never)
-darkmode: false
+darkmode: true
 
 # Social links
 twitter_username: _ad1411
@@ -50,7 +50,7 @@ about_content: | # this will include new lines to allow paragraphs
     Hello, I'm Andrea, a second year PhD student in Computer Science at the University of L’Aquila, Italy. 
 
     I previously earned my Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
-    
+
     My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
 
 content:
