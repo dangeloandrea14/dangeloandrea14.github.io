@@ -51,7 +51,7 @@ about_content: | # this will include new lines to allow paragraphs
   My main research topics include <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>.
 
 content:
-  - title: [Journals](https://dangeloandrea14.github.io/journals/) [Conferences](https://dangeloandrea14.github.io/conferences/)
+  - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
       Alongside my interests in networks and software engineering some of my other interests and hobbies are:
