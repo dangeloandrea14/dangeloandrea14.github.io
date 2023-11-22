@@ -50,7 +50,15 @@ about_content: | # this will include new lines to allow paragraphs
   Hello, my name's Andrea and I'm a second year PhD Student at University of L'Aquila.
   My main research topics include <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>.
 
+
 content:
+  <ul id="menu">
+      <li><a href="#">Home</a></li>
+      <li class="active"><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+  </ul>
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
