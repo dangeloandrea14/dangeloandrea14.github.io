@@ -75,15 +75,9 @@ permalink: /publications/
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       <h4 id="j1"><a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link"> Exploiting spatial relations for grammar-based specification of multidimensional languages</a></h4>
       <h5> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h5>
-<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
-          </a>
-        
-      </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.
-</p>
-<div><h4> - </h4> </div>
-    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.</p></div>
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
 
     
 
