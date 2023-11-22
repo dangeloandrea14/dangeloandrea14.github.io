@@ -90,6 +90,12 @@ content:
               .active {
                 background-color: #04AA6D;
               }
+              @media screen and (max-width: 600px) {
+                li {
+                    width: 100%;
+                    float: none;
+                }
+              }
           </style>
           <ul id="menu">
             <li><a href="#">Home</a></li>
