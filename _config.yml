@@ -55,7 +55,7 @@ content:
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
-      [<mark>Journals</mark>](https://dangeloandrea14.github.io/journals/) | [Conferences](https://dangeloandrea14.github.io/conferences/) | [Workshops](https://dangeloandrea14.github.io/workshops/) | [Talks](https://dangeloandrea14.github.io/talks/) | [Lectures](https://dangeloandrea14.github.io/lectures/) 
+          [<mark>Journals</mark>](https://dangeloandrea14.github.io/journals/) | [<mark>Conferences</mark>](https://dangeloandrea14.github.io/conferences/) | [<mark>Workshops</mark>](https://dangeloandrea14.github.io/workshops/) | [<mark>Talks</mark>](https://dangeloandrea14.github.io/talks/) | [<mark>Lectures</mark>](https://dangeloandrea14.github.io/lectures/) 
       
 
 # Footer

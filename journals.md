@@ -74,13 +74,13 @@ permalink: /journals/
         
           
 <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
-            <i class="fa-brands fa-readme" title="sproogen/modern-resume-theme"></i>
+            <i class="fa-solid fa-book-open" title="sproogen/modern-resume-theme"></i>
           </a>
         
       </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">This is probably one of the greatest apps ever created, if you don't agree you're probably wrong.
-</p><p>I started this project as a way if learning <mark>React</mark> and it has since grown into a fully fledged app. I have learned many skills through this and been I’m very proud of having this in my portfolio. If you don’t have a project as awesome as this I would advise you make one.</p>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.
+</p>
 
     </div>
   </div>
