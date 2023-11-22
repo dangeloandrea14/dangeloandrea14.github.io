@@ -48,7 +48,7 @@ linkedin_username: andrea-d-angelo-02569319a
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   Hello, my name's Andrea and I'm a second year Ph.D. Student at University of L'Aquila.
-  My main research topics include <mark>Natural Language Processing</mark>, <mark>Data Mining</mark> and <mark>Large Language Models</mark>.
+  My main research topics include <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>.
 
 content:
   - title: Projects # Title for the section
