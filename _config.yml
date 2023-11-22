@@ -58,52 +58,57 @@ content:
     layout: text
     content: | # this will include new lines to allow paragraphs
           <style>
-              .navbar ul {
+            #menu {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
                 background-color: #333;
-              }
+            }
 
-              .navbar li {
+            #menu li {
                 width: 20%;
                 float: left;
-              }
+            }
 
-              .navbar li a {
+            #menu li a {
                 display: block;
                 color: white;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
                 border-right: 1px solid #bbb;
-              }
-              .navbar li:last-child {
-                border-right: none;
-              }
+            }
 
-              /* Change the link color to #111 (black) on hover */
-              .navbar li a:hover {
+            #menu li:last-child {
+                border-right: none;
+            }
+
+            /* Change the link color to #111 (black) on hover */
+            #menu li a:hover {
                 background-color: #111;
-              }
-              .navbar .active {
+            }
+
+            #menu .active {
                 background-color: #04AA6D;
-              }
-              @media screen and (max-width: 600px) {
-                .navbar li {
+            }
+
+            @media screen and (max-width: 600px) {
+                #menu li {
                     width: 100%;
                     float: none;
                 }
-              }
-          </style>
-          <ul class="navbar" id="menu">
+            }
+        </style>
+
+        <ul id="menu">
             <li><a href="#">Home</a></li>
             <li><a href="/publications">Publications</a></li>
             <li><a href="/talks">Talks</a></li>
             <li><a href="/lectures">Lectures</a></li>
             <li><a href="/other">Other Activities</a></li>
-          </ul>
+        </ul>
+
 
 # Footer
 #footer_show_references: true
