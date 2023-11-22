@@ -69,12 +69,12 @@ permalink: /journals/
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="super-awesome-project">Super awesome project</h4>
-<a href="//github.com/sproogen" target="_blank" class="link">github.com/sproogen</a><p class="no-print aditional-links">
+      <h4 id="super-awesome-project">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
+<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
           
-<a href="//github.com/sproogen/modern-resume-theme" target="_blank" class="">
-            <i class="fab fa-github" title="sproogen/modern-resume-theme"></i>
+<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
+            <i class="fa-brands fa-readme" title="sproogen/modern-resume-theme"></i>
           </a>
         
       </p>
