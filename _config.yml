@@ -55,11 +55,11 @@ content:
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
-      [Journals](https://dangeloandrea14.github.io/journals/) | [Conferences](https://dangeloandrea14.github.io/conferences/) | [Workshops](https://dangeloandrea14.github.io/workshops/) | [Talks](https://dangeloandrea14.github.io/talks/)
+      [Journals](https://dangeloandrea14.github.io/journals/) | [Conferences](https://dangeloandrea14.github.io/conferences/) | [Workshops](https://dangeloandrea14.github.io/workshops/) | [Talks](https://dangeloandrea14.github.io/talks/) | [Lectures](https://dangeloandrea14.github.io/lectures/) | [Theses](https://dangeloandrea14.github.io/theses/)
       
 
 # Footer
-footer_show_references: true
+#footer_show_references: true
 # references_title: References on request (Override references text)
 
 # Build settings
