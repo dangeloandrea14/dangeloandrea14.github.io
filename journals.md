@@ -83,7 +83,7 @@ permalink: /publications/
 
  <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j2"> <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Debiaser for Multiple Variables to enhance fairness in classification tasks </a></h4>
+      <h4 id="j2"> <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272">Debiaser for Multiple Variables to enhance fairness in classification tasks </a></h4>
             <h5> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h5>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Information Processing & Management.</p></div>
@@ -99,7 +99,8 @@ permalink: /publications/
       <h5> Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco </h5>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at ECSA '23.</p></div>
-    
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
+
 
 
  <div class="row clearfix layout layout-top-middle border-no">
