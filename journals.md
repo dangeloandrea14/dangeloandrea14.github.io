@@ -86,7 +86,42 @@ permalink: /publications/
  <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       <h4 id="j2">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
-            <h4> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h4>
+            <h5> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h5>
+<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Read</a><p class="no-print aditional-links">
+        
+          
+<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="">
+          </a>
+        
+      </p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Information Processing & Management.
+</p>
+  
+  
+          <div class="container list-container">
+            <h3 id="projects">Journals</h3>
+            
+  <div class="row clearfix layout layout-top-middle border-no">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4 id="j1">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
+      <h4> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h4>
+<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link">Read</a><p class="no-print aditional-links">
+        
+          
+<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
+          </a>
+        
+      </p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.
+</p>
+    </div>
+
+ <div class="row clearfix layout layout-top-middle border-no">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4 id="j2">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
+            <h5> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h5>
 <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
           
@@ -99,12 +134,21 @@ permalink: /publications/
 </p>
     </div>
 
-</div>
-</div>
-        
-        
+  
+  
+  
+    </div>        
       </div>
-  </main><div class="container footer-container">
+      
+  
+  
+  
+  
+  </main>
+  
+  
+  
+  <div class="container footer-container">
   <p>
     Andrea D&#39;Angelo -
     <a href="mailto:andrea.dangelo6@graduate.univaq.it" target="_blank">andrea.dangelo6@graduate.univaq.it</a></p>
