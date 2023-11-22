@@ -47,9 +47,9 @@ linkedin_username: andrea-d-angelo-02569319a
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-Hello, I'm Andrea, a second year PhD student in Computer Science at the University of L’Aquila, Italy.
-I previously earned his Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
-My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
+    Hello, I'm Andrea, a second year PhD student in Computer Science at the University of L’Aquila, Italy.
+    I previously earned his Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
+    My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
 
 content:
   - title: My Research
