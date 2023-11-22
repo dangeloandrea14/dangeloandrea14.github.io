@@ -7,7 +7,7 @@
 #
 layout: journals
 title: Journals
-permalink: /journals/
+permalink: /publications/
 ---
 
 <html lang="en"><head>
