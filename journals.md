@@ -81,66 +81,30 @@ permalink: /journals/
     </div>
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.
 </p>
-
     </div>
-  </div>
 
-
-          </div>
-        
-          <div class="container list-container">
-            <h3 id="experience">Experience</h3>
-            
-  <div class="row clearfix layout layout-left border-no">
+ <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="the-boring-company">The Boring Company</h4><p><b>Senior Network System Administrator</b></p><p>November 2017 - Present</p>
-<a href="//boringcompany.com" target="_blank" class="link">boringcompany.com</a><p class="no-print aditional-links">
+      <h4 id="super-awesome-project">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
+<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Read</a><p class="no-print aditional-links">
+        
+          
+<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="">
+            <i class="fa-solid fa-book-open" title="sproogen/modern-resume-theme"></i>
+          </a>
         
       </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
-</p><p>Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.</p>
-
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Information Processing & Management.
+</p>
     </div>
-  </div>
 
-
-          </div>
+</div>
+</div>
         
-          <div class="container list-container">
-            <h3 id="education">Education</h3>
-            
-  <div class="row clearfix layout layout-left border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="harvard-university">Harvard University</h4><p><b>BSc Computer Science</b></p><p>2010 - 2013</p><p class="no-print aditional-links">
-        
-      </p>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
-</p><p>During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.</p>
-
-<p>I spent a lot of my free time as a committee member of the <em>Harvard Mountaineering Club</em> taking on roles such as <em>Trip Secretary</em> and <em>Vice-President</em>.</p>
-
-    </div>
-  </div>
 
 
-          </div>
-        
-          <div class="container text-container">
-            <h3 id="a-little-more-about-me">A Little More About Me</h3>
-            <div class="row clearfix">
-  <div class="col-md-12">
-    <p>Alongside my interests in networks and software engineering some of my other interests and hobbies are:</p>
-<ul>
-  <li>Rock climbing</li>
-  <li>Gaming</li>
-  <li>Knitting</li>
-  <li><a href="https://www.youtube.com/watch?v=vtg4o__aRMg">Becoming a ninja</a></li>
-</ul>
 
-<p>Look at this cool image<br />
-<img src="/modern-resume-theme/images/landscape-trees.jpg" alt="Trees" title="Trees" /></p>
 
   </div>
 </div>
