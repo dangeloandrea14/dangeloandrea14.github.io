@@ -51,14 +51,14 @@ about_content: | # this will include new lines to allow paragraphs
 
     I previously earned my Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
 
-    My research interestss revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
+    My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
 
 content:
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
           <style>
-              ul {
+              .navbar ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
@@ -66,12 +66,12 @@ content:
                 background-color: #333;
               }
 
-              li {
+              .navbar li {
                 width: 20%;
                 float: left;
               }
 
-              li a {
+              .navbar li a {
                 display: block;
                 color: white;
                 text-align: center;
@@ -79,25 +79,25 @@ content:
                 text-decoration: none;
                 border-right: 1px solid #bbb;
               }
-              li:last-child {
+              .navbar li:last-child {
                 border-right: none;
               }
 
               /* Change the link color to #111 (black) on hover */
-              li a:hover {
+              .navbar li a:hover {
                 background-color: #111;
               }
-              .active {
+              .navbar .active {
                 background-color: #04AA6D;
               }
               @media screen and (max-width: 600px) {
-                li {
+                .navbar li {
                     width: 100%;
                     float: none;
                 }
               }
           </style>
-          <ul id="menu">
+          <ul class="navbar" id="menu">
             <li><a href="#">Home</a></li>
             <li><a href="/publications">Publications</a></li>
             <li><a href="/talks">Talks</a></li>
