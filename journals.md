@@ -15,7 +15,7 @@ permalink: /journals/
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> <a href="dangeloandrea14.github.io">Andrea D'Angelo | PhD Student in Computer Science @ University of L'Aquila </a></title><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title>Andrea D'Angelo | PhD Student in Computer Science @ University of L'Aquila</title><!-- Begin Jekyll SEO tag v2.8.0 -->
 
 <meta name="generator" content="Jekyll v3.9.3" />
 <meta property="og:title" content="PhD Student in Computer Science @ University of L’Aquila" />
@@ -36,7 +36,7 @@ permalink: /journals/
 <body class=""><div class="container header-container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-      <h1>Andrea D&#39;Angelo</h1>
+      <h1><a href="dangeloandrea14.github.io">Andrea D&#39;Angelo</a></h1>
       <h2>PhD Student in Computer Science @ University of L&#39;Aquila</h2>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
