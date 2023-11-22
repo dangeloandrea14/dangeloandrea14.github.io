@@ -11,7 +11,7 @@ title: PhD Student in Computer Science @ University of L'Aquila
 email: andrea.dangelo6@graduate.univaq.it
 
 # Dark Mode (true/false/never)
-darkmode: true
+darkmode: false
 
 # Social links
 twitter_username: _ad1411
@@ -57,8 +57,13 @@ content:
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
-          [<mark>Journals</mark>](https://dangeloandrea14.github.io/journals/) | [<mark>Conferences</mark>](https://dangeloandrea14.github.io/conferences/) | [<mark>Workshops</mark>](https://dangeloandrea14.github.io/workshops/) | [<mark>Talks</mark>](https://dangeloandrea14.github.io/talks/) | [<mark>Lectures</mark>](https://dangeloandrea14.github.io/lectures/) 
-      
+          <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
 
 # Footer
 #footer_show_references: true
