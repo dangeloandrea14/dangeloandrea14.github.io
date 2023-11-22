@@ -100,43 +100,60 @@ permalink: /publications/
   
   
           <div class="container list-container">
-            <h3 id="projects">Journals</h3>
+            <h3 id="projects">Conferences</h3>
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j1">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
-      <h4> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h4>
-<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link">Read</a><p class="no-print aditional-links">
-        
-          
-<a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
-          </a>
+      <h4 id="j1">Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape</h4>
+      <h5> Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco </h5>
+<a href="https://arxiv.org/abs/2309.11239" target="_blank" class="link">Read</a><p class="no-print aditional-links">
+      
         
       </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at ECSA '23.
 </p>
     </div>
 
  <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j2">Debiaser for Multiple Variables to enhance fairness in classification tasks</h4>
-            <h5> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h5>
-<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="link">Read</a><p class="no-print aditional-links">
-        
-          
-<a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272" target="_blank" class="">
-          </a>
+      <h4 id="j2">Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach</h4>
+            <h5> Giordano d'Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D'Angelo </h5>
+<a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
       </p>
     </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Information Processing & Management.
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at BIAS '22.
 </p>
     </div>
 
   
   
+
+ <div class="row clearfix layout layout-top-middle border-no">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4 id="j2">DIORAMA: Digital twIn fOR sustAinable territorial MAnagement</h4>
+            <h5> Andrea Bianchi, Giordano d’Aloisio, Andrea D’Angelo, Antinisca Di Marco, Alessandro Di Matteo, Jessica Leone, Giulia Scoccia, Giovanni Stilo and Luca Traini </h5>
+<a href="https://ceur-ws.org/Vol-3340/paper43.pdf" target="_blank" class="link">Read</a><p class="no-print aditional-links">
+        
+      </p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at ITADATA '22.
+</p>
+    </div>
+
   
+
+
+
+
+
+
+
+
+
+
+
     </div>        
       </div>
       
