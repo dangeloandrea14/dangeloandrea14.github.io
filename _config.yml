@@ -52,21 +52,10 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
-  <ul id="menu">
-      <li><a href="#">Home</a></li>
-      <li class="active"><a href="#">About Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Contact</a></li>
-  </ul>
   - title: My Research
     layout: text
     content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - [Journals](https://dangeloandrea14.github.io/journals/)
-      - [Conferences](https://dangeloandrea14.github.io/conferences/)
-      - [Workshops](https://dangeloandrea14.github.io/workshops/)
-      - [Talks](https://dangeloandrea14.github.io/talks/)
+      [Journals](https://dangeloandrea14.github.io/journals/) | [Conferences](https://dangeloandrea14.github.io/conferences/) | [Workshops](https://dangeloandrea14.github.io/workshops/) | [Talks](https://dangeloandrea14.github.io/talks/)
       
 
 # Footer
