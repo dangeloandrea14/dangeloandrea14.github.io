@@ -69,14 +69,15 @@ permalink: /publications/
 <main class="page-content" aria-label="Content">
 
           <div class="container list-container">
-            <h3 id="projects">Journals</h3>
+            <h3 id="projects"><mark>Journals</mark></h3>
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
       <h4 id="j1">Exploiting spatial relations for grammar-based specification of multidimensional languages</h4>
-      <h4> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h4>
+      <h5> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h5>
 <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="link">Read</a><p class="no-print aditional-links">
         
+        <div><h4> - </h4> </div>
           
 <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6" target="_blank" class="">
           </a>
@@ -104,7 +105,7 @@ permalink: /publications/
   
   
           <div class="container list-container">
-            <h3 id="projects">Conferences</h3>
+            <h3 id="projects"><mark>Conferences</mark></h3>
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
