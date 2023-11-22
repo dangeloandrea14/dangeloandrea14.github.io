@@ -163,12 +163,6 @@ permalink: /publications/
       
   
   
-  
-  
-  </main>
-  
-  
-  
   <div class="container footer-container">
   <p>
     Andrea D&#39;Angelo -
@@ -176,6 +170,3 @@ permalink: /publications/
 </div>
     <script src="/assets/js/index.js"></script>
   
-</body>
-
-</html>

@@ -67,6 +67,7 @@ content:
               }
 
               li {
+                width: 20%;
                 float: left;
               }
 
