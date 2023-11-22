@@ -58,7 +58,7 @@ content:
     layout: text
     content: | # this will include new lines to allow paragraphs
           <style>
-              ul {
+              #menu {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
