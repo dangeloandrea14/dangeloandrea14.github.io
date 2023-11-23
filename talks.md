@@ -87,7 +87,7 @@ permalink: /talks/
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</a> </p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</p>
                 </div>
             </div>
 
