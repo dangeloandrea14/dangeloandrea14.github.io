@@ -69,7 +69,7 @@ permalink: /publications/
 <main class="page-content" aria-label="Content">
 
           <div class="container list-container">
-            <h3 id="projects"><mark>Journals</mark></h3>
+            <h3 id="experience"><mark>Journals</mark></h3>
             
   <div class="row clearfix layout layout-top-middle border-no">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
