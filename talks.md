@@ -73,14 +73,26 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">ECSA '23</h4><p><b>Istanbul</b></p><p>September 2023</p><p> <a href="talks_slides/ECSA23> Download Slides </p><p class="no-print aditional-links">
+                <h4 id="natwest">ECSA '23</h4><p><b>Istanbul</b></p><p>September 2023</p><p> <a href="talks_slides/ECSA23> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
                     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At ECSA '23 I presented our work titled <a href="https://arxiv.org/abs/2309.11239">"Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape".</a> </p>
-
                 </div>
             </div>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">AIGAP '23</h4><p><b>L'Aquila</b></p><p>November 2023</p><p> <a href="talks_slides/AIGAP23> Download Slides </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</a> </p>
+                </div>
+            </div>
+
+
+
 
       </div>
       
