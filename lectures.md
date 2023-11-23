@@ -5,9 +5,9 @@
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
-layout: talks
-title: Talks
-permalink: /talks/
+layout: lectures
+title: Lectures
+permalink: /lectures/
 ---
 
 <html lang="en"><head>
@@ -73,7 +73,7 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">Data Mining</h4><p><b>Univaq</b></p><p>2023</p><p> <a href="lectures_slides/IR_Lecture.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">Data Mining</h4><p><b>Univaq</b></p><p>2023</p><p> <a href="https://dangeloandrea14.github.io/lectures_slides/IR_Lecture.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
