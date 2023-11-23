@@ -68,35 +68,20 @@ permalink: /talks/
 </div>
 <main class="page-content" aria-label="Content">
 
-          <div class="container list-container">
-            <h3 id="experience"><mark>Talks</mark></h3>
+    <div class="container list-container">
+        <h3 id="experience"><mark>Talks</mark></h3>
 
-    <div class="row clearfix layout layout-left border-weak">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-        <h4 id="natwest">NatWest</h4><p><b>Lead Frontend Software Engineer</b></p><p>July 2021 - Present</p><p class="no-print aditional-links">
-            
-        </p>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Taken accountability for the frontend of the payments product area within a commercial banking platform, becoming a go to for knowledge and technical decisions.</p>
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ECSA '23</h4><p><b>Istanbul</b></p><p>September 2023</p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At ECSA '23 I presented our work titled <a href="https://arxiv.org/abs/2309.11239">"Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape".</a> </p>
 
-    <p>Currently developing a new frontend architecture transforming the current monolithic frontend application into a scalable modular application with micro-frontends
-    using Webpack Module Federation. This has been a great experience to develop a new workflow for developers to develop and release code and have input in all aspects
-    of the development workflow.</p>
+                </div>
+            </div>
 
-    <p>I have also been a key part of our frontend interview provess, I have worked to improve our interview process including writing new code tests, whilst interviewing
-    candidates across multiple countries.</p>
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-    </div>        
       </div>
       
   

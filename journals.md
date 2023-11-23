@@ -136,7 +136,54 @@ permalink: /publications/
     </div>        
       </div>
       
-  
+            <style>
+              #menu {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+              }
+
+              li {
+                width: 20%;
+                float: left;
+              }
+
+              li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                border-right: 1px solid #bbb;
+              }
+              li:last-child {
+                border-right: none;
+              }
+
+              /* Change the link color to #111 (black) on hover */
+              li a:hover {
+                background-color: #111;
+              }
+              .active {
+                background-color: #04AA6D;
+              }
+              @media screen and (max-width: 600px) {
+                #menu li {
+                    width: 100%;
+                    float: none;
+                }
+              }
+          </style>
+          <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="/publications">Publications</a></li>
+            <li><a href="/talks">Talks</a></li>
+            <li><a href="/lectures">Lectures</a></li>
+            <li><a href="/other">Other Activities</a></li>
+          </ul>
+
   
   <div class="container footer-container">
   <p>
