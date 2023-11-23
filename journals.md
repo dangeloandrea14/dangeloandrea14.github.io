@@ -5,8 +5,8 @@
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
-layout: journals
-title: Journals
+layout: publications
+title: Publications
 permalink: /publications/
 ---
 
@@ -68,74 +68,32 @@ permalink: /publications/
 </div>
 <main class="page-content" aria-label="Content">
 
-          <div class="container list-container">
-            <h3 id="experience"><mark>Journals</mark></h3>
-            
-  <div class="row clearfix layout layout-top-middle border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j1"><a href="https://link.springer.com/article/10.1007/s10115-023-01879-6"> Exploiting spatial relations for grammar-based specification of multidimensional languages</a></h4>
-      <h5> Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo </h5>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Knowledge and Information Systems.</p></div>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
+    <div class="container list-container">
+        <h3 id="experience"><mark>Journals</mark></h3>
 
-    
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">IP&M</h4><p><b>Information Processing and Management</b></p><p>2023</p><p> <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272"> Read </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Debiaser for Multiple Variables to enhance fairness in classification tasks </p>
+                    <p>Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo</p>
+                </div>
+            </div>
 
- <div class="row clearfix layout layout-top-middle border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j2"> <a href="https://www.sciencedirect.com/science/article/pii/S0306457322003272">Debiaser for Multiple Variables to enhance fairness in classification tasks </a></h4>
-            <h5> Giordano d'Aloisio, Andrea D'Angelo, Antinisca Di Marco, Giovanni Stilo </h5>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Published in Information Processing & Management.</p></div>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
-
-    
-          <div class="container list-container">
-            <h3 id="projects"><mark>Conferences</mark></h3>
-            
-  <div class="row clearfix layout layout-top-middle border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="c1"> <a href="https://arxiv.org/abs/2309.11239"> Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape</a></h4>
-      <h5> Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco </h5>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at ECSA '23.</p></div>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">KAIS</h4><p><b>Knowledge and Information Systems</b></p><p>2023</p><p> <a href="https://link.springer.com/article/10.1007/s10115-023-01879-6"> Read </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Exploiting spatial relations for grammar-based specification of multidimensional languages</p>
+                    <p>Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo</p>
+                </div>
+            </div>
 
 
-
- <div class="row clearfix layout layout-top-middle border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j2"><a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11">Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach</a></h4>
-            <h5> Giordano d'Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D'Angelo </h5>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at BIAS '22.</p> </div>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
-  
-
- <div class="row clearfix layout layout-top-middle border-no">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4 id="j2"><a href="https://ceur-ws.org/Vol-3340/paper43.pdf">DIORAMA: Digital twIn fOR sustAinable territorial MAnagement</a></h4>
-            <h5> Andrea Bianchi, Giordano d’Aloisio, Andrea D’Angelo, Antinisca Di Marco, Alessandro Di Matteo, Jessica Leone, Giulia Scoccia, Giovanni Stilo and Luca Traini </h5>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p class="quote">Presented at ITADATA '22.</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details"><h4> - </h4> </div>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-    </div>        
-      </div>
-      
             <style>
               #menu {
                 list-style-type: none;
@@ -184,6 +142,11 @@ permalink: /publications/
             <li><a href="/other">Other Activities</a></li>
           </ul>
 
+
+
+      </div>
+      
+  
   
   <div class="container footer-container">
   <p>

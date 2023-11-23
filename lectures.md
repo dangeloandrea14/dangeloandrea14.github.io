@@ -87,15 +87,9 @@ permalink: /lectures/
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Reinforcement Learning Laboratory sessions. Code is available on GitHub.</p>
                 </div>
             </div>
-
-
-
-
-      </div>
-      
 
             <style>
               #menu {
@@ -145,7 +139,7 @@ permalink: /lectures/
             <li><a href="/other">Other Activities</a></li>
           </ul>
 
-  
+        </div>
   
   <div class="container footer-container">
   <p>
