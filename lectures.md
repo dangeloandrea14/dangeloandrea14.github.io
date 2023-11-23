@@ -69,7 +69,7 @@ permalink: /lectures/
 <main class="page-content" aria-label="Content">
 
     <div class="container list-container">
-        <h3 id="experience"><mark>Talks</mark></h3>
+        <h3 id="experience"><mark>Lectures</mark></h3>
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
