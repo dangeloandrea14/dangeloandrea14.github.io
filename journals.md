@@ -93,6 +93,7 @@ permalink: /publications/
                 </div>
             </div>
       </div>
+      </div>
 
           <div class="container list-container">
             <h3 id="experience"><mark>Conference papers</mark></h3>
@@ -110,7 +111,7 @@ permalink: /publications/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">ITADATA 22</h4><p>2022</p><p> <a href="https://ceur-ws.org/Vol-3340/paper43.pdf"> Read </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">ITADATA '22</h4><p>2022</p><p> <a href="https://ceur-ws.org/Vol-3340/paper43.pdf"> Read </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
@@ -118,7 +119,7 @@ permalink: /publications/
                     <p>Andrea Bianchi, Giordano d’Aloisio, Andrea D’Angelo, Antinisca Di Marco, Alessandro Di Matteo, Jessica Leone, Giulia Scoccia, Giovanni Stilo and Luca Traini</p>
                 </div>
           </div>
-
+      </div>
       </div>
           <div class="container list-container">
             <h3 id="experience"><mark>Workshop papers</mark></h3>
