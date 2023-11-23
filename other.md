@@ -83,9 +83,7 @@ permalink: /other/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">ICSA '23</h4><p><b>L'Aquila</b></p><p>2023</p><p>   </a></p><p class="no-print aditional-links">
-                    
-                </p>
+                <h4 id="natwest">ICSA '23</h4><p><b>L'Aquila</b></p><p>2023</p>
                 </div>
                     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Student Volunteer for ICSA '23.</p>
                 </div>

@@ -146,7 +146,6 @@ permalink: /publications/
               <p>Giordano d’Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D’Angelo </p>
           </div>
       </div>
-  </div>
 
 
 
@@ -197,7 +196,7 @@ permalink: /publications/
             <li><a href="/lectures">Lectures</a></li>
             <li><a href="/other">Other Activities</a></li>
           </ul>
-
+    </div>
   
   
   <div class="container footer-container">
