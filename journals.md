@@ -69,7 +69,7 @@ permalink: /publications/
 <main class="page-content" aria-label="Content">
 
     <div class="container list-container">
-        <h3 id="experience"><mark>Journals</mark></h3>
+        <h3 id="experience"><mark>Journal papers</mark></h3>
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
@@ -92,6 +92,46 @@ permalink: /publications/
                     <p>Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo</p>
                 </div>
             </div>
+
+          <div class="container list-container">
+            <h3 id="experience"><mark>Conference papers</mark></h3>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ECSA '23</h4><p><b>European Conference on Software Architecture</b></p><p>2023</p><p> <a href="https://arxiv.org/abs/2309.112392"> Read (preprint)</a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape</p>
+                    <p>Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco</p>
+                </div>
+            </div>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ITADATA 22</h4><p>2022</p><p> <a href="https://ceur-ws.org/Vol-3340/paper43.pdf"> Read </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>DIORAMA: Digital twIn fOR sustAinable territorial MAnagement</p>
+                    <p>Andrea Bianchi, Giordano d’Aloisio, Andrea D’Angelo, Antinisca Di Marco, Alessandro Di Matteo, Jessica Leone, Giulia Scoccia, Giovanni Stilo and Luca Traini</p>
+                </div>
+          </div>
+
+          <div class="container list-container">
+            <h3 id="experience"><mark>Workshop papers</mark></h3>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">BIAS '22</h4><p>2022</p><p> <a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11"> Read</a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach</p>
+                    <p>Giordano d’Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D’Angelo </p>
+                </div>
+            </div>
+          </div>
 
 
             <style>
@@ -135,7 +175,7 @@ permalink: /publications/
               }
           </style>
           <ul id="menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="https://dangeloandrea14.github.io">Home</a></li>
             <li><a href="/publications">Publications</a></li>
             <li><a href="/talks">Talks</a></li>
             <li><a href="/lectures">Lectures</a></li>

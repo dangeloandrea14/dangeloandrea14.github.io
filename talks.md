@@ -133,7 +133,7 @@ permalink: /talks/
               }
           </style>
           <ul id="menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="https://dangeloandrea14.github.io">Home</a></li>
             <li><a href="/publications">Publications</a></li>
             <li><a href="/talks">Talks</a></li>
             <li><a href="/lectures">Lectures</a></li>
