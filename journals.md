@@ -92,6 +92,7 @@ permalink: /publications/
                     <p>Giuseppe della Penna, Sergio Orefice, Andrea D'Angelo</p>
                 </div>
             </div>
+      </div>
 
           <div class="container list-container">
             <h3 id="experience"><mark>Conference papers</mark></h3>
@@ -118,6 +119,7 @@ permalink: /publications/
                 </div>
           </div>
 
+      </div>
           <div class="container list-container">
             <h3 id="experience"><mark>Workshop papers</mark></h3>
 
