@@ -91,6 +91,16 @@ permalink: /talks/
                 </div>
             </div>
 
+                        <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">Territori Aperti 2024</h4><p><b>L'Aquila</b></p><p>January 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TA2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I talked about Privacy implication of training and use of Large Language Models during the final event of Territori Aperti.</p>
+                </div>
+            </div>
+
 
             <style>
               #menu {
