@@ -83,7 +83,7 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">AIGAP '23</h4><p><b>L'Aquila</b></p><p>November 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/AIGPA23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">AIGAP '23</h4><p><b>L'Aquila</b></p><p>November 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/AIGAP23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
