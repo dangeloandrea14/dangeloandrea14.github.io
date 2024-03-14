@@ -83,13 +83,25 @@ permalink: /lectures/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest"> Artificial Intelligence</h4><p><b>L'Aquila</b></p><p>2023</p><p> <a href="https://github.com/dangeloandrea14/RL_practice_univaq"> <i class="fab fa-github" title="Github link"></i> </a></p><p class="no-print aditional-links">
+                <h4 id="natwest"> Artificial Intelligence</h4><p><b>L'Aquila</b></p><p>2023</p><p> <a href="https://github.com/dangeloandrea14/RL_practice_univaq"> <i class="fab fa-github" title="Github link"><- Click </i> </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Reinforcement Learning Laboratory sessions. Code is available on GitHub.</p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>AI 2023 Laboratory sessions on Reinforcement Learning. Code is available on GitHub.</p>
                 </div>
             </div>
+
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest"> Deep Neural Newtorks</h4><p><b>L'Aquila</b></p><p>2023</p><p> <a href="https://github.com/dangeloandrea14/DNN-lectures"> <i class="fab fa-github" title="Github link"><- Click </i> </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Deep Neural Networks 2024 laboratory sessions. Code is available on GitHub.</p>
+                </div>
+            </div>
+
 
             <style>
               #menu {
