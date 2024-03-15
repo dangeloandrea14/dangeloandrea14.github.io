@@ -91,7 +91,7 @@ permalink: /talks/
                 </div>
             </div>
 
-                        <div class="row clearfix layout layout-left border-weak">
+            <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
                 <h4 id="natwest">Territori Aperti 2024</h4><p><b>L'Aquila</b></p><p>January 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TA2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
@@ -101,6 +101,15 @@ permalink: /talks/
                 </div>
             </div>
 
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">Perfail 2024</h4><p><b>L'Aquila</b></p><p>March 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/Perfail2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I presented the paper "Echocardiographic Epicardial Adipose Tissue Quantification: Challenges and Insights" at Perfail 2024 on behalf of the authors. The paper also won the Best Paper award for the workshop.</p>
+                </div>
+            </div>
 
             <style>
               #menu {
