@@ -103,7 +103,7 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">Perfail 2024</h4><p><b>L'Aquila</b></p><p>March 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/Perfail2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">Perfail 2024</h4><p><b>Biarritz</b></p><p>March 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/Perfail2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
