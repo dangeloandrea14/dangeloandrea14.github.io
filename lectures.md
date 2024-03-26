@@ -94,7 +94,7 @@ permalink: /lectures/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest"> Deep Neural Netwsorks</h4><p><b>L'Aquila</b></p><p>2024</p><p> <a href="https://github.com/dangeloandrea14/DNN-lectures"> <i class="fab fa-github" title="Github link"> <-- Click </i> </a></p><p class="no-print aditional-links">
+                <h4 id="natwest"> Deep Neural Networks</h4><p><b>L'Aquila</b></p><p>2024</p><p> <a href="https://github.com/dangeloandrea14/DNN-lectures"> <i class="fab fa-github" title="Github link"> <-- Click </i> </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
