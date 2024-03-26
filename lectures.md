@@ -94,7 +94,7 @@ permalink: /lectures/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest"> Deep Neural Newtorks</h4><p><b>L'Aquila</b></p><p>2023</p><p> <a href="https://github.com/dangeloandrea14/DNN-lectures"> <i class="fab fa-github" title="Github link"> <-- Click </i> </a></p><p class="no-print aditional-links">
+                <h4 id="natwest"> Deep Neural Newtorks</h4><p><b>L'Aquila</b></p><p>2024</p><p> <a href="https://github.com/dangeloandrea14/DNN-lectures"> <i class="fab fa-github" title="Github link"> <-- Click </i> </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
@@ -102,6 +102,15 @@ permalink: /lectures/
                 </div>
             </div>
 
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">Bioinformatics</h4><p><b>L'Aquila</b></p><p>2024</p><p> <a href="https://dangeloandrea14.github.io/lectures_slides/CNVs.pdf"> </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Lecture on Bioinformatics @ University of L'Aquila. The lecture detailed the high-level processes and pipeline operations to find Copy Number Variations (CNVs) from genome/exome sequencing. </p>
+                </div>
+            </div>
 
             <style>
               #menu {
