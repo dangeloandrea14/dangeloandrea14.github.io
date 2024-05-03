@@ -71,6 +71,21 @@ permalink: /publications/
   <div class="container list-container">
       <h3 id="journals"><mark>Journal papers</mark></h3>
 
+
+      <div class="row clearfix layout layout-left border-weak">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+              <h4 id="natwest">NAR GAB</h4>
+              <p><b>NAR Genomics and Bioinformatics</b></p>
+              <p>2024</p>
+              <p><a href="https://academic.oup.com/nargab/article/6/2/lqae033/7648802">Click here to read</a></p>
+              <p class="no-print aditional-links"></p>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+              <p> <b> A method to comprehensively identify germline SNVs, INDELs and CNVs from whole exome sequencing data of BRCA1/2 negative breast cancer patients </b> </p>
+              <p>Andrea Bianchi, Veronica Zelli, Andrea D’Angelo, Alessandro Di Matteo, Giulia Scoccia, Katia Cannita, Antigone S Dimas, Stavros Glentis, Francesca Zazzeroni, Edoardo Alesse, Antinisca Di Marco, Alessandra Tessitore</p>
+          </div>
+      </div>
+
       <div class="row clearfix layout layout-left border-weak">
           <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
               <h4 id="natwest">IP&M</h4>
@@ -99,45 +114,18 @@ permalink: /publications/
           </div>
       </div>
 
-
-      <div class="row clearfix layout layout-left border-weak">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-              <h4 id="natwest">NAR GAB</h4>
-              <p><b>NAR Genomics and Bioinformatics</b></p>
-              <p>2024</p>
-              <p><a href="https://academic.oup.com/nargab/article/6/2/lqae033/7648802">Click here to read</a></p>
-              <p class="no-print aditional-links"></p>
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-              <p> <b> A method to comprehensively identify germline SNVs, INDELs and CNVs from whole exome sequencing data of BRCA1/2 negative breast cancer patients </b> </p>
-              <p>Andrea Bianchi, Veronica Zelli, Andrea D’Angelo, Alessandro Di Matteo, Giulia Scoccia, Katia Cannita, Antigone S Dimas, Stavros Glentis, Francesca Zazzeroni, Edoardo Alesse, Antinisca Di Marco, Alessandra Tessitore</p>
-          </div>
-      </div>
   </div>
 
   <div class="container list-container">
       <h3 id="conferences"><mark>Conference papers</mark></h3>
 
-      <div class="row clearfix layout layout-left border-weak">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-              <h4 id="natwest">ECSA '23</h4>
-              <p><b>European Conference on Software Architecture</b></p>
-              <p>2023</p>
-              <p><a href="https://arxiv.org/abs/2309.112392">Read (preprint)</a></p>
-              <p class="no-print aditional-links"></p>
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-              <p> <b> Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape </b> </p>
-              <p>Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco</p>
-          </div>
-      </div>
 
       <div class="row clearfix layout layout-left border-weak">
           <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
               <h4 id="natwest">MSR '24</h4>
               <p><b>Mining Software Repositories</b></p>
-              <p>2022</p>
-              <p><a href="https://arxiv.org/pdf/2401.08561.pdf">Read (preprint)</a></p>
+              <p>2024</p>
+              <p><a href="https://arxiv.org/pdf/2401.08561.pdf">Click here to read (preprint)</a></p>
               <p class="no-print aditional-links"></p>
           </div>
           <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
@@ -148,9 +136,23 @@ permalink: /publications/
 
       <div class="row clearfix layout layout-left border-weak">
           <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+              <h4 id="natwest">ECSA '23</h4>
+              <p><b>European Conference on Software Architecture</b></p>
+              <p>2023</p>
+              <p><a href="https://arxiv.org/abs/2309.112392">Click here to read (preprint)</a></p>
+              <p class="no-print aditional-links"></p>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+              <p> <b> Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape </b> </p>
+              <p>Giordano d'Aloisio, Andrea D'Angelo, Francesca Marzi, Diana Di Marco, Giovanni Stilo, Antinisca Di Marco</p>
+          </div>
+      </div>
+
+      <div class="row clearfix layout layout-left border-weak">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
               <h4 id="natwest">ITADATA '22</h4>
               <p>2022</p>
-              <p><a href="https://ceur-ws.org/Vol-3340/paper43.pdf">Read</a></p>
+              <p><a href="https://ceur-ws.org/Vol-3340/paper43.pdf">Click here to read</a></p>
               <p class="no-print aditional-links"></p>
           </div>
           <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
@@ -167,19 +169,6 @@ permalink: /publications/
 
       <div class="row clearfix layout layout-left border-weak">
           <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-              <h4 id="natwest">BIAS '22</h4>
-              <p>2022</p>
-              <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11">Read</a></p>
-              <p class="no-print aditional-links"></p>
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-              <p> <b> Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach </b> </p>
-              <p>Giordano d’Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D’Angelo </p>
-          </div>
-      </div>
-
-      <div class="row clearfix layout layout-left border-weak">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
               <h4 id="natwest">ICPE '24 Data Challenge</h4>
               <p>2024</p>
               <p class="no-print aditional-links"></p>
@@ -187,6 +176,19 @@ permalink: /publications/
           <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
               <p> <b> Grammar-Based Anomaly Detection of Microservice Systems Execution Traces </b> </p>
               <p> Andrea D'Angelo, Giordano d'Aloisio </p>
+          </div>
+      </div>
+
+      <div class="row clearfix layout layout-left border-weak">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+              <h4 id="natwest">BIAS '22</h4>
+              <p>2022</p>
+              <p><a href="https://link.springer.com/chapter/10.1007/978-3-031-09316-6_11">Click here to read</a></p>
+              <p class="no-print aditional-links"></p>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+              <p> <b> Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach </b> </p>
+              <p>Giordano d’Aloisio, Giovanni Stilo, Antinisca Di Marco, Andrea D’Angelo </p>
           </div>
       </div>
 
