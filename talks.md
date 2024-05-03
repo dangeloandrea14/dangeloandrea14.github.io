@@ -45,6 +45,10 @@ permalink: /talks/
               <i class="fab fa-github" title="Github link"></i>
             </a>
           </li><li>
+            <a target="_blank" href="https://www.instagram.com/_andreadng" class="button button--sacnite button--round-l">
+              <i class="fab fa-instagram" title="Instagram link"></i>
+            </a>
+          </li><li>
             <a target="_blank" href="https://www.linkedin.com/in/andrea-d-angelo-02569319a" class="button button--sacnite button--round-l">
               <i class="fab fa-linkedin" title="Linkedin link"></i>
             </a>
