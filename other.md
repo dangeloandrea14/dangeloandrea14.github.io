@@ -119,7 +119,7 @@ permalink: /other/
         <h3 id="grants"><mark>Grants and Awards</mark></h3>
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">EUGAIN Virtual Mobility Grant</h4><p><b></b></p><p>2023</p><p> </p><p class="no-print aditional-links">         
+                <h4 id="natwest">EUGAIN Virtual Mobility Grant</h4><p><b></b></p><p>2024</p><p> </p><p class="no-print aditional-links">         
                 </p>
                 </div>
                     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p> Winner of EUGAIN Virtual Mobility Grant titled: "Female participation in Informatics degrees in Europe". </p>
@@ -128,7 +128,7 @@ permalink: /other/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">ICPE 2024 Best Data Challenge Award</h4><p><b></b></p><p>2023</p><p> </p><p class="no-print aditional-links">         
+                <h4 id="natwest">ICPE 2024 Best Data Challenge Award</h4><p><b></b></p><p>2024</p><p> </p><p class="no-print aditional-links">         
                 </p>
                 </div>
                     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p> Awarded for the paper titled "Grammar-Based Anomaly Detection of Microserve Systems Execution Traces". </p>
