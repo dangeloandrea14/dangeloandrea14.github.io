@@ -68,6 +68,65 @@ permalink: /other/
 </div>
 <main class="page-content" aria-label="Content">
 
+<div class="container list-container">
+
+        <h3 id="grants"><mark>Program Committees</mark></h3>
+              <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">CIKM '24 Proceedings Chair</h4><p>2024</p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Proceedings Chair of CIKM 2024.</p>
+                </div>
+            </div>
+
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">CIKM '24 Program Committee</h4><p>2024</p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>In the program commitee of CIKM 2024 Main Research Track.</p>
+                </div>
+            </div>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">SIGKDD - DELTA</h4><p>2024</p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>Reviewer of 30th ACM SIGKDD - Workshop on Discovering Drift Phenomena in Evolving Landscape (DELTA 2024)</p>
+                </div>
+            </div>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ECML-PKDD - MIDAS</h4><p>2024</p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>In the program commitee of Workshop on MIning DAta for financial applicationsS (MIDAS), co-located with the ECML-PKDD 2024 Conference.</p>
+                </div>
+            </div>
+
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ECIR - BIAS</h4><p>2022</p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>In the program commitee of Workshop on BIAS @ ECIR.</p>
+                </div>
+            </div>
+
+
+
+
+        <h3 id="grants"><mark>Grants and Awards</mark></h3>
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">Pinkamp Tutor</h4><p><b></b></p><p>2023</p><p> </p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p> Computer Science Tutor for <a href="https://www.pinkamp.disim.univaq.it"> Pinkamp 2023 </a> </p>
+                </div>
+            </div>
+            
     <div class="container list-container">
         <h3 id="experience"><mark>Other</mark></h3>
 
