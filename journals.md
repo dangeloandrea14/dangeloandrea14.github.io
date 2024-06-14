@@ -176,6 +176,8 @@ permalink: /publications/
           <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
               <p> <b> Grammar-Based Anomaly Detection of Microservice Systems Execution Traces </b> </p>
               <p> Andrea D'Angelo, Giordano d'Aloisio </p>
+              <p><a href="https://dl.acm.org/doi/abs/10.1145/3629527.3651844">Click here to read</a></p>
+              <p class="no-print aditional-links"></p>
           </div>
       </div>
 
