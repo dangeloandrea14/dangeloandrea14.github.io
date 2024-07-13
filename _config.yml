@@ -1,0 +1,120 @@
+# Site
+repository: sproogen/resume-theme
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Andrea D'Angelo
+title: PhD Student in Computer Science @ University of L'Aquila
+email: andrea.dangelo6@graduate.univaq.it
+
+# Dark Mode (true/false/never)
+darkmode: false
+
+# Social links
+twitter_username: _ad1411
+github_username:  dangeloandrea14
+# stackoverflow_username: "00000001"
+# dribbble_username: jekyll
+# facebook_username: jekyll
+# flickr_username: jekyll
+instagram_username: _andreadng
+linkedin_username: andrea-d-angelo-02569319a
+# xing_username: jekyll
+# pinterest_username: jekyll
+# youtube_username: globalmtb
+# googleplus_username: +jekyll
+# orcid_username: 0000-0000-0000-0000
+
+# Additional icon links
+additional_links:
+- title: ResearchGate
+  icon: fab fa-researchgate
+  url: https://www.researchgate.net/profile/Andrea-Dangelo-5
+# - title: another link
+#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+#   url: Link url (eg. https://google.com)
+
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+    Hello, I'm Andrea, a second year PhD student in Computer Science at the University of L’Aquila, Italy. 
+
+    I previously earned my Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
+
+    My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
+
+content:
+  - title: My Research
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+          <style>
+              #menu {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+              }
+
+              li {
+                width: 20%;
+                float: left;
+              }
+
+              li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                border-right: 1px solid #bbb;
+              }
+              li:last-child {
+                border-right: none;
+              }
+
+              /* Change the link color to #111 (black) on hover */
+              li a:hover {
+                background-color: #111;
+              }
+              .active {
+                background-color: #04AA6D;
+              }
+              @media screen and (max-width: 600px) {
+                #menu li {
+                    width: 100%;
+                    float: none;
+                }
+              }
+          </style>
+          <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="/publications">Publications</a></li>
+            <li><a href="/talks">Talks</a></li>
+            <li><a href="/lectures">Lectures</a></li>
+            <li><a href="/other">Other Activities</a></li>
+          </ul>
+
+# Footer
+#footer_show_references: true
+# references_title: References on request (Override references text)
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
