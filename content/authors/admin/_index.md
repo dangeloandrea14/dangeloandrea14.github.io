@@ -1,17 +1,17 @@
 ---
 # Display name
-title: 吳健雄
+title: Dr.
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+#name_pronunciation: Chien Shiung Wu
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Andrea
+last_name: D'Angelo
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: 👾
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,31 +20,27 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Chief Scientist
+role: Ph.D. Student
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: OpenAI
-    url: https://openai.com/
+  - name: University of L'Aquila
+    url: https://www.disim.univaq.it/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
+    url: 'mailto:andrea.dangelo6@graduate.univaq.it'
     label: E-mail Me
   - icon: brands/x
-    url: https://twitter.com/GetResearchDev
-  - icon: brands/instagram
-    url: https://www.instagram.com/
-  - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://x.com/_ad1411
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
+    url: https://www.linkedin.com/in/andrea-d-angelo-02569319a/
   - icon: academicons/google-scholar
-    url: https://scholar.google.com/
+    url: https://scholar.google.com/citations?user=9WIwwWwAAAAJ
   - icon: academicons/orcid
-    url: https://orcid.org/
+    url: https://orcid.org/my-orcid?orcid=0000-0002-0577-2494
 
 interests:
   - Artificial Intelligence
@@ -52,8 +48,8 @@ interests:
   - Information Retrieval
 
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
+  - area: PhD Information and Communication Technology
+    institution: Università degli studi dell'Aquila
     date_start: 2016-01-01
     date_end: 2020-12-31
     summary: |
