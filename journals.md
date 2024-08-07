@@ -71,6 +71,19 @@ permalink: /publications/
   <div class="container list-container">
       <h3 id="journals"><mark>Journal papers</mark></h3>
 
+      <div class="row clearfix layout layout-left border-weak">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+              <h4 id="natwest">JSS</h4>
+              <p><b>Journal of Systems and Software</b></p>
+              <p>2024</p>
+              <p><a href="https://www.sciencedirect.com/science/article/pii/S0164121224002073">Click here to read</a></p>
+              <p class="no-print aditional-links"></p>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+              <p> <b> Uncovering gender gap in academia: A comprehensive analysis within the software engineering community </b> </p>
+              <p>Andrea D'Angelo, Giordano d'Aloisio, Francesca Marzi, Antinisca Di Marco, Giovanni Stilo</p>
+          </div>
+      </div>
 
       <div class="row clearfix layout layout-left border-weak">
           <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
