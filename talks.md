@@ -74,31 +74,21 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">ECSA '23</h4><p><b>Istanbul</b></p><p>September 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/ECSA23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">KDD '24 PhD Consortium</h4><p><b>Barcelona</b></p><p>August 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/phd_consortium_kdd.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At ECSA '23 I presented our work titled <a href="https://arxiv.org/abs/2309.11239">"Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape".</a> </p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I presented our work titled "A Novel Relevance Score for Unsupervised Retrieval with Large Language Models" at KDD24's PhD Consortium. </p>
                 </div>
             </div>
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">AIGAP '23</h4><p><b>L'Aquila</b></p><p>November 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/AIGAP23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">TUM Invited Speaker</h4><p><b>Munich</b></p><p>July 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TUM_seminar.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</p>
-                </div>
-            </div>
-
-            <div class="row clearfix layout layout-left border-weak">
-                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">Territori Aperti 2024</h4><p><b>L'Aquila</b></p><p>January 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TA2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
-                    
-                </p>
-                </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I talked about Privacy implication of training and use of Large Language Models during the final event of Territori Aperti.</p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I talked about Machine Unlearning in a seminar as an Invited Speaker at the Technical University of Munich (TUM). </p>
                 </div>
             </div>
 
@@ -114,13 +104,39 @@ permalink: /talks/
 
             <div class="row clearfix layout layout-left border-weak">
                 <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-                <h4 id="natwest">TUM Invited Speaker</h4><p><b>Munich</b></p><p>July 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TUM_seminar.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                <h4 id="natwest">Territori Aperti 2024</h4><p><b>Naples</b></p><p>January 2024</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/TA2024.pdf"> Download Slides </a></p><p class="no-print aditional-links">
                     
                 </p>
                 </div>
-                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I talked about Machine Unlearning in a seminar as an Invited Speaker at the Technical University of Munich (TUM). </p>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>I talked about Privacy implication of training and use of Large Language Models during the final event of Territori Aperti.</p>
                 </div>
             </div>
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">AIGAP '23</h4><p><b>L'Aquila</b></p><p>November 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/AIGAP23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At AIGAP '23 I presented our work titled Uncovering Gender Bias in Academia.</p>
+                </div>
+            </div>
+
+
+            <div class="row clearfix layout layout-left border-weak">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+                <h4 id="natwest">ECSA '23</h4><p><b>Istanbul</b></p><p>September 2023</p><p> <a href="https://dangeloandrea14.github.io/talks_slides/ECSA23.pdf"> Download Slides </a></p><p class="no-print aditional-links">
+                    
+                </p>
+                </div>
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content"><p>At ECSA '23 I presented our work titled <a href="https://arxiv.org/abs/2309.11239">"Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape".</a> </p>
+                </div>
+            </div>
+
+
+
+
+
 
             <style>
               #menu {
