@@ -1,0 +1,19 @@
+- name: Andrea D'Angelo
+  photo: headshot.jpg
+  info: PhD Student, University of L'Aquila
+  email: andrea.dangelo6@graduate.univaq.it
+  github: https://github.com/dangeloandrea14
+  researchgate: https://www.researchgate.net/profile/Andrea-Dangelo-5?ev=hdr_xprf
+  scholar: https://scholar.google.com/citations?user=9WIwwWwAAAAJ&hl=it
+  cv: cv/cv.pdf
+  # Change the items in "education" you have (up to 6)
+  education:
+    [ 
+      "(Currently) Visiting PhD Student, Aarhus Universitet",
+      "(2022-) PhD Student in Computer Science, Univaq",
+      "(2022) M.S. cum laude in Computer Science, Univaq",
+      "(2019) B.S. cum laude in Computer Science cum laude, Univaq",
+    ]
+
+  educationshort:
+    ["(Currently) Visiting PhD Student, Aarhus Universitet"]

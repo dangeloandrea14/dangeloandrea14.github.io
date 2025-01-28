@@ -1,120 +1,92 @@
-# Site
-repository: sproogen/resume-theme
-favicon: images/favicon.ico
-
-# Content configuration version
-version: 2
-
-# Personal info
-name: Andrea D'Angelo
-title: PhD Student in Computer Science @ University of L'Aquila
+# Site settings
+title: Andrea D'Angelo
 email: andrea.dangelo6@graduate.univaq.it
+description: Academic webpage of Andrea D'Angelo
+baseurl: ""
+url: ""
 
-# Dark Mode (true/false/never)
-darkmode: false
+# Google analytics ID: Uncomment and your own, if you like
+# google_analytics: XX
+# google_analytics_4: XXX
+# google_tag_manager: XXX
 
-# Social links
-twitter_username: _ad1411
-github_username:  dangeloandrea14
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-instagram_username: _andreadng
-linkedin_username: andrea-d-angelo-02569319a
-# xing_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: globalmtb
-# googleplus_username: +jekyll
-# orcid_username: 0000-0000-0000-0000
+# Footer info
+affiliation: >
+  Andrea D'Angelo<br/>
+  PhD Student in Computer Science<br/>
+  University of L'Aquila
 
-# Additional icon links
-additional_links:
-- title: ResearchGate
-  icon: fab fa-researchgate
-  url: https://www.researchgate.net/profile/Andrea-Dangelo-5
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
-#   url: Link url (eg. https://google.com)
+location: >
+  University of L'Aquila<br/>
+  67100 L'Aquila<br/>
+  Italy
 
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
+contact: >
+  <a href="mailto:andrea.dangelo6@graduate.univaq.it" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Andrea via email</a> <br/>
 
-# About Section
-# about_title: About Me
-about_profile_image: images/profile.jpg
-about_content: | # this will include new lines to allow paragraphs
-    Hello, I'm Andrea, a second year PhD student in Computer Science at the University of L’Aquila, Italy. 
+# Pages shown in navbar
+nav_pages:
+  - name: about
+  - name: publications
+  - name: talks
+  - name: teaching
+  - name: pcs
+  - name: theses
 
-    I previously earned my Bachelor’s and Master’s degrees in Computer Science in 2019 and 2022, respectively. 
+include:
+  - .htaccess
+  - _pages
 
-    My research interests revolve around <mark>Natural Language Processing</mark>, <mark>Data Mining</mark>, and <mark>Large Language Models</mark>. 
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
-content:
-  - title: My Research
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-          <style>
-              #menu {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-              }
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  parse_block_html: true # default for kramdown is false. This will enable using Markdown links
 
-              li {
-                width: 20%;
-                float: left;
-              }
+plugins: ["jekyll/scholar"]
 
-              li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                border-right: 1px solid #bbb;
-              }
-              li:last-child {
-                border-right: none;
-              }
+scholar:
+  last_name: D'Angelo
+  first_name: [Andrea]
 
-              /* Change the link color to #111 (black) on hover */
-              li a:hover {
-                background-color: #111;
-              }
-              .active {
-                background-color: #04AA6D;
-              }
-              @media screen and (max-width: 600px) {
-                #menu li {
-                    width: 100%;
-                    float: none;
-                }
-              }
-          </style>
-          <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="/publications">Publications</a></li>
-            <li><a href="/talks">Talks</a></li>
-            <li><a href="/lectures">Lectures</a></li>
-            <li><a href="/other">Other Activities</a></li>
-          </ul>
+  style: citesty
+  locale: en
 
-# Footer
-#footer_show_references: true
-# references_title: References on request (Override references text)
+  source: /assets/
+  bibliography: ref.bib
+  bibliography_template: bibtemplate
+  sort_by: year, month
+  order: descending
 
-# Build settings
-remote_theme: sproogen/resume-theme
+  replace_strings: true
+  join_strings: true
 
-sass:
-  sass_dir: _sass
-  style: compressed
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
 
-plugins:
- - jekyll-seo-tag
+  query: "@*"
+
+  bibliography_list_attributes:
+    reversed: "reversed"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - update_boostrap.sh
+  - switch_theme.sh
+  - tags
+  - Rakefile
