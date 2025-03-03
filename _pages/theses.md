@@ -55,9 +55,8 @@ Study the impact of Machine Unlearning methods on a multimodal dataset of videog
 <div class="jumbotron">
 <div class="row align-items-end">
 <div class="col-md-12 col-sm-12">
-<h4><b>Hybrid-Kan</b></h4>
+<h4><b>Recent Advances in Chain-of-Thought Prompting: Current Trends and Automation Approaches</b></h4>
 
-Empirical Study on the effectiveness, in terms of accuracy and training time, of KAN vs. classical Neural Networks.
 
 </div>
 </div>
@@ -68,7 +67,28 @@ Empirical Study on the effectiveness, in terms of accuracy and training time, of
 <div class="col-md-12 col-sm-12">
 <h4><b>Membership Inference Attack for Machine Unlearning</b></h4>
 
-Empirical Study on the State of the art metrics for Machine Unlearning methods + building a new metric based on MIA. 
+</div>
+</div>
+</div>
+
+
+## Completed Theses
+
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>HybridKAN: Leveraging Multi-Sized Sub-MLPs for
+Enhanced Performances</b></h4>
+
+</div>
+</div>
+</div>
+
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Beyond the Systematic Evaluation of Large Language Models: From Theory to Practical Analysis
+of Results</b></h4>
 
 </div>
 </div>
