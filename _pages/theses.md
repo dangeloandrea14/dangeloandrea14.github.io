@@ -39,7 +39,8 @@ iframe {
 <div class="jumbotron">
 <div class="row align-items-end">
 <div class="col-md-12 col-sm-12">
-<h4><b>Machine Unlearning on a Videogame dataset</b></h4>
+<h4><b>Machine Unlearning on a Multimodal Videogame dataset</b></h4>
+<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/Multimodal_thesis.pdf" target="_blank"><button class="btn btn-danger btn-sm">READ THE PROPOSAL</button></a> 
 <a href="https://huggingface.co/datasets/claudioDsi94/PlayMyData" target="_blank"><button class="btn btn-success btn-sm">DATASET</button></a>
 <a href="{{ site.url }}{{ site.baseurl }}/papers/playmydata.pdf" target="_blank"><button class="btn btn-danger btn-sm">PAPER</button></a> 
 
@@ -48,6 +49,7 @@ Study the impact of Machine Unlearning methods on a multimodal dataset of videog
 </div>
 </div>
 </div>
+
 
 
 ## Ongoing Theses
@@ -90,6 +92,23 @@ Enhanced Performances</b></h4>
 <h4><b>Beyond the Systematic Evaluation of Large Language Models: From Theory to Practical Analysis
 of Results</b></h4>
 
+</div>
+</div>
+</div>
+
+
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>From ERASURE to Evaluation\\of Machine Unlearning Techniques</b></h4>
+</div>
+</div>
+</div>
+
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Recent Advances in Chain-of-Thought Prompting: Current Trends and Automation Approaches</b></h4>
 </div>
 </div>
 </div>
