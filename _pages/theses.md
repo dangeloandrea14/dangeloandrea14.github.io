@@ -51,29 +51,6 @@ Study the impact of Machine Unlearning methods on a multimodal dataset of videog
 </div>
 
 
-
-## Ongoing Theses
-
-<div class="jumbotron">
-<div class="row align-items-end">
-<div class="col-md-12 col-sm-12">
-<h4><b>Recent Advances in Chain-of-Thought Prompting: Current Trends and Automation Approaches</b></h4>
-
-
-</div>
-</div>
-</div>
-
-<div class="jumbotron">
-<div class="row align-items-end">
-<div class="col-md-12 col-sm-12">
-<h4><b>Membership Inference Attack for Machine Unlearning</b></h4>
-
-</div>
-</div>
-</div>
-
-
 ## Completed Theses
 
 <div class="jumbotron">
