@@ -40,7 +40,7 @@ iframe {
 <div class="row align-items-end">
 <div class="col-md-12 col-sm-12">
 <h4><b>Machine Unlearning on a Multimodal Videogame dataset</b></h4>
-<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/Multimodal_thesis.pdf" target="_blank"><button class="btn btn-danger btn-sm">READ THE PROPOSAL</button></a> 
+<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/Multimodal_thesis.pdf" target="_blank"><button class="btn btn-success btn-sm">READ THE PROPOSAL</button></a> 
 <a href="https://huggingface.co/datasets/claudioDsi94/PlayMyData" target="_blank"><button class="btn btn-success btn-sm">DATASET</button></a>
 <a href="{{ site.url }}{{ site.baseurl }}/papers/playmydata.pdf" target="_blank"><button class="btn btn-danger btn-sm">PAPER</button></a> 
 
@@ -50,6 +50,33 @@ Study the impact of Machine Unlearning methods on a multimodal dataset of videog
 </div>
 </div>
 
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Adversarial Graph Unlearning</b></h4>
+<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/Adversarial_Graph_Unlearning.pdf" target="_blank"><button class="btn btn-success btn-sm">READ THE PROPOSAL</button></a> 
+
+Study the problem of Machine Unlearning in the Graph Domain with an Adversarial approach.
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Density-based Document Retrieval</b></h4>
+<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/DbU.pdf" target="_blank"><button class="btn btn-success btn-sm">READ THE PROPOSAL</button></a> 
+
+Fine-tune a Large Language Model (LLM) for Document Ranking via density-based metrics.
+
+</div>
+</div>
+</div>
 
 ## Completed Theses
 
