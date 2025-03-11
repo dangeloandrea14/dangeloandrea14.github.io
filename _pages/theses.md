@@ -78,6 +78,18 @@ Fine-tune a Large Language Model (LLM) for Document Ranking via density-based me
 </div>
 </div>
 
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Time Series Unlearning</b></h4>
+<a href="{{ site.url }}{{ site.baseurl }}/theses_proposals/Time Series Unlearning.pdf" target="_blank"><button class="btn btn-success btn-sm">READ THE PROPOSAL</button></a> 
+
+Study new algorithms of Machine Unlearning on Time Series.
+
+</div>
+</div>
+</div>
+
 ## Completed Theses
 
 <div class="jumbotron">
