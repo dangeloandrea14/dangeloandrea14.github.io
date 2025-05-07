@@ -90,6 +90,17 @@ Study new algorithms of Machine Unlearning on Time Series.
 </div>
 </div>
 
+<div class="jumbotron">
+<div class="row align-items-end">
+<div class="col-md-12 col-sm-12">
+<h4><b>Noise-injecting Tool for Differential Privacy in Graphs</b></h4>
+
+Please contact me for more info on this thesis.
+
+</div>
+</div>
+</div>
+
 ## Completed Theses
 
 <div class="jumbotron">
