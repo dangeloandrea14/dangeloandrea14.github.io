@@ -19,6 +19,15 @@ years: [2016, 2017, 2018, 2019, 2020, 2021]
 {% if site.data.ProgramCommittees %}
 
 <div class="jumbotron">
+  <h3>Event Organization</h3>
+  <ul>
+    {% for pc in site.data.Chairs %}
+      <li>{{ pc.name }}, {{pc.role}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="jumbotron">
   <h3>Program Committees</h3>
   <ul>
     {% for pc in site.data.ProgramCommittees %}
