@@ -13,9 +13,9 @@ iframe {
   width: 175px;
   display: inline;
   vertical-align:middle;
-  <!-- margin-bottom:5px; -->
-  <!-- margin-left:5px; -->
-  <!-- border: 1px solid red; -->
+  margin-bottom:5px;
+  margin-left:5px;
+  border: 1px solid red; 
 }
 .col-md-3 {
   margin:0;
@@ -62,9 +62,6 @@ Study the problem of Machine Unlearning in the Graph Domain with an Adversarial 
 </div>
 </div>
 
-</div>
-</div>
-</div>
 
 <div class="jumbotron">
 <div class="row align-items-end">

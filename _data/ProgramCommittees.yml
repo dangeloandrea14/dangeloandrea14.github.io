@@ -1,3 +1,7 @@
+- name: ECML PKDD 2025
+  role: External Reviewer
+  year: 2025 
+
 - name: Resource and Benchmarks Track @ KDD 2025
   role: PC Member
   year: 2025 
@@ -12,10 +16,6 @@
 
 
 - name: CIKM 2024
-  role: PC Member
-  year: 2024
-
-- name: DELTA Workshop @ SIGKDD 2024
   role: PC Member
   year: 2024
 

@@ -2,7 +2,7 @@
 title: "Program Committees"
 layout: gridlay
 sitemap: false
-permalink: /pcs/
+permalink: /service/
 years: [2016, 2017, 2018, 2019, 2020, 2021]
 ---
 

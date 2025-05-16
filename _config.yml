@@ -30,7 +30,7 @@ nav_pages:
   - name: publications
   - name: talks
   - name: teaching
-  - name: pcs
+  - name: service
   - name: theses
 
 include:
