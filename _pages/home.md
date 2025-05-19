@@ -19,7 +19,7 @@ Research Interests:
 <div class="row">
 <center>
 <img src="{{ site.url }}{{ site.baseurl }}/images/WIPE-OUT.png" width="100%"/><br/>
-Join the WIPE-OUT workshop @ ECML-PKDD 2025! <br/>
+<a href="https://aiimlab.org/events/ECML_PKDD_2025_WIPE-OUT_Innovations_Privacy-preservation_Evaluations_Machine_Unlearning_Techniques.html"> Join the WIPE-OUT workshop @ ECML-PKDD 2025! </a> <br/>
 </center>
 </div>
 </div>
