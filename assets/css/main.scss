@@ -41,3 +41,76 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+.pub-index {
+  display: inline-block;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 600;
+  font-size: 0.8em;
+  margin-right: 6px;
+  color: #333;
+}
+
+.pub-quartile {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 600;
+  font-size: 0.75em;
+  margin-right: 6px;
+  color: #fff;
+}
+
+.pub-quartile.q1 { background-color: #2ecc71; }  /* green  */
+.pub-quartile.q2 { background-color: #f1c40f; }  /* yellow */
+.pub-quartile.q3 { background-color: #e67e22; }  /* orange */
+.pub-quartile.q4 { background-color: #e74c3c; }  /* red    */
+
+.pub-tier {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 600;
+  font-size: 0.75em;
+  margin-right: 6px;
+  color: #fff;
+}
+
+/* Colors for conference tiers */
+.pub-tier.a { background-color: #2ecc71; }        /* green  */
+.pub-tier.astar { background-color: #1abc9c; }    /* teal   */
+.pub-tier.b { background-color: #f1c40f; }        /* yellow */
+.pub-tier.workshop { background-color: #95a5a6; } /* gray   */
+
+/* --- Publication Cards --- */
+.archive__item {
+  background-color: #fdfdfd;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive__item:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* --- Dark mode (academicpages built-in) --- */
+html[data-theme="dark"] .archive__item {
+  background-color: #1f1f1f;  /* dark gray card */
+  border-color: #2d2d2d;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.6);
+}
+
+html[data-theme="dark"] .archive__item:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.8);
+}
+
+.talk-location {
+  color: var(--text-muted, #666);
+  font-style: italic;
+}
