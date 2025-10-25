@@ -1,72 +1,47 @@
 ---
-title: "About"
-layout: gridlay
-sitemap: false
-permalink: /about/
+permalink: /
+title: "Short Bio"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
 ---
 
-## About
 
-{% for member in site.data.pi %}
+I’m a **Ph.D. Candidate** at  [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹  
 
-<div class="jumbotron">
-<div class="row">
-<div class="col-sm-4">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/{{ member.photo }}" width="100%" style="max-width:250px"/>
-</div>
-<div class="col-sm-8 col-xs-12">
-  <h3>{{ member.name }}</h3>
-  <h4><i>{{ member.info }}</i></h4>
-  {% if member.email %}<a href="mailto:{{ member.email }}" target="_blank"><i class="fa fa-envelope-square fa-3x"></i></a> {% endif %}
-  {% if member.cv %} <a href="{{ site.url }}{{ site.baseurl }}/{{ member.cv }}" target="_blank"><i class="ai ai-cv-square ai-3x"></i></a> {% endif %}
-  {% if member.scholar %} <a href="{{ member.scholar }}" target="_blank"><i class="ai ai-google-scholar-square ai-3x"></i></a> {% endif %}
-  {% if member.github %} <a href="{{ member.github }}" target="_blank"><i class="fa fa-github-square fa-3x"></i></a> {% endif %}
-  {% if member.researchgate %} <a href="{{ member.researchgate }}" target="_blank"><i class="ai ai-researchgate-square ai-3x"></i></a> {% endif %}
 
-  <ul style="overflow: hidden">
-    {% for education in member.education %}
-      <li>{{ education | replace: "-","&#8211;" }}</li>
-    {% endfor %}
-  </ul>
+My research has appeared in venues like IJCAI, CIKM, and JSS, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during a **Visiting Ph.D. Researcher** stay at [Aarhus University](https://international.au.dk/) 🇩🇰 
 
-</div>
-</div>
-</div>
-{% endfor %}
 
-{% if site.data.grants %}
+You can find all the info on this website (:
 
-<div class="jumbotron">
-  <h3>Grants</h3>
-  <ul>
-    {% for grant in site.data.grants %}
-      <li>{{ grant.name }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
 
-{% if site.data.awards %}
+**Research Interests**
+-----
 
-<div class="jumbotron">
-  <h3>Awards</h3>
-  <ul>
-    {% for award in site.data.awards %}
-      <li>{{ award.name | replace: "-","&#8211;" }}</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
+My Research revolves around Trustworthy AI, with a focus on Machine Unlearning and Bias and Fairness.
 
-{% if site.data.people %}
+### 🌟 Selected Highlights (among other things)
 
-<div class="jumbotron">
-  <h3>Other Activities</h3>
-  <ul>
-    {% for activity in site.data.activities %}
-      <li>{{ activity.name }}, ({{ activity.location }}, {{ activity.year }})</li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
+| Year | Achievement |
+|------|--------------|
+| 2025 | 📚 Proceedings Chair for **WSDM 2026** |
+| 2025 | 📘 Published at **Springer's Machine Learning Journal** |
+| 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
+| 2025 | 📘 Published at **IJCAI 2025 Demo**, **CIKM 2025** |
+| 2025 | 🌍 Visiting Ph.D. — **Aarhus University**, Denmark |
+| 2024 | 🌍 Held an invited talk on *Machine Unlearning* at **Technical University of Munich** |
+| 2024 | 📚 Proceedings Chair for **CIKM 2024** |
 
+
+**Projects**
+-----
+
+<a href="https://github.com/aiim-research/ERASURE" target="_blank">
+<img src="images/ERASURE_LOGO.png" alt="ERASURE" style="height:70px; width:auto;"> 
+</a> ERASURE is our extendible Machine Unlearning framework. Take a look by clicking on the logo!
+
+<a href="https://aiimlab.org/events/ECML_PKDD_2025_WIPE-OUT_Innovations_Privacy-preservation_Evaluations_Machine_Unlearning_Techniques" target="_blank">
+<img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="height:70px; width:auto;"> 
+</a> WIPE-OUT is our Machine Unlearning workshop. The first edition was held at ECML-PKDD 2025. Stay tuned for more!

@@ -1,0 +1,30 @@
+---
+layout: archive
+title: "Theses"
+permalink: /theses/
+author_profile: true
+---
+
+{% include base_path %}
+
+<h2>📚 Available Theses</h2>
+{% assign available = site.theses | where: "availability", "available" %}
+{% if available.size > 0 %}
+  {% for post in available reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p><em>No available theses listed yet.</em></p>
+{% endif %}
+
+<hr>
+
+<h2>🎓 Completed Theses</h2>
+{% assign completed = site.theses | where: "availability", "complete" %}
+{% if completed.size > 0 %}
+  {% for post in completed reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p><em>No completed theses listed yet.</em></p>
+{% endif %}

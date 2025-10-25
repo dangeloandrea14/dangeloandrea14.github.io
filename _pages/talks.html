@@ -1,0 +1,34 @@
+---
+layout: archive
+title: "Talks and Presentations"
+permalink: /talks/
+author_profile: true
+---
+
+{% if site.talkmap_link == true %}
+<p style="text-decoration:underline;">
+  <a href="/talkmap.html">See a map of all the places I've given a talk!</a>
+</p>
+{% endif %}
+
+<h2>🎤 Invited Talks</h2>
+{% assign invited_talks = site.talks | where: "talktype", "invited" %}
+{% if invited_talks.size > 0 %}
+  {% for post in invited_talks reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p><em>No invited talks listed yet.</em></p>
+{% endif %}
+
+<hr>
+
+<h2>📄 Conference & Paper Presentations</h2>
+{% assign paper_talks = site.talks | where: "talktype", "paper" %}
+{% if paper_talks.size > 0 %}
+  {% for post in paper_talks reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p><em>No paper talks listed yet.</em></p>
+{% endif %}
