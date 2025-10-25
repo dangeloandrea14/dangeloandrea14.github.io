@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-I’m a **Ph.D. Candidate** at  [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹  
+I’m a **Ph.D. Candidate** at  [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹  in Computer Science.
 
 
 My research has appeared in venues like IJCAI, CIKM, and JSS, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D.
@@ -23,7 +23,7 @@ You can find all the info on this website (:
 **Research Interests**
 -----
 
-My Research revolves around Trustworthy AI, with a focus on Machine Unlearning and Bias and Fairness.
+My Research revolves around Trustworthy AI, with a focus on Machine Unlearning and Bias.
 
 ### 🌟 Selected Highlights (among other things)
 
