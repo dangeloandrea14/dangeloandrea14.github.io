@@ -19,6 +19,12 @@ main:
     
   - title: "Theses"
     url: /theses/
+
+  - title: "Service"
+    url: /service/
+
+  - title: "Awards"
+    url: /awards/
         
   - title: "Blog Posts"
     url: /year-archive/

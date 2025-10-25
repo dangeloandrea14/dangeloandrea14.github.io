@@ -11,7 +11,10 @@ redirect_from:
 I’m a **Ph.D. Candidate** at  [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹  
 
 
-My research has appeared in venues like IJCAI, CIKM, and JSS, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during a **Visiting Ph.D. Researcher** stay at [Aarhus University](https://international.au.dk/) 🇩🇰 
+My research has appeared in venues like IJCAI, CIKM, and JSS, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D.
+
+
+I was also a **Visiting Ph.D. Researcher** at [Aarhus University](https://international.au.dk/) 🇩🇰 
 
 
 You can find all the info on this website (:
