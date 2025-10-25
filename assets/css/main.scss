@@ -114,11 +114,3 @@ html[data-theme="dark"] .archive__item:hover {
   color: var(--text-muted, #666);
   font-style: italic;
 }
-
-.masthead__inner-wrap {
-  background-image: url('{{ "/images/yorkshire_rose.png" | relative_url }}');
-  background-repeat: repeat-x;
-  background-size: 40px 40px;
-  background-position: center bottom;
-  opacity: 0.15;
-}
