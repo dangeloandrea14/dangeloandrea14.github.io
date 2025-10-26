@@ -16,7 +16,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Andrea D'Angelo"
-  pronouns         : # example: "she/her"  
+  pronouns         : "he/him"  
   bio              : "Ph.D. Candidate at University of L'Aquila. Previously Visiting Ph.D. at Aarhus University."
   location         : "L'Aquila"
   employer         : "University of L'Aquila"
@@ -24,7 +24,7 @@ author:
   email            : "andrea.dangelo6@graduate.univaq.it" 
 
   # Academic websites
-  academia         : # URL
+  academia         : "andrea-dangelo.com"
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=9WIwwWwAAAAJ"
   inspire-hep      : # URL
@@ -39,7 +39,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : # Username
+  github           : "dangeloandrea14"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
