@@ -23,7 +23,7 @@ You can find all the info on this website (:
 **Research Interests**
 -----
 
-My Research revolves around Trustworthy AI, with a focus on Machine Unlearning and Bias.
+My Research revolves around Trustworthy AI, with a focus on Machine Unlearning.
 
 ### 🌟 Selected Highlights (among other things)
 
