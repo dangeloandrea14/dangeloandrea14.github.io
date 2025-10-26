@@ -2,72 +2,148 @@
 ---
 
 /*
- * This file controls what is imported from /_sass
- *
- * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
+ * Cleaned AcademicPages stylesheet
+ * Compact publication cards + restored dark mode
  */
 
+/* === Import theme and base === */
 @import
-    "vendor/breakpoint/breakpoint",
+  "vendor/breakpoint/breakpoint",
+  "themes",
+  "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+  "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+  "include/mixins",
+  "vendor/susy/susy",
+  "layout/reset",
+  "layout/base",
+  "include/utilities",
+  "layout/tables",
+  "layout/buttons",
+  "layout/notices",
+  "layout/masthead",
+  "layout/navigation",
+  "layout/footer",
+  "syntax",
+  "layout/forms",
+  "layout/page",
+  "layout/archive",
+  "layout/sidebar",
+  "layout/json_cv",
+  "vendor/font-awesome/fontawesome",
+  "vendor/font-awesome/solid",
+  "vendor/font-awesome/brands";
 
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+/* ==========================================================
+   VARIABLES
+   ========================================================== */
 
-    "include/mixins",
-    "vendor/susy/susy",
-
-    "layout/reset",
-    "layout/base",
-
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
-
-    "layout/forms",
-
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv",
-
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands"
-;
-
-.pub-index {
-  display: inline-block;
-  background-color: #e0e0e0;
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-weight: 600;
-  font-size: 0.8em;
-  margin-right: 6px;
-  color: #333;
+/* Light mode */
+:root {
+  --bg-card: #fafafa;
+  --text-main: #222;
+  --text-muted: #555;
+  --link-color: #0047ab;
+  --link-hover: #002f6c;
+  --border-card: #ccc;
+  --accent-left: #0047ab;
 }
 
-.pub-quartile {
-  display: inline-block;
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-weight: 600;
-  font-size: 0.75em;
-  margin-right: 6px;
-  color: #fff;
+/* Dark mode */
+html[data-theme="dark"] {
+  --bg-card: #1e1e1e;
+  --text-main: #fafafa;
+  --text-muted: #bbb;
+  --link-color: #7aa9ff;
+  --link-hover: #a5c5ff;
+  --border-card: #333;
+  --accent-left: #7aa9ff;
 }
 
-.pub-quartile.q1 { background-color: #2ecc71; }  /* green  */
-.pub-quartile.q2 { background-color: #f1c40f; }  /* yellow */
-.pub-quartile.q3 { background-color: #e67e22; }  /* orange */
-.pub-quartile.q4 { background-color: #e74c3c; }  /* red    */
+/* ==========================================================
+   GENERIC ELEMENTS
+   ========================================================== */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
 
+.talk-location {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ==========================================================
+   PUBLICATION + ARCHIVE CARDS
+   ========================================================== */
+.archive__item {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid var(--accent-left);
+  border-radius: 6px;
+  box-shadow: none;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.archive__item:hover {
+  background: rgba(var(--accent-left), 0.05);
+  transform: translateY(-1px);
+}
+
+.archive__item-title {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-family: 'Source Serif Pro', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+.archive__item-title a {
+  color: inherit;
+}
+
+.archive__item p,
+.archive__item-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0;
+}
+
+.archive__item p:last-child {
+  margin-bottom: 0;
+}
+
+.archive__item a {
+  font-size: 0.85rem;
+  color: var(--link-color);
+}
+
+.archive__item a:hover {
+  color: var(--link-hover);
+}
+
+/* Grid spacing */
+.grid__wrapper {
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* ==========================================================
+   SMALL BADGES
+   ========================================================== */
+.pub-index,
+.pub-quartile,
 .pub-tier {
   display: inline-block;
   border-radius: 4px;
@@ -77,204 +153,26 @@
   margin-right: 6px;
   color: #fff;
 }
-
-/* Colors for conference tiers */
-.pub-tier.a { background-color: #2ecc71; }        /* green  */
-.pub-tier.astar { background-color: #1abc9c; }    /* teal   */
-.pub-tier.b { background-color: #f1c40f; }        /* yellow */
-.pub-tier.workshop { background-color: #95a5a6; } /* gray   */
-
-/* --- Publication Cards --- */
-.archive__item {
-  background-color: #fdfdfd;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  padding: 1rem 1.25rem;
-  margin-bottom: 1rem;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+.pub-index {
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 0.8em;
 }
+.pub-quartile.q1 { background-color: #2ecc71; }
+.pub-quartile.q2 { background-color: #f1c40f; }
+.pub-quartile.q3 { background-color: #e67e22; }
+.pub-quartile.q4 { background-color: #e74c3c; }
+.pub-tier.a { background-color: #2ecc71; }
+.pub-tier.astar { background-color: #1abc9c; }
+.pub-tier.b { background-color: #f1c40f; }
+.pub-tier.workshop { background-color: #95a5a6; }
 
-.archive__item:hover {
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-}
-
-/* --- Dark mode (academicpages built-in) --- */
-html[data-theme="dark"] .archive__item {
-  background-color: #1f1f1f;  /* dark gray card */
-  border-color: #2d2d2d;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.6);
-}
-
-html[data-theme="dark"] .archive__item:hover {
-  box-shadow: 0 3px 10px rgba(0,0,0,0.8);
-}
-
-.talk-location {
-  color: var(--text-muted, #666);
-  font-style: italic;
-}
-
-/* ===== SMALLER PUBLICATION CARDS ===== */
-.archive__item {
-  padding: 0.4rem 0.7rem !important;
-  margin-bottom: 0.7rem !important;
-  border-radius: 6px !important;
-  box-shadow: none !important;
-  border: 1px solid #ccc !important;
-  background: #fafafa !important;
-  font-size: 0.9rem !important;
-  line-height: 1.25 !important;
-}
-
-.archive__item-title {
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.25rem !important;
-  line-height: 1.2 !important;
-}
-
-.archive__item-excerpt,
-.archive__item p {
-  font-size: 0.85rem !important;
-  color: #555 !important;
-  line-height: 1.15 !important;
-  margin: 0.2rem 0 !important;
-}
-
-.archive__item a {
-  font-size: 0.85rem !important;
-  color: #0055aa !important;
-}
-
-.grid__wrapper {
-  gap: 0.5rem !important;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
-}
-
-/* ===== REMOVE EXTRA SPACE ABOVE LINK BLOCKS IN PUBLICATION CARDS ===== */
-.archive__item p {
-  margin-top: 0.2rem !important;   /* tighten paragraphs */
-  margin-bottom: 0.2rem !important;
-}
-
-.archive__item p:last-child {
-  margin-bottom: 0 !important;     /* remove bottom gap */
-}
-
-.archive__item p a {
-  display: inline-block;
-  margin-top: 0 !important;
-  line-height: 1.1 !important;
-}
-/* ===== FINAL POLISH FOR PUBLICATION CARDS (LIGHT + DARK MODE) ===== */
-
-/* Light mode */
-.archive__item {
-  padding: 0.4rem 0.7rem !important;
-  margin-bottom: 0.7rem !important;
-  border-radius: 6px !important;
-  border: 1px solid #ccc !important;
-  background: #fafafa !important;
-  font-size: 0.9rem !important;
-  line-height: 1.25 !important;
-  box-shadow: none !important;
-}
-
-.archive__item-title {
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  margin-bottom: 0.25rem !important;
-  line-height: 1.2 !important;
-  color: #222 !important;
-}
-
-.archive__item-excerpt,
-.archive__item p {
-  font-size: 0.85rem !important;
-  color: #555 !important;
-  line-height: 1.15 !important;
-  margin: 0.2rem 0 !important;
-}
-
-.archive__item p:last-child {
-  margin-bottom: 0 !important;
-}
-
-.archive__item a {
-  font-size: 0.85rem !important;
-  color: #0055aa !important;
-}
-
-/* Dark mode */
-html[data-theme="dark"] .archive__item {
-  background: #1e1e1e !important;
-  border: 1px solid #333 !important;
-  color: #e0e0e0 !important;
-}
-
-html[data-theme="dark"] .archive__item-title {
-  color: #fafafa !important;
-}
-
-html[data-theme="dark"] .archive__item-excerpt,
-html[data-theme="dark"] .archive__item p {
-  color: #bbb !important;
-}
-
-html[data-theme="dark"] .archive__item a {
-  color: #7aa9ff !important;
-}
-
-/* ===== REMOVE TOP GAP INSIDE PUBLICATION CARDS ===== */
-.archive__item-title {
-  margin-top: 0 !important;      /* kills default h2 margin */
-  margin-bottom: 0.25rem !important;
-}
-
-.archive__item {
-  padding-top: 0.4rem !important;  /* slight breathing room */
-}
-
-html[data-theme="dark"] .archive__item {
-  padding-top: 0.4rem !important;  /* keep equal for dark mode */
-}
-
-/* ===== Elegant link and accent styling ===== */
-a {
-  color: #0047ab;
-  text-decoration: none;
-  transition: color 0.15s ease, text-decoration 0.15s ease;
-}
-
-a:hover {
-  color: #002f6c;
-  text-decoration: underline;
-}
-
-/* Light mode publication card accents */
-.archive__item-title a {
-  color: #1a1a1a;
-}
-
-.archive__item-title a:hover {
-  color: #0047ab;
-}
-
-/* Dark mode */
-html[data-theme="dark"] a {
-  color: #7aa9ff;
-}
-
-html[data-theme="dark"] a:hover {
-  color: #a5c5ff;
-}
-
-
-.archive__item {
-  border-left: 3px solid #0047ab;
-}
-
-html[data-theme="dark"] .archive__item {
-  border-left-color: #7aa9ff;
+/* ==========================================================
+   TYPOGRAPHY (for academic look)
+   ========================================================== */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
 }
