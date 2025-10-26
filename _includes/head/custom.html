@@ -1,7 +1,12 @@
 <!-- start custom head snippets -->
 {% include base_path %}
 
-
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
+</script>
 
 
 <!-- Support for Academicons -->
