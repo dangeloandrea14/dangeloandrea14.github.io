@@ -114,3 +114,167 @@ html[data-theme="dark"] .archive__item:hover {
   color: var(--text-muted, #666);
   font-style: italic;
 }
+
+/* ===== SMALLER PUBLICATION CARDS ===== */
+.archive__item {
+  padding: 0.4rem 0.7rem !important;
+  margin-bottom: 0.7rem !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+  background: #fafafa !important;
+  font-size: 0.9rem !important;
+  line-height: 1.25 !important;
+}
+
+.archive__item-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1.2 !important;
+}
+
+.archive__item-excerpt,
+.archive__item p {
+  font-size: 0.85rem !important;
+  color: #555 !important;
+  line-height: 1.15 !important;
+  margin: 0.2rem 0 !important;
+}
+
+.archive__item a {
+  font-size: 0.85rem !important;
+  color: #0055aa !important;
+}
+
+.grid__wrapper {
+  gap: 0.5rem !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+}
+
+/* ===== REMOVE EXTRA SPACE ABOVE LINK BLOCKS IN PUBLICATION CARDS ===== */
+.archive__item p {
+  margin-top: 0.2rem !important;   /* tighten paragraphs */
+  margin-bottom: 0.2rem !important;
+}
+
+.archive__item p:last-child {
+  margin-bottom: 0 !important;     /* remove bottom gap */
+}
+
+.archive__item p a {
+  display: inline-block;
+  margin-top: 0 !important;
+  line-height: 1.1 !important;
+}
+/* ===== FINAL POLISH FOR PUBLICATION CARDS (LIGHT + DARK MODE) ===== */
+
+/* Light mode */
+.archive__item {
+  padding: 0.4rem 0.7rem !important;
+  margin-bottom: 0.7rem !important;
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important;
+  background: #fafafa !important;
+  font-size: 0.9rem !important;
+  line-height: 1.25 !important;
+  box-shadow: none !important;
+}
+
+.archive__item-title {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1.2 !important;
+  color: #222 !important;
+}
+
+.archive__item-excerpt,
+.archive__item p {
+  font-size: 0.85rem !important;
+  color: #555 !important;
+  line-height: 1.15 !important;
+  margin: 0.2rem 0 !important;
+}
+
+.archive__item p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.archive__item a {
+  font-size: 0.85rem !important;
+  color: #0055aa !important;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .archive__item {
+  background: #1e1e1e !important;
+  border: 1px solid #333 !important;
+  color: #e0e0e0 !important;
+}
+
+html[data-theme="dark"] .archive__item-title {
+  color: #fafafa !important;
+}
+
+html[data-theme="dark"] .archive__item-excerpt,
+html[data-theme="dark"] .archive__item p {
+  color: #bbb !important;
+}
+
+html[data-theme="dark"] .archive__item a {
+  color: #7aa9ff !important;
+}
+
+/* ===== REMOVE TOP GAP INSIDE PUBLICATION CARDS ===== */
+.archive__item-title {
+  margin-top: 0 !important;      /* kills default h2 margin */
+  margin-bottom: 0.25rem !important;
+}
+
+.archive__item {
+  padding-top: 0.4rem !important;  /* slight breathing room */
+}
+
+html[data-theme="dark"] .archive__item {
+  padding-top: 0.4rem !important;  /* keep equal for dark mode */
+}
+
+/* ===== Elegant link and accent styling ===== */
+a {
+  color: #0047ab;
+  text-decoration: none;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+a:hover {
+  color: #002f6c;
+  text-decoration: underline;
+}
+
+/* Light mode publication card accents */
+.archive__item-title a {
+  color: #1a1a1a;
+}
+
+.archive__item-title a:hover {
+  color: #0047ab;
+}
+
+/* Dark mode */
+html[data-theme="dark"] a {
+  color: #7aa9ff;
+}
+
+html[data-theme="dark"] a:hover {
+  color: #a5c5ff;
+}
+
+
+.archive__item {
+  border-left: 3px solid #0047ab;
+}
+
+html[data-theme="dark"] .archive__item {
+  border-left-color: #7aa9ff;
+}

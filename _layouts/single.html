@@ -107,3 +107,35 @@ layout: default
     </div>
   {% endif %}
 </div>
+
+<style>
+/* ====== FORCE SMALLER RELATED POST CARDS ====== */
+.page__related .grid__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+  gap: 0.4rem !important;
+}
+
+.page__related .archive__item {
+  padding: 0.4rem 0.6rem !important;
+  margin: 0 !important;
+  border-radius: 4px !important;
+  font-size: 0.85rem !important;
+  line-height: 1.2 !important;
+  background: #fafafa !important;
+  box-shadow: none !important;
+  border: 1px solid #ddd !important;
+  transform: scale(0.92) !important;
+}
+
+.page__related .archive__item-title {
+  font-size: 0.95rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.page__related .archive__item-excerpt {
+  font-size: 0.8rem !important;
+  line-height: 1.1 !important;
+  color: #555 !important;
+}
+</style>
