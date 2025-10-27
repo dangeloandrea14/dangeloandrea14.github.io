@@ -1,23 +1,29 @@
 ---
 permalink: /
-title: "Short Bio"
+title: "Home"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
+<div class="home-container">
+  <div class="main-bio" markdown="1">
 
-I’m a **Ph.D. Candidate** at  [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹  in Computer Science.
-
+I’m a **Ph.D. Candidate** at [University of L’Aquila](https://www.univaq.it/en/) 🇮🇹 in Computer Science.
 
 My research has appeared in venues like IJCAI, CIKM, and JSS, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D.
 
-
 I was also a **Visiting Ph.D. Researcher** at [Aarhus University](https://international.au.dk/) 🇩🇰 
 
-
 You can find all the info on this website (:
+
+  </div>
+
+  <div class="sidebar-right">
+    {% include news.html %}
+  </div>
+</div>
 
 
 **Research Interests**
@@ -36,7 +42,6 @@ My Research revolves around Trustworthy AI, with a focus on Machine Unlearning.
 | 2025 | 🌍 Visiting Ph.D. — **Aarhus University**, Denmark |
 | 2024 | 🌍 Held an invited talk on *Machine Unlearning* at **Technical University of Munich** |
 | 2024 | 📚 Proceedings Chair for **CIKM 2024** |
-
 
 **Projects**
 -----

@@ -176,3 +176,83 @@ body {
   line-height: 1.6;
   color: var(--text-main);
 }
+
+/* --- Right-side News Widget --- */
+.home-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main-bio {
+  flex: 3;
+}
+
+.sidebar-right {
+  flex: 1.2;
+  max-width: 320px;
+}
+
+
+.news-box {
+  background: #fafafa;
+  border-left: 4px solid #0047ab;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.news-box h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4rem;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.news-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Dark mode support */
+html[data-theme="dark"] .news-box {
+  background: #1f1f1f;
+  border-left-color: #7aa9ff;
+  color: #ddd;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* --- Justify short bio text --- */
+.main-bio {
+  text-align: justify;
+  text-justify: inter-word; /* makes word spacing more natural */
+  line-height: 1.6;
+}
+
+/* Optional: make links and headings stay readable */
+.main-bio a {
+  text-align: left;
+}
+
+.main-bio h1,
+.main-bio h2,
+.main-bio h3,
+.main-bio h4,
+.main-bio h5,
+.main-bio h6 {
+  text-align: left;
+}
+
+a {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

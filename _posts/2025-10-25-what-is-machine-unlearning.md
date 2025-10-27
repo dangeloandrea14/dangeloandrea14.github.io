@@ -1,5 +1,6 @@
 ---
 title: 'What is Machine Unlearning?'
+description: 'Introduction to Machine Unlearning in trustworthy AI. Machine Unlearning motivation and workflow'
 date: 2025-10-25
 permalink: /posts/2025/10/what_is_mu/
 mathjax: true
