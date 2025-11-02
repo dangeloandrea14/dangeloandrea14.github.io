@@ -11,6 +11,7 @@ redirect_from:
 
 | Year | Role | Event |
 |------|---------| -------- |
+| 2025 | Co-Organizer | Web&Graph Workshop at WSDM 2026 |
 | 2025 | Proceedings Chair | **WSDM 2026** |
 | 2025 | Co-Organizer | WIPE-OUT workshop at ECML-PKDD 2025 |
 | 2025 | Co-Organizer | Tutorial on Graph counterfactual explainability at ECML-PKDD 2025 |
