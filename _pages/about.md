@@ -35,7 +35,7 @@ My Research revolves around Trustworthy AI, with a focus on Machine Unlearning.
 
 | Year | Achievement |
 |------|--------------|
-|------| 🌍 Visiting Researcher — **Aarhus University**, Denmark |
+|2026 | 🌍 Visiting Researcher — **Aarhus University**, Denmark |
 | 2025 | 📚 Proceedings Chair for **WSDM 2026** |
 | 2025 | 📘 Published at **Springer's Machine Learning Journal** |
 | 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
