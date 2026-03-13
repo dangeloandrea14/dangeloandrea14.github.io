@@ -35,6 +35,7 @@ My Research revolves around Trustworthy AI, with a focus on Machine Unlearning.
 
 | Year | Achievement |
 |------|--------------|
+|------| 🌍 Visiting Researcher — **Aarhus University**, Denmark |
 | 2025 | 📚 Proceedings Chair for **WSDM 2026** |
 | 2025 | 📘 Published at **Springer's Machine Learning Journal** |
 | 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
@@ -46,10 +47,10 @@ My Research revolves around Trustworthy AI, with a focus on Machine Unlearning.
 **Projects**
 -----
 
+<a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank">
+<img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="height:70px; width:auto;"> 
+</a> WIPE-OUT 2 Workshop on Machine Unlearning and Privacy Preservation will be held at ECML-PKDD 2026!
+
 <a href="https://github.com/aiim-research/ERASURE" target="_blank">
 <img src="images/ERASURE_LOGO.png" alt="ERASURE" style="height:70px; width:auto;"> 
 </a> ERASURE is our extendible Machine Unlearning framework. Take a look by clicking on the logo!
-
-<a href="https://aiimlab.org/events/ECML_PKDD_2025_WIPE-OUT_Innovations_Privacy-preservation_Evaluations_Machine_Unlearning_Techniques" target="_blank">
-<img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="height:70px; width:auto;"> 
-</a> WIPE-OUT is our Machine Unlearning workshop. The first edition was held at ECML-PKDD 2025. Stay tuned for more!
