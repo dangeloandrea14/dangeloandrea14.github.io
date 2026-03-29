@@ -17,11 +17,11 @@ author:
   avatar           : "profile.png"
   name             : "Andrea D'Angelo"
   pronouns         : "he/him"  
-  bio              : "Ph.D. Candidate at University of L'Aquila. Previously Visiting Ph.D. at Aarhus University."
-  location         : "L'Aquila"
-  employer         : "University of L'Aquila"
+  bio              : "Postdoctoral Researcher at University of Aarhus"
+  location         : "Aarhus"
+  employer         : "University of Aarhus"
   uri              : # URL
-  email            : "andrea.dangelo6@graduate.univaq.it" 
+  email            : "andreadangelo@acm.org" 
 
   # Academic websites
   academia         : #
