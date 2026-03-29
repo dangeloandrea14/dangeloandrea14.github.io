@@ -59,14 +59,36 @@
     {% endif %}
 
     {% if post.collection == 'teaching' %}
-      <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+      <p>
+        {% if post.university_key %}
+          <span class="uni-badge uni-{{ post.university_key }}">{{ post.venue | split: "," | first }}</span>
+        {% endif %}
+        <span style="color: var(--text-muted); font-size: 0.85em;">{{ post.type }} &middot; <strong style="color: var(--text-main); font-size: 1.05em;">{{ post.date | default: "1900-01-01" | date: "%Y" }}</strong></span>
+      </p>
+      {% if post.description %}
+        <p style="font-size: 0.85em; color: var(--text-muted); margin: 0.2rem 0;">{{ post.description }}</p>
+      {% endif %}
+      {% if post.topics %}
+        <p style="margin: 0.3rem 0 0;">{% for topic in post.topics %}<span class="teaching-topic">{{ topic }}</span>{% endfor %}</p>
+      {% endif %}
+    {% elsif post.collection == 'theses' %}
+      <p>
+        {% if post.venue %}
+          <span class="uni-badge uni-{{ post.university_key }}">{{ post.venue }}</span>
+        {% endif %}
+        {% if post.date %}
+          <strong style="color: var(--text-main); font-size: 1.05em;">{{ post.date | date: "%Y" }}</strong>
+        {% endif %}
+      </p>
     {% elsif post.collection == 'publications' %}
       <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
       {% elsif post.collection == 'talks' %}
     <p>
-      <strong>{{ post.venue }}</strong>, {{ post.date | date: "%B %Y" }}
+      <span class="uni-badge talk-badge-{{ post.talktype }}">{{ post.venue }}</span>
+      <strong style="color: var(--text-main); font-size: 1.05em;">{{ post.date | date: "%Y" }}</strong>
+      <span style="color: var(--text-muted); font-size: 0.85em;">({{ post.date | date: "%B" }})</span>
       {% if post.location %}
-        <br>📍 <span class="talk-location">{{ post.location }}</span>
+        &middot; <span class="talk-location">📍 {{ post.location }}</span>
       {% endif %}
     </p>
     {% elsif post.date %}

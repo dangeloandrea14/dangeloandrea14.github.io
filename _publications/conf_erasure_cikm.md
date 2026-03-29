@@ -7,4 +7,5 @@ date: 2025-11-01
 venue: 'Proceedings of the 34th ACM International Conference on Information and Knowledge Management (CIKM 2025)'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/erasure_cikm.bib'
 tier: A
+selected: true
 ---

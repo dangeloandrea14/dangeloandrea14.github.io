@@ -7,6 +7,20 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+{% assign teaching_by_uni = site.teaching | group_by: "university_key" | sort: "name" %}
+
+{% for group in teaching_by_uni %}
+  {% assign uni_name = group.items[0].venue | split: "," | first %}
+  {% assign uni_location = group.items[0].location %}
+
+  <div class="teaching-section">
+    <div class="teaching-uni-header teaching-uni-{{ group.name }}">
+      <span class="teaching-uni-name">{{ uni_name }}</span>
+      <span class="teaching-uni-location">📍 {{ uni_location }}</span>
+    </div>
+    {% assign sorted_posts = group.items | sort: "date" | reverse %}
+    {% for post in sorted_posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </div>
 {% endfor %}

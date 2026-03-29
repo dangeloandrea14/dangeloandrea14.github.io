@@ -7,24 +7,30 @@ author_profile: true
 
 {% include base_path %}
 
-<h2>📚 Available Theses</h2>
-{% assign available = site.theses | where: "availability", "available" %}
-{% if available.size > 0 %}
-  {% for post in available reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% else %}
-  <p><em>No available theses listed yet.</em></p>
-{% endif %}
+<div class="teaching-section">
+  <div class="teaching-uni-header theses-header-available">
+    <span class="teaching-uni-name">📚 Available Theses</span>
+  </div>
+  {% assign available = site.theses | where: "availability", "available" %}
+  {% if available.size > 0 %}
+    {% for post in available reversed %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% else %}
+    <p><em>No available theses listed yet.</em></p>
+  {% endif %}
+</div>
 
-<hr>
-
-<h2>🎓 Completed Theses</h2>
-{% assign completed = site.theses | where: "availability", "complete" %}
-{% if completed.size > 0 %}
-  {% for post in completed reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% else %}
-  <p><em>No completed theses listed yet.</em></p>
-{% endif %}
+<div class="teaching-section">
+  <div class="teaching-uni-header theses-header-complete">
+    <span class="teaching-uni-name">🎓 Completed Theses</span>
+  </div>
+  {% assign completed = site.theses | where: "availability", "complete" | sort: "date" | reverse %}
+  {% if completed.size > 0 %}
+    {% for post in completed %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% else %}
+    <p><em>No completed theses listed yet.</em></p>
+  {% endif %}
+</div>
