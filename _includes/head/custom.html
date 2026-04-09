@@ -1,20 +1,61 @@
 <!-- start custom head snippets -->
 {% include base_path %}
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
-</script>
-
-
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<!-- ✅ Custom favicon: Yorkshire Rose -->
+<!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ base_path }}/images/yorkshire_rose.png" sizes="32x32">
 <link rel="apple-touch-icon" href="{{ base_path }}/images/yorkshire_rose.png">
 
 <meta name="theme-color" content="#ffffff"/>
+
+<!-- Author and keywords meta tags -->
+<meta name="author" content="Andrea D'Angelo">
+<meta name="keywords" content="Andrea D'Angelo, Andrea D Angelo, machine unlearning, trustworthy AI, GDPR right to be forgotten, privacy-preserving machine learning, federated unlearning, AI fairness, algorithmic debiasing, ERASURE framework, postdoctoral researcher, Aarhus University, computer science">
+
+<!-- Rich structured data: Person (Schema.org JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andrea D'Angelo",
+  "alternateName": ["Andrea D Angelo", "D'Angelo Andrea", "dangeloandrea14"],
+  "url": "https://andrea-dangelo.com",
+  "email": "andreadangelo@acm.org",
+  "image": "https://andrea-dangelo.com/images/profile.png",
+  "jobTitle": "Postdoctoral Researcher",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Aarhus University",
+    "url": "https://cs.au.dk/"
+  },
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "University of L'Aquila"
+  },
+  "description": "Postdoctoral Researcher at Aarhus University specializing in Machine Unlearning, Trustworthy AI, GDPR right to be forgotten, and privacy-preserving machine learning. Creator of the ERASURE framework. Published at IJCAI, CIKM, and Springer Machine Learning.",
+  "knowsAbout": [
+    "Machine Unlearning",
+    "Trustworthy AI",
+    "Privacy-Preserving Machine Learning",
+    "GDPR Right to Be Forgotten",
+    "Federated Unlearning",
+    "AI Fairness",
+    "Algorithmic Debiasing",
+    "Machine Learning",
+    "Data Privacy"
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=9WIwwWwAAAAJ",
+    "https://orcid.org/0000-0002-0577-2494",
+    "https://www.semanticscholar.org/author/Andrea-D%27Angelo/2174071404",
+    "https://www.researchgate.net/profile/Andrea-Dangelo-5",
+    "https://www.scopus.com/authid/detail.uri?authorId=57807458000",
+    "https://dblp.org/pid/218/4853.html",
+    "https://www.linkedin.com/in/andrea-d-angelo-02569319a/",
+    "https://github.com/dangeloandrea14"
+  ]
+}
+</script>
 <!-- end custom head snippets -->

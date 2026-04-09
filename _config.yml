@@ -3,7 +3,7 @@ site_theme: "default"
 title: "Andrea D'Angelo"
 title_separator: "•"
 name: "Andrea D'Angelo"
-description: "Postdoctoral Researcher at University of Aarhus working on Machine Unlearning and Trustworthy AI."
+description: "Andrea D'Angelo — Postdoctoral Researcher at Aarhus University working on Machine Unlearning, Trustworthy AI, GDPR right to be forgotten, and privacy-preserving machine learning. Creator of the ERASURE framework."
 url: "https://andrea-dangelo.com"
 baseurl: ""
 repository: "dangeloandrea14/dangeloandrea14.github.io"
@@ -118,7 +118,7 @@ atom_feed:
 
 
 # SEO Related
-google_site_verification :
+google_site_verification : C2nz89sjeIy3M6Wnd_MPg4X4n37WjunYhaRONPzidR8
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -131,14 +131,22 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "images/bio-photo.jpg"
-og_description           : "Postdoctoral Researcher at University of Aarhus working on Machine Unlearning and Trustworthy AI."
+og_image                 : "images/profile.png"
+og_description           : "Postdoctoral Researcher at Aarhus University working on Machine Unlearning, Trustworthy AI, GDPR right to be forgotten, and privacy-preserving machine learning. Creator of the ERASURE framework."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Andrea D'Angelo"
+  links:
+    - "https://scholar.google.com/citations?user=9WIwwWwAAAAJ"
+    - "https://orcid.org/0000-0002-0577-2494"
+    - "https://www.semanticscholar.org/author/Andrea-D%27Angelo/2174071404"
+    - "https://www.researchgate.net/profile/Andrea-Dangelo-5"
+    - "https://www.scopus.com/authid/detail.uri?authorId=57807458000"
+    - "https://dblp.org/pid/218/4853.html"
+    - "https://www.linkedin.com/in/andrea-d-angelo-02569319a/"
+    - "https://github.com/dangeloandrea14"
 
 
 # google_analytics: "G-SGP6CCYXVL"

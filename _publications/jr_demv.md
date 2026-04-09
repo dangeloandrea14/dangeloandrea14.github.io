@@ -8,4 +8,5 @@ venue: 'Information Processing & Management'
 quartile: Q1
 paperurl: 'https://www.sciencedirect.com/science/article/pii/S0306457322003272'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/journals/demv.bib'
+description: "DEMV is a data- and model-agnostic debiasing method that enhances algorithmic fairness in classification tasks by simultaneously addressing multiple sensitive variables, reducing discrimination in machine learning systems. Published in Information Processing & Management (Q1)."
 ---

@@ -1,6 +1,8 @@
 ---
 permalink: /
 title: "Hello!"
+description: "Andrea D'Angelo — Postdoctoral Researcher at Aarhus University working on Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten. Creator of the ERASURE framework. Published at IJCAI, CIKM, Springer Machine Learning."
+keywords: "Andrea D'Angelo, Andrea D Angelo, machine unlearning, trustworthy AI, GDPR right to be forgotten, privacy-preserving machine learning, ERASURE framework, Aarhus University"
 author_profile: true
 redirect_from: 
   - /about/
