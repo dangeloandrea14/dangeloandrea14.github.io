@@ -16,6 +16,7 @@ redirect_from:
 | 2024 | EUGAIN Virtual Mobility Grant |
 | 2024 | KDD 2024 Mobility Grant |
 | 2024 | ICPE 2024 Best Short Paper |
+| 2022 | Publicly-funded Ph.D. Scholarship, University of L'Aquila |
 | &nbsp; | &nbsp; |
 | 2015 | Second place at an official New Super Mario Bros. Wii tournament <br> (this is actually real) |
 

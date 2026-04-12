@@ -78,6 +78,8 @@ publication_category:
     title: 'Conference Papers'
   books:
     title: 'Book Chapters'
+  posters:
+    title: 'Posters'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
