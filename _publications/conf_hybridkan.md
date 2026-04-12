@@ -7,5 +7,6 @@ date: 2025-09-01
 venue: 'ITADATA (Italian Conference on Big Data and Data Science) 2025'
 paperurl: 'https://ceur-ws.org/Vol-4152/paper60.pdf'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/hybridkan.bib'
+authors: "Fabio D'Andreamatteo, Andrea D'Angelo, Giovanni Stilo"
 description: "HybridKAN is a hybrid architecture that leverages multi-sized sub-MLPs to combine the expressiveness of Kolmogorov-Arnold Networks with the efficiency of traditional MLPs, achieving enhanced performance on benchmark tasks. Presented at ITADATA 2025."
 ---

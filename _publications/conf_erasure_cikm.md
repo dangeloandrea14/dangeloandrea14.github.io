@@ -8,5 +8,6 @@ venue: 'Proceedings of the 34th ACM International Conference on Information and 
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/erasure_cikm.bib'
 tier: A
 selected: true
+authors: "Andrea D'Angelo, Claudio Savelli, Gabriele Tagliente, Flavio Giobergia, Elena Baralis, Giovanni Stilo"
 description: "ERASURE is a modular, extensible open-source framework for Machine Unlearning research, enabling reproducible benchmarking and comparison of forgetting algorithms across diverse models and datasets. Presented at CIKM 2025."
 ---

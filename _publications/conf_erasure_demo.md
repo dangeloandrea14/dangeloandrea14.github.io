@@ -9,5 +9,6 @@ selected: true
 venue: 'Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI 2025)'
 paperurl: 'https://www.ijcai.org/proceedings/2025/1255.pdf'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/erasure_demo.bib'
+authors: "Andrea D'Angelo, Claudio Savelli, Gabriele Tagliente, Flavio Giobergia, Elena Baralis, Giovanni Stilo"
 description: "A demonstration of the ERASURE framework for reproducible Machine Unlearning research, showing how researchers can implement, compare, and validate unlearning algorithms in a principled and extensible environment. Presented at IJCAI 2025."
 ---
