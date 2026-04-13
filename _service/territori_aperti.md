@@ -9,3 +9,5 @@ venue: "Territori Aperti"
 date: 2024-01-01
 location: "Napoli, Italy"
 ---
+
+**Role:** Co-Organizer

@@ -1,9 +1,6 @@
 ---
 permalink: /academic-service
 title: "Academic Service"
-redirect_from:
-  - /service/
-  - /service.html
 ---
 
 

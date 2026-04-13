@@ -11,4 +11,6 @@ location: "Porto, Portugal"
 websiteurl: "https://aiimlab.org/events/ECML_PKDD_2025_WIPE-OUT_Innovations_Privacy-preservation_Evaluations_Machine_Unlearning_Techniques.html"
 ---
 
+**Role:** Co-Organizer & Program Committee Chair
+
 [🌐 Visit workshop website]({{ page.websiteurl }})

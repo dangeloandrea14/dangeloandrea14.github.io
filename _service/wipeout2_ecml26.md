@@ -11,4 +11,6 @@ location: "TBA"
 websiteurl: "https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation.html"
 ---
 
+**Role:** Co-Organizer
+
 [🌐 Visit workshop website]({{ page.websiteurl }})

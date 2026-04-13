@@ -9,3 +9,5 @@ venue: "CIKM 2024"
 date: 2024-10-21
 location: "Boise, Idaho, USA"
 ---
+
+**Role:** Proceedings Chair

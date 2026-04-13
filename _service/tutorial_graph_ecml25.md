@@ -9,3 +9,5 @@ venue: "ECML-PKDD 2025"
 date: 2025-09-15
 location: "Porto, Portugal"
 ---
+
+**Role:** Co-Organizer

@@ -9,3 +9,5 @@ venue: "WSDM 2026"
 date: 2026-03-01
 location: "Boise, Idaho, USA"
 ---
+
+**Role:** Proceedings Chair

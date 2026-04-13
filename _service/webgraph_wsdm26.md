@@ -11,4 +11,6 @@ location: "Boise, Idaho, USA"
 websiteurl: "https://aiimlab.org/events/WSDM_2026_WEB_and_GRAPH_2026_Workshop_on_Web_and_Graphs_Responsible_Intelligence_and_Social_Media"
 ---
 
+**Role:** Co-Organizer
+
 [🌐 Visit workshop website]({{ page.websiteurl }})
