@@ -1,5 +1,5 @@
 ---
-title: "WEB&GRAPH 2026: Workshop on Web & Graphs, Responsible Intelligence, and Social Media"
+title: "WEB&amp;GRAPH 2026: Workshop on Web &amp; Graphs, Responsible Intelligence, and Social Media"
 collection: service
 type: "Workshop"
 permalink: /service/webgraph_wsdm26

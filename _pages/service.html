@@ -7,35 +7,45 @@ author_profile: true
 
 {% include base_path %}
 
-<div class="teaching-section">
-  <div class="teaching-uni-header talks-header-invited">
-    <span class="teaching-uni-name">🌟 Organization</span>
-  </div>
-  {% assign organized = site.service | sort: "date" | reverse %}
-  {% for post in organized %}
-    {% include archive-single.html %}
-  {% endfor %}
+<h3>🌟 Organization</h3>
+
+{% assign organized = site.service | sort: "date" | reverse %}
+{% for post in organized %}
+<div class="archive__item">
+  <h2 class="archive__item-title" style="margin-top: 0.5em;">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </h2>
+  <p class="archive__item-excerpt">
+    <strong>{{ post.role }}</strong> &mdash; {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
+  </p>
 </div>
+{% endfor %}
 
 
-### Journal Reviews
+<h3>Journal Reviews</h3>
 
-| Year | Journal |
-|------|--------------|
-| 2026 | Springer Artificial Intelligence Review |
-| 2026 | Automated Software Engineering (ASE) |
+<table>
+  <thead><tr><th>Year</th><th>Journal</th></tr></thead>
+  <tbody>
+    <tr><td>2026</td><td>Springer Artificial Intelligence Review</td></tr>
+    <tr><td>2026</td><td>Automated Software Engineering (ASE)</td></tr>
+  </tbody>
+</table>
 
 
-### Program Committee Member
+<h3>Program Committee Member</h3>
 
-| Year | Conference |
-|------|--------------|
-| 2025,2026 | KDD Datasets & Benchmarks |
-| 2025, 2026 | ECML-PKDD |
-| 2025 | WWW |
-| 2025 | ICPE Data Challenge |
-| 2024,2025,2026 | CIKM, **Distinguished Reviewer** award in 2024 |
-| 2024, 2026 | LL4MSE Workshop |
-| 2024 | DELTA Workshop @ KDD 2024 |
-| 2024 | MIDAS Workshop @ ECML-PKDD 2024  |
-| 2023 | BIAS Workshop @ ECIR 2023 |
+<table>
+  <thead><tr><th>Year</th><th>Conference</th></tr></thead>
+  <tbody>
+    <tr><td>2025, 2026</td><td>KDD Datasets &amp; Benchmarks</td></tr>
+    <tr><td>2025, 2026</td><td>ECML-PKDD</td></tr>
+    <tr><td>2025</td><td>WWW</td></tr>
+    <tr><td>2025</td><td>ICPE Data Challenge</td></tr>
+    <tr><td>2024, 2025, 2026</td><td>CIKM &mdash; <strong>Distinguished Reviewer</strong> award in 2024</td></tr>
+    <tr><td>2024, 2026</td><td>LL4MSE Workshop</td></tr>
+    <tr><td>2024</td><td>DELTA Workshop @ KDD 2024</td></tr>
+    <tr><td>2024</td><td>MIDAS Workshop @ ECML-PKDD 2024</td></tr>
+    <tr><td>2023</td><td>BIAS Workshop @ ECIR 2023</td></tr>
+  </tbody>
+</table>
