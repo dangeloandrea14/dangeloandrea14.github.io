@@ -4,3 +4,38 @@ title: "Service"
 permalink: /service/
 author_profile: true
 ---
+
+{% include base_path %}
+
+<div class="teaching-section">
+  <div class="teaching-uni-header talks-header-invited">
+    <span class="teaching-uni-name">🌟 Organization</span>
+  </div>
+  {% assign organized = site.service | sort: "date" | reverse %}
+  {% for post in organized %}
+    {% include archive-single.html %}
+  {% endfor %}
+</div>
+
+
+### Journal Reviews
+
+| Year | Journal |
+|------|--------------|
+| 2026 | Springer Artificial Intelligence Review |
+| 2026 | Automated Software Engineering (ASE) |
+
+
+### Program Committee Member
+
+| Year | Conference |
+|------|--------------|
+| 2025,2026 | KDD Datasets & Benchmarks |
+| 2025, 2026 | ECML-PKDD |
+| 2025 | WWW |
+| 2025 | ICPE Data Challenge |
+| 2024,2025,2026 | CIKM, **Distinguished Reviewer** award in 2024 |
+| 2024, 2026 | LL4MSE Workshop |
+| 2024 | DELTA Workshop @ KDD 2024 |
+| 2024 | MIDAS Workshop @ ECML-PKDD 2024  |
+| 2023 | BIAS Workshop @ ECIR 2023 |
