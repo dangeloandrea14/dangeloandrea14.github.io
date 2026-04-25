@@ -15,7 +15,7 @@ redirect_from:
 <div style="line-height: 1.8; font-size: 1.05em;">
 I’m a <strong>Postdoctoral Researcher</strong> at <a href="https://cs.au.dk/">University of Aarhus</a> 🇩🇰 in the field of Computer Science.
 <br><br>
-My research has appeared in venues like IJCAI, CIKM, and Springer Machine Learning, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D. at University of L’Aquila. 🇮🇹
+My research has appeared in venues like IJCAI, CIKM, and Springer Machine Learning, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D. (cum Laude, Doctor Europaeus) at University of L’Aquila. 🇮🇹
 </div>
 
 
@@ -30,7 +30,7 @@ My research is at the intersection of privacy, safety, and machine learning. I w
 | Year | Achievement |
 |------|--------------|
 |2026 | 🏅 Won a Postdoc position at **University of Aarhus** |
-| 2026 | 🎓 Defended my Ph.D.! |
+| 2026 | 🎓 Defended my Ph.D. **cum Laude** with **Doctor Europaeus** distinction! |
 | 2025 | 📚 Proceedings Chair for **WSDM 2026** |
 | 2025 | 📘 Published at **Springer's Machine Learning Journal** |
 | 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
