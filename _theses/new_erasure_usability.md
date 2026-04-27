@@ -6,4 +6,4 @@ permalink: /theses/erasure_usability
 availability: available
 ---
 
-A software engineering thesis focused on debugging, refactoring, and documenting the ERASURE machine unlearning framework — lowering the skill floor so that researchers can adopt it without reading the source code.
+A thesis focused on debugging, refactoring, and documenting the ERASURE machine unlearning framework, lowering the skill floor so that researchers can adopt it without reading the source code.
