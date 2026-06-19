@@ -1,5 +1,5 @@
 ---
-title: "Machine Unlearning for Time Series Data"
+title: "Machine Unlearning Applied to Time Series and Human Activity Recognition"
 collection: theses
 type: "Theses"
 permalink: /theses/timeseries_mu

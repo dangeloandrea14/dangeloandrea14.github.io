@@ -1,5 +1,5 @@
 ---
-title: " Perspectives on Machine Unlearning and Privacy-preserving Machine Learning"
+title: "Perspectives on Machine Unlearning and Privacy-preserving Machine Learning"
 collection: talks
 type: "Talk"
 permalink: /talks/dresden

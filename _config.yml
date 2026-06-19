@@ -3,7 +3,7 @@ site_theme: "default"
 title: "Andrea D'Angelo"
 title_separator: "•"
 name: "Andrea D'Angelo"
-description: "Andrea D'Angelo — Postdoctoral Researcher at Aarhus University working on Machine Unlearning, Trustworthy AI, GDPR right to be forgotten, and privacy-preserving machine learning. Creator of the ERASURE framework."
+description: "Andrea D'Angelo — DDSA Postdoc at Aarhus University working on Robust Graph Unlearning, Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten."
 url: "https://andrea-dangelo.com"
 baseurl: ""
 repository: "dangeloandrea14/dangeloandrea14.github.io"
@@ -17,7 +17,7 @@ author:
   avatar           : "profile.png"
   name             : "Andrea D'Angelo"
   pronouns         : "he/him"  
-  bio              : "Postdoctoral Researcher at University of Aarhus"
+  bio              : "DDSA Postdoc at University of Aarhus, working on Robust Graph Unlearning"
   location         : "Aarhus"
   employer         : "University of Aarhus"
   uri              : # URL
@@ -134,7 +134,7 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : "images/profile.png"
-og_description           : "Postdoctoral Researcher at Aarhus University working on Machine Unlearning, Trustworthy AI, GDPR right to be forgotten, and privacy-preserving machine learning. Creator of the ERASURE framework."
+og_description           : "DDSA Postdoc at Aarhus University working on Robust Graph Unlearning, Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:

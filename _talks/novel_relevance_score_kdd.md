@@ -7,5 +7,5 @@ venue: "KDD 2024"
 date: 2024-07-01
 talktype: paper
 location: "Barcelona, Spain"
-slidesurl: "/files/talks/ldd_novel_score.pdf"
+slidesurl: "/files/talks/kdd_novel_score.pdf"
 ---
