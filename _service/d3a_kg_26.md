@@ -5,8 +5,8 @@ type: "Parallel Session"
 permalink: /service/d3a_kg_26
 role: "Co-Organizer"
 eventtype: session
-venue: "D3A 3.0 (Danish Digitalization, Data Science and AI)"
-date: 2026-01-01
+venue: "D3A 4.0 (Danish Digitalization, Data Science and AI)"
+date: 2026-10-08
 location: "Nyborg Strand, Denmark"
 ---
 
