@@ -962,3 +962,114 @@ html[data-theme="dark"] .page__title { border-bottom-color: #3a3a3a; }
 }
 html[data-theme="dark"] .section-kicker { border-bottom-color: #3a3a3a; }
 .section-kicker:first-of-type { margin-top: 0.5rem; }
+
+/* ==========================================================
+   YORKSHIRE ROSE — personal emblem motif
+   Tinted to the AU-blue accent via CSS masking, so it adapts
+   to light/dark automatically. Source: /images/rose-mark.png
+   ========================================================== */
+%rose-mask {
+  background-color: var(--accent-left);
+  -webkit-mask: url("/images/rose-mark.png") center / contain no-repeat;
+          mask: url("/images/rose-mark.png") center / contain no-repeat;
+}
+
+/* 1 — Footer sign-off (site-wide) */
+.rose-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+  margin: 2.4rem auto 0.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid #ddd;
+  max-width: 320px;
+}
+html[data-theme="dark"] .rose-sign { border-top-color: #3a3a3a; }
+.rose-sign__mark {
+  @extend %rose-mask;
+  width: 38px;
+  height: 39px;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+.rose-sign__name {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+.rose-sign__meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* 3 — Ornamental divider */
+.rose-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.4rem 0;
+}
+.rose-divider::before,
+.rose-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+html[data-theme="dark"] .rose-divider::before,
+html[data-theme="dark"] .rose-divider::after { background: #3a3a3a; }
+.rose-divider span {
+  @extend %rose-mask;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 21px;
+  opacity: 0.8;
+}
+
+/* 4 — Sidebar mark */
+.author__rose {
+  @extend %rose-mask;
+  display: block;
+  width: 26px;
+  height: 27px;
+  margin: 1rem auto 0.2rem;
+  opacity: 0.5;
+}
+
+/* 5 — Faint watermark on the home page (main-bio only) */
+.main-bio { position: relative; }
+.main-bio > * { position: relative; z-index: 1; }
+.main-bio::before {
+  @extend %rose-mask;
+  content: "";
+  position: absolute;
+  right: -46px;
+  bottom: -34px;
+  width: 250px;
+  height: 258px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+}
+html[data-theme="dark"] .main-bio::before { opacity: 0.08; }
+
+/* 6 — 404 hero */
+.rose-404 { text-align: center; padding: 1.5rem 0 0.5rem; }
+.rose-404__mark {
+  @extend %rose-mask;
+  display: inline-block;
+  width: 118px;
+  height: 122px;
+  opacity: 0.85;
+}
+.rose-404__title {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0.5rem 0 0.2rem;
+  color: var(--text-main);
+}
+.rose-404__sub { color: var(--text-muted); font-size: 0.95rem; }

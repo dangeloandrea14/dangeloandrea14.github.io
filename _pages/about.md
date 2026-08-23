@@ -22,6 +22,8 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 <a class="highlight-card" href="https://cs.au.dk/news-events/news/show-news/artikel/ddsa-postdoc-fellowship-for-andrea-dangelo" target="_blank" rel="noopener"><span class="highlight-rail"></span><img class="au-seal-light" src="images/au-logo-inv.svg" alt="Aarhus University"><img class="au-seal-dark" src="images/au-logo.svg" alt="Aarhus University"><span class="highlight-body"><span class="highlight-kicker">News · June 2026</span><span class="highlight-title">DDSA Postdoc Fellowship for Andrea D’Angelo</span><span class="highlight-sub">Aarhus University · Dept. of Computer Science</span><span class="highlight-cta">Read the article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
 </div>
 
+<div class="rose-divider" aria-hidden="true"><span></span></div>
+
 <h2 class="section-kicker">Selected Highlights</h2>
 
 | Year | Achievement |
