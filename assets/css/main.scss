@@ -465,6 +465,12 @@ html[data-theme="dark"] .sidebar .author__connect::after {
   background: #3a3a3a;
 }
 
+/* On mobile the social links collapse into the "Follow" dropdown, so the
+   "Connect" divider would label nothing — hide it below the sidebar breakpoint. */
+@media screen and (max-width: 1023px) {
+  .sidebar .author__connect { display: none; }
+}
+
 /* link rows */
 .sidebar .author__urls {
   text-align: left;
@@ -580,8 +586,9 @@ a {
 .teaching-uni-luiss  { border-left-color: #5c2d82; }
 .teaching-uni-univaq { border-left-color: #1a6b3a; }
 .teaching-uni-engage { border-left-color: #007a8a; }
-.talks-header-invited { border-left-color: #0047ab; }
-.talks-header-paper   { border-left-color: #b5651d; }
+.talks-header-invited  { border-left-color: #0047ab; }
+.talks-header-paper    { border-left-color: #b5651d; }
+.talks-header-tutorial { border-left-color: #2a7f7f; }
 .talk-badge-invited   { background-color: #0047ab; }
 .talk-badge-paper     { background-color: #b5651d; }
 .theses-header-available { border-left-color: #2a7f7f; }
@@ -703,3 +710,220 @@ html[data-theme="dark"] .pub-stat + .pub-stat { border-left-color: #3a3a3a; }
   font-weight: 400;
 }
 html[data-theme="dark"] .pub-venue { color: #7aa9ff; }
+
+/* ==========================================================
+   TALK MAP — "Minimal Luxe" Leaflet map (see _pages/talks.html)
+   Hairlines, squared corners, AU-blue accents, theme-aware.
+   ========================================================== */
+.talkmap-block {
+  margin: 0 0 2.4rem;
+}
+
+.talkmap-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+html[data-theme="dark"] .talkmap-header { border-bottom-color: #3a3a3a; }
+
+.talkmap-kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-left);
+}
+
+.talkmap-count {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.talkmap {
+  height: 440px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: var(--bg-card);
+  z-index: 0;
+}
+html[data-theme="dark"] .talkmap { border-color: #3a3a3a; }
+
+.talkmap-fallback {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 600px) {
+  .talkmap { height: 340px; }
+}
+
+/* --- City pin: AU-blue dot with a hairline ring --- */
+.talkmap-pin__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin: 4px;
+  border-radius: 50%;
+  background: #0047ab;
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.18), 0 0 0 1px #fff;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.talkmap-pin--multi .talkmap-pin__dot {
+  width: 22px;
+  height: 22px;
+  margin: 2px;
+}
+.talkmap-pin:hover .talkmap-pin__dot {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 5px rgba(0, 71, 171, 0.22), 0 0 0 1px #fff;
+}
+html[data-theme="dark"] .talkmap-pin__dot {
+  background: #7aa9ff;
+  color: #10131a;
+  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.20), 0 0 0 1px #10131a;
+}
+html[data-theme="dark"] .talkmap-pin:hover .talkmap-pin__dot {
+  box-shadow: 0 0 0 5px rgba(122, 169, 255, 0.26), 0 0 0 1px #10131a;
+}
+
+/* --- Cluster bubble --- */
+.talkmap-cluster {
+  background: transparent;
+}
+.talkmap-cluster span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 71, 171, 0.92);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 4px rgba(0, 71, 171, 0.16);
+}
+html[data-theme="dark"] .talkmap-cluster span {
+  background: rgba(122, 169, 255, 0.92);
+  color: #10131a;
+  border-color: #10131a;
+  box-shadow: 0 0 0 4px rgba(122, 169, 255, 0.18);
+}
+
+/* --- Hover tooltip (city name) --- */
+.talkmap-tip.leaflet-tooltip {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 2px 8px;
+}
+.talkmap-tip.leaflet-tooltip-top::before { border-top-color: #ddd; }
+html[data-theme="dark"] .talkmap-tip.leaflet-tooltip { border-color: #3a3a3a; }
+html[data-theme="dark"] .talkmap-tip.leaflet-tooltip-top::before { border-top-color: #3a3a3a; }
+
+/* --- Popup: squared, hairline, serif title --- */
+.talkmap-popup-wrap .leaflet-popup-content-wrapper {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.talkmap-popup-wrap .leaflet-popup-tip {
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+html[data-theme="dark"] .talkmap-popup-wrap .leaflet-popup-content-wrapper,
+html[data-theme="dark"] .talkmap-popup-wrap .leaflet-popup-tip {
+  border-color: #3a3a3a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.talkmap-popup-wrap .leaflet-popup-content { margin: 0.7rem 0.85rem; line-height: 1.3; }
+.talkmap-popup-wrap a.leaflet-popup-close-button { color: var(--text-muted); }
+
+.talkmap-popup__city {
+  display: block;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text-main);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+html[data-theme="dark"] .talkmap-popup__city { border-bottom-color: #3a3a3a; }
+
+.talkmap-popup__list { list-style: none; margin: 0; padding: 0; }
+.talkmap-popup__item { padding: 0.35rem 0; }
+.talkmap-popup__item + .talkmap-popup__item { border-top: 1px solid #eee; }
+html[data-theme="dark"] .talkmap-popup__item + .talkmap-popup__item { border-top-color: #2c2c2c; }
+
+.talkmap-popup__title {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin: 0.15rem 0 0.1rem;
+}
+a.talkmap-popup__title { color: var(--link-color); }
+a.talkmap-popup__title:hover { color: var(--link-hover); }
+.talkmap-popup__meta {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Type tag — mirrors the talk header accent colours */
+.talkmap-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.talkmap-tag--invited  { background: #0047ab; }
+.talkmap-tag--paper    { background: #b5651d; }
+.talkmap-tag--tutorial { background: #2a7f7f; }
+.talkmap-tag--talk     { background: #555; }
+
+/* Leaflet attribution/controls — quieten to match the palette */
+.talkmap .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
+  font-size: 0.62rem;
+}
+.talkmap .leaflet-control-attribution a { color: var(--link-color); }
+html[data-theme="dark"] .talkmap .leaflet-control-attribution {
+  background: rgba(20, 20, 20, 0.7);
+}
+.talkmap .leaflet-bar a {
+  background: var(--bg-card);
+  color: var(--text-main);
+  border-bottom-color: #ddd;
+}
+.talkmap .leaflet-bar a:hover { background: rgba(0, 71, 171, 0.08); }
+html[data-theme="dark"] .talkmap .leaflet-bar a { border-bottom-color: #3a3a3a; }

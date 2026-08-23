@@ -7,6 +7,168 @@ author_profile: true
 
 {% include base_path %}
 
+<!-- =========================================================
+     TALK MAP — "Minimal Luxe" interactive map of talk cities
+     Marker data is generated from the _talks collection via Liquid
+     (stays in sync automatically); coordinates come from
+     _data/talk_coords.yml since the classic Pages build can't geocode.
+     ========================================================= -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+
+{% assign talk_groups = site.talks | group_by: "location" %}
+<div class="talkmap-block">
+  <div class="talkmap-header">
+    <span class="talkmap-kicker">Where I've Spoken</span>
+    <span class="talkmap-count">{{ talk_groups | size }} cities &middot; {{ site.talks | size }} talks across Europe</span>
+  </div>
+  <div id="talkmap" class="talkmap" role="img" aria-label="Map of European cities where Andrea D'Angelo has given talks"></div>
+  <p class="talkmap-fallback"><em>Interactive map of talk locations. The full list of talks is below.</em></p>
+</div>
+
+<script>
+window.TALK_MARKERS = [
+{% for group in talk_groups %}
+  {%- assign loc = group.name -%}
+  {%- assign is_remote = false -%}
+  {%- if loc contains "(Remote)" %}{% assign is_remote = true %}{% endif -%}
+  {%- assign city = loc | remove: " (Remote)" | strip -%}
+  {%- assign coords = site.data.talk_coords[city] -%}
+  {%- if coords -%}
+  {
+    "city": {{ city | jsonify }},
+    "lat": {{ coords.lat }},
+    "lng": {{ coords.lng }},
+    "remote": {{ is_remote }},
+    "talks": [
+      {%- assign sorted = group.items | sort: "date" | reverse -%}
+      {%- for t in sorted %}
+      {
+        "title": {{ t.title | jsonify }},
+        "venue": {{ t.venue | jsonify }},
+        "date": {{ t.date | date: "%b %Y" | jsonify }},
+        "type": {{ t.talktype | default: "talk" | jsonify }},
+        "url": {{ t.url | prepend: base_path | jsonify }},
+        "remote": {% if t.location contains "(Remote)" %}true{% else %}false{% endif %}
+      },
+      {%- endfor %}
+    ]
+  },
+  {%- endif -%}
+{% endfor %}
+];
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(function () {
+  var el = document.getElementById('talkmap');
+  if (!el || !window.L || !Array.isArray(window.TALK_MARKERS) || !window.TALK_MARKERS.length) {
+    if (el) { el.style.display = 'none'; }
+    return;
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+
+  var CARTO = {
+    light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    dark:  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  };
+  var ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
+  var map = L.map('talkmap', {
+    scrollWheelZoom: true,
+    zoomControl: true,
+    attributionControl: true,
+    minZoom: 3,
+    maxZoom: 12
+  });
+
+  var tileLayer = L.tileLayer(isDark() ? CARTO.dark : CARTO.light, {
+    attribution: ATTR, subdomains: 'abcd', maxZoom: 19
+  }).addTo(map);
+
+  function cityIcon(n) {
+    return L.divIcon({
+      className: 'talkmap-pin' + (n > 1 ? ' talkmap-pin--multi' : ''),
+      html: '<span class="talkmap-pin__dot">' + (n > 1 ? n : '') + '</span>',
+      iconSize: [26, 26], iconAnchor: [13, 13], popupAnchor: [0, -13]
+    });
+  }
+
+  var TYPE_LABEL = { invited: 'Invited', paper: 'Paper', tutorial: 'Tutorial', talk: 'Talk' };
+
+  function popupHtml(m) {
+    var head = '<span class="talkmap-popup__city">' + esc(m.city) + '</span>';
+    var items = m.talks.map(function (t) {
+      var type = (t.type || 'talk').toLowerCase();
+      var label = TYPE_LABEL[type] || 'Talk';
+      var meta = esc(t.venue) + ' &middot; ' + esc(t.date) + (t.remote ? ' &middot; Remote' : '');
+      var title = t.url
+        ? '<a class="talkmap-popup__title" href="' + esc(t.url) + '">' + esc(t.title) + '</a>'
+        : '<span class="talkmap-popup__title">' + esc(t.title) + '</span>';
+      return '<li class="talkmap-popup__item">' +
+        '<span class="talkmap-tag talkmap-tag--' + esc(type) + '">' + label + '</span>' +
+        title +
+        '<span class="talkmap-popup__meta">' + meta + '</span>' +
+      '</li>';
+    }).join('');
+    return '<div class="talkmap-popup">' + head +
+      '<ul class="talkmap-popup__list">' + items + '</ul></div>';
+  }
+
+  var cluster = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    maxClusterRadius: 44,
+    iconCreateFunction: function (c) {
+      var total = c.getAllChildMarkers().reduce(function (s, mk) {
+        return s + (mk.options.talkCount || 1);
+      }, 0);
+      return L.divIcon({
+        className: 'talkmap-cluster',
+        html: '<span>' + total + '</span>',
+        iconSize: [36, 36]
+      });
+    }
+  });
+
+  var bounds = [];
+  window.TALK_MARKERS.forEach(function (m) {
+    var marker = L.marker([m.lat, m.lng], {
+      icon: cityIcon(m.talks.length),
+      talkCount: m.talks.length,
+      title: m.city
+    });
+    marker.bindTooltip(m.city, { direction: 'top', offset: [0, -12], className: 'talkmap-tip' });
+    marker.bindPopup(popupHtml(m), { className: 'talkmap-popup-wrap', maxWidth: 300, minWidth: 220 });
+    cluster.addLayer(marker);
+    bounds.push([m.lat, m.lng]);
+  });
+  map.addLayer(cluster);
+
+  if (bounds.length === 1) {
+    map.setView(bounds[0], 6);
+  } else {
+    map.fitBounds(bounds, { padding: [40, 40] });
+  }
+
+  // Re-tile when the site theme toggle flips data-theme on <html>.
+  var mo = new MutationObserver(function () {
+    tileLayer.setUrl(isDark() ? CARTO.dark : CARTO.light);
+  });
+  mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+<!-- ===== end talk map ===== -->
+
 <div class="teaching-section">
   <div class="teaching-uni-header talks-header-invited">
     <span class="teaching-uni-name">🎤 Invited Talks</span>
@@ -32,5 +194,19 @@ author_profile: true
     {% endfor %}
   {% else %}
     <p><em>No paper talks listed yet.</em></p>
+  {% endif %}
+</div>
+
+<div class="teaching-section">
+  <div class="teaching-uni-header talks-header-tutorial">
+    <span class="teaching-uni-name">🎓 Tutorials</span>
+  </div>
+  {% assign tutorial_talks = site.talks | where: "talktype", "tutorial" | sort: "date" | reverse %}
+  {% if tutorial_talks.size > 0 %}
+    {% for post in tutorial_talks %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% else %}
+    <p><em>No tutorials listed yet.</em></p>
   {% endif %}
 </div>
