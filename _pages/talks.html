@@ -20,10 +20,8 @@ author_profile: true
 <div class="talkmap-block">
   <div class="talkmap-header">
     <span class="talkmap-kicker">Where I've Spoken</span>
-    <span class="talkmap-count">{{ talk_groups | size }} cities &middot; {{ site.talks | size }} talks across Europe</span>
   </div>
   <div id="talkmap" class="talkmap" role="img" aria-label="Map of European cities where Andrea D'Angelo has given talks"></div>
-  <p class="talkmap-fallback"><em>Interactive map of talk locations. The full list of talks is below.</em></p>
 </div>
 
 <script>
@@ -63,6 +61,7 @@ window.TALK_MARKERS = [
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 (function () {
+  function init() {
   var el = document.getElementById('talkmap');
   if (!el || !window.L || !Array.isArray(window.TALK_MARKERS) || !window.TALK_MARKERS.length) {
     if (el) { el.style.display = 'none'; }
@@ -154,17 +153,32 @@ window.TALK_MARKERS = [
   });
   map.addLayer(cluster);
 
-  if (bounds.length === 1) {
-    map.setView(bounds[0], 6);
-  } else {
-    map.fitBounds(bounds, { padding: [40, 40] });
+  function fit() {
+    if (bounds.length === 1) {
+      map.setView(bounds[0], 6);
+    } else {
+      map.fitBounds(bounds, { padding: [40, 40] });
+    }
   }
+  fit();
+
+  // Leaflet paints a grey box if the container is sized only after init
+  // (external stylesheet applying late); recompute once layout settles.
+  setTimeout(function () { map.invalidateSize(); fit(); }, 200);
+  window.addEventListener('load', function () { map.invalidateSize(); fit(); });
 
   // Re-tile when the site theme toggle flips data-theme on <html>.
   var mo = new MutationObserver(function () {
     tileLayer.setUrl(isDark() ? CARTO.dark : CARTO.light);
   });
   mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 <!-- ===== end talk map ===== -->
