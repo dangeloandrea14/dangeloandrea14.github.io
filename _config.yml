@@ -14,7 +14,7 @@ repository: "dangeloandrea14/dangeloandrea14.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Andrea D'Angelo"
   pronouns         : "he/him"  
   bio              : "DDSA Postdoc at University of Aarhus, working on Robust Graph Unlearning"
@@ -133,7 +133,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : "images/profile.png"
+og_image                 : "profile.jpg"
 og_description           : "DDSA Postdoc at Aarhus University working on Robust Graph Unlearning, Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles

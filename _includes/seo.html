@@ -86,17 +86,12 @@
   <link rel="next" href="{{ paginator.next_page_path | prepend: seo_url }}">
 {% endif %}
 
-{% if site.social %}
-  <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "{% if site.social.type %}{{ site.social.type }}{% else %}Person{% endif %}",
-      "name" : "{{ site.social.name | default: site.name }}",
-      "url" : {{ seo_url | jsonify }},
-      "sameAs" : {{ site.social.links | jsonify }}
-    }
-  </script>
-{% endif %}
+{% comment %}
+  The Person JSON-LD is emitted (richer: image, jobTitle, affiliation,
+  knowsAbout, sameAs) from _includes/head/custom.html. This stock
+  minimal Person block is intentionally removed to avoid duplicate,
+  conflicting Person structured data on every page.
+{% endcomment %}
 
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
