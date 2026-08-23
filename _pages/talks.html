@@ -162,12 +162,11 @@ window.TALK_MARKERS = [
   }
   fit();
 
-  // Leaflet paints a grey box if the container is sized only after init
-  // (external stylesheet applying late); recompute once layout settles.
+  /* invalidateSize once layout settles, else Leaflet mis-sizes the map */
   setTimeout(function () { map.invalidateSize(); fit(); }, 200);
   window.addEventListener('load', function () { map.invalidateSize(); fit(); });
 
-  // Re-tile when the site theme toggle flips data-theme on <html>.
+  /* re-tile when the site theme toggle flips data-theme on <html> */
   var mo = new MutationObserver(function () {
     tileLayer.setUrl(isDark() ? CARTO.dark : CARTO.light);
   });
