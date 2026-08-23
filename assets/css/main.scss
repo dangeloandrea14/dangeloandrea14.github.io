@@ -1029,16 +1029,6 @@ html[data-theme="dark"] .rose-divider::after { background: #3a3a3a; }
   opacity: 0.85;
 }
 
-/* 4 — Sidebar mark */
-.author__rose {
-  @extend %rose-mask;
-  display: block;
-  width: 48px;
-  height: 50px;
-  margin: 1.1rem auto 0.3rem;
-  opacity: 0.8;
-}
-
 /* 5 — Faint watermark on the home page (main-bio only) */
 .main-bio { position: relative; }
 .main-bio > * { position: relative; z-index: 1; }
