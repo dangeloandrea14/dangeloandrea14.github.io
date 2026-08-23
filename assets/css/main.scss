@@ -987,13 +987,28 @@ html[data-theme="dark"] .section-kicker { border-bottom-color: #3a3a3a; }
   max-width: 320px;
 }
 html[data-theme="dark"] .rose-sign { border-top-color: #3a3a3a; }
+/* row of affiliation roses, oldest → newest */
+.rose-sign__roses {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.7rem;
+  margin-bottom: 0.35rem;
+}
 .rose-sign__mark {
   @extend %rose-mask;
-  width: 46px;
-  height: 48px;
-  opacity: 0.9;
-  margin-bottom: 0.25rem;
+  width: 44px;
+  height: 46px;
+  opacity: 0.85;
+  cursor: help;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
+.rose-sign__mark:hover { opacity: 1; transform: translateY(-2px); }
+
+/* institution tints — University of L'Aquila gold #f4c645 (its logo
+   yellow) and Aarhus blue. Gold reads lighter than blue, so give it
+   full opacity to balance the pair on a light background. */
+.rose-sign__mark--univaq { background-color: #f4c645; opacity: 1; }
+.rose-sign__mark--au     { background-color: var(--accent-left); }
 .rose-sign__name {
   font-family: "Newsreader", Georgia, "Times New Roman", serif;
   font-size: 0.98rem;
