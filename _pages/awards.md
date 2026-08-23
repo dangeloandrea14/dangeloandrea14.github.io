@@ -7,8 +7,6 @@ redirect_from:
 ---
 
 
-### 🌟 Grants & Awards
-
 | Year | Award |
 |------|--------|
 | 2026 | DDSA Postdoc Grant — *Robust Graph Unlearning* (1,365,000 DKK / ~€183,000, 2 years, Aarhus University) |

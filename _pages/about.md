@@ -22,7 +22,7 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 <a class="highlight-card" href="https://cs.au.dk/news-events/news/show-news/artikel/ddsa-postdoc-fellowship-for-andrea-dangelo" target="_blank" rel="noopener"><span class="highlight-rail"></span><img class="au-seal-light" src="images/au-logo-inv.svg" alt="Aarhus University"><img class="au-seal-dark" src="images/au-logo.svg" alt="Aarhus University"><span class="highlight-body"><span class="highlight-kicker">News · June 2026</span><span class="highlight-title">DDSA Postdoc Fellowship for Andrea D’Angelo</span><span class="highlight-sub">Aarhus University · Dept. of Computer Science</span><span class="highlight-cta">Read the article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a>
 </div>
 
-### 🌟 Selected Highlights (among other things)
+<h2 class="section-kicker">Selected Highlights</h2>
 
 | Year | Achievement |
 |------|--------------|
@@ -36,12 +36,11 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 | 2025 | 📘 Published at **IJCAI 2025 Demo**, **CIKM 2025** |
 | 2025 | 🌍 Visiting Ph.D. — **University of Aarhus**, Denmark |
 
-**Projects**
------
+<h2 class="section-kicker">Projects</h2>
 
 <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
 
-  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 10px;">
+  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
     <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" style="flex-shrink: 0;">
       <img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="height:70px; width:auto;">
     </a>
@@ -50,7 +49,7 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
     </div> 
   </div>
 
-  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 10px;">
+  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
     <a href="https://github.com/aiim-research/ERASURE" target="_blank" style="flex-shrink: 0;">
       <img src="images/ERASURE_LOGO.png" alt="ERASURE" style="height:70px; width:auto;">
     </a>
@@ -62,8 +61,7 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 
 </div>
 
-**Selected Publications**
------
+<h2 class="section-kicker">Selected Publications</h2>
 
 {% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
 {% for post in selected_pubs %}

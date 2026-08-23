@@ -102,8 +102,8 @@ a:hover {
 .archive__item-title {
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-family: 'Source Serif Pro', serif;
-  font-weight: 600;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
   font-size: 1rem;
   line-height: 1.2;
   color: var(--text-main);
@@ -927,3 +927,38 @@ html[data-theme="dark"] .talkmap .leaflet-control-attribution {
 }
 .talkmap .leaflet-bar a:hover { background: rgba(0, 71, 171, 0.08); }
 html[data-theme="dark"] .talkmap .leaflet-bar a { border-bottom-color: #3a3a3a; }
+
+/* ==========================================================
+   "Minimal Luxe" — global page titles + section kickers
+   (Tier 2 rollout: Teaching / Service / Awards / Theses / Home)
+   ========================================================== */
+
+/* All page <h1> titles (archive + single layouts) in the display serif */
+.page__title {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: var(--text-main);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+html[data-theme="dark"] .page__title { border-bottom-color: #3a3a3a; }
+.page__title a { color: inherit; }
+
+/* Reusable section label: uppercase, letter-spaced, AU-blue, hairline rule.
+   Use in place of a bare <h2>/<h3> to divide a page into Luxe sections. */
+.section-kicker {
+  display: block;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-left);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.45rem;
+  margin: 2.2rem 0 1rem;
+}
+html[data-theme="dark"] .section-kicker { border-bottom-color: #3a3a3a; }
+.section-kicker:first-of-type { margin-top: 0.5rem; }
