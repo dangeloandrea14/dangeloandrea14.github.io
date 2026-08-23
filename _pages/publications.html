@@ -9,6 +9,35 @@ author_profile: true
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}
 
+{% assign pub_astar = site.publications | where: "tier", "A*" | size %}
+{% assign pub_a = site.publications | where: "tier", "A" | size %}
+{% assign pub_toptier = pub_astar | plus: pub_a %}
+{% assign pub_q1 = site.publications | where_exp: "p", "p.quartile" | size %}
+<div class="pub-stats">
+  <div class="pub-stat"><span class="n">{{ site.publications | size }}</span><span class="k">Publications</span></div>
+  <div class="pub-stat"><span class="n">{{ pub_toptier }}</span><span class="k">A*/A Papers</span></div>
+  <div class="pub-stat"><span class="n">{{ pub_q1 }}</span><span class="k">Q1 Journals</span></div>
+</div>
+
+{% assign astar_pubs = site.publications | where: "tier", "A*" | sort: "date" %}
+{% assign a_pubs = site.publications | where: "tier", "A" | sort: "date" %}
+{% if astar_pubs.size > 0 or a_pubs.size > 0 %}
+<div class="pub-venues-group">
+  {% if astar_pubs.size > 0 %}
+  <div class="pub-venues">
+    <span class="pub-venues-label">A* venues</span>
+    {% for post in astar_pubs %}<a class="pub-venue" href="{{ post.paperurl | default: post.url }}">{{ post.venue_short | default: post.venue }}</a>{% endfor %}
+  </div>
+  {% endif %}
+  {% if a_pubs.size > 0 %}
+  <div class="pub-venues">
+    <span class="pub-venues-label">A venues</span>
+    {% for post in a_pubs %}<a class="pub-venue" href="{{ post.paperurl | default: post.url }}">{{ post.venue_short | default: post.venue }}</a>{% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+
 {% include base_path %}
 
 <!-- New style rendering if publication categories are defined -->

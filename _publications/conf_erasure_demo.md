@@ -7,6 +7,7 @@ date: 2025-09-01
 tier: A*
 selected: true
 venue: 'Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence (IJCAI 2025)'
+venue_short: 'IJCAI 2025'
 paperurl: 'https://www.ijcai.org/proceedings/2025/1255.pdf'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/erasure_demo.bib'
 authors: "Andrea D'Angelo, Claudio Savelli, Gabriele Tagliente, Flavio Giobergia, Elena Baralis, Giovanni Stilo"

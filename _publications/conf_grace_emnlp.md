@@ -5,6 +5,7 @@ category: conferences
 permalink: /publication/grace_emnlp
 date: 2026-11-01
 venue: 'EMNLP 2026 Findings'
+venue_short: 'EMNLP 2026'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/grace_emnlp.bib'
 tier: A*
 selected: true

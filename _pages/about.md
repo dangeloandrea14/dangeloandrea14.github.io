@@ -15,45 +15,34 @@ redirect_from:
 <div style="line-height: 1.8; font-size: 1.05em;">
 I’m a <strong>DDSA Postdoc</strong> at <a href="https://cs.au.dk/">Aarhus University</a> 🇩🇰, working on <strong>Robust Graph Unlearning</strong>.
 <br><br>
-My research has appeared in venues like IJCAI, CIKM, and Springer Machine Learning, and I’ve been lucky to organize workshops, teach, and collaborate with amazing researchers during my Ph.D. at University of L’Aquila. 🇮🇹
+My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and <strong>Machine Unlearning</strong>. I have published papers at EMNLP, IJCAI, CIKM, and Springer’s Machine Learning, among others.
 </div>
 
-
-
-**Research Interests**
------
-
-My research is at the intersection of privacy, safety, and machine learning. I work on **Machine Unlearning**: making AI systems selectively forget specific data after training, without retraining from scratch. This is essential for regulatory compliance (e.g. GDPR's right to be forgotten), correcting model misbehavior, and building AI that is trustworthy and accountable. Check out [ERASURE](https://github.com/aiim-research/ERASURE): an open-source, extendible framework that makes unlearning practical and reproducible.
+<a class="highlight-card" href="https://cs.au.dk/news-events/news/show-news/artikel/ddsa-postdoc-fellowship-for-andrea-dangelo" target="_blank" rel="noopener">
+  <span class="highlight-rail"></span>
+  <img class="au-seal-light" src="images/au-logo-inv.svg" alt="Aarhus University">
+  <img class="au-seal-dark" src="images/au-logo.svg" alt="Aarhus University">
+  <div>
+    <span class="highlight-kicker">News · June 2026</span>
+    <div class="highlight-title">DDSA Postdoc Fellowship for Andrea D’Angelo</div>
+    <span class="highlight-sub">Aarhus University · Dept. of Computer Science</span>
+    <span class="highlight-cta">Read the article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </div>
+</a>
 
 ### 🌟 Selected Highlights (among other things)
 
 | Year | Achievement |
 |------|--------------|
+| 2026 | 📘 Published at **EMNLP 2026 Findings** |
 |2026 | 🏅 Awarded a **DDSA Postdoc** grant on *Robust Graph Unlearning* (Danish Data Science Academy) |
 | 2026 | 📘 Published in **Springer's Machine Learning Journal**, ECML-PKDD 2026 Journal track |
 |2026 | 🏅 Won a Postdoc position at **University of Aarhus** |
 | 2026 | 🎓 Defended my Ph.D. **cum Laude** with **Doctor Europaeus** distinction! |
-| 2025 | 📚 Proceedings Chair for **WSDM 2026** |
 | 2025 | 📘 Published in **Springer's Machine Learning Journal** |
 | 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
 | 2025 | 📘 Published at **IJCAI 2025 Demo**, **CIKM 2025** |
 | 2025 | 🌍 Visiting Ph.D. — **University of Aarhus**, Denmark |
-| 2024 | 🌍 Held an invited talk on *Machine Unlearning* at **Technical University of Munich** |
-| 2024 | 📚 Proceedings Chair for **CIKM 2024** |
-
-**Selected Publications**
------
-
-{% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
-{% for post in selected_pubs %}
-<div style="margin-bottom: 0.6rem;">
-  {% if post.tier %}<span class="pub-tier {{ post.tier | replace: '*','star' | downcase }}">{{ post.tier }}</span>{% endif %}
-  {% if post.quartile %}<span class="pub-quartile {{ post.quartile | downcase }}">{{ post.quartile }}</span>{% endif %}
-  <a href="{{ post.paperurl | default: post.url }}">{{ post.title }}</a><br>
-  <span style="font-size: 0.85em; color: var(--text-muted);">{{ post.venue }} &middot; <strong>{{ post.date | date: "%Y" }}</strong></span>
-</div>
-{% endfor %}
-<p style="font-size: 0.85em;"><a href="/publications/">View all publications →</a></p>
 
 **Projects**
 -----
@@ -80,3 +69,17 @@ My research is at the intersection of privacy, safety, and machine learning. I w
   </div>
 
 </div>
+
+**Selected Publications**
+-----
+
+{% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
+{% for post in selected_pubs %}
+<div style="margin-bottom: 0.6rem;">
+  {% if post.tier %}<span class="pub-tier {{ post.tier | replace: '*','star' | downcase }}">{{ post.tier }}</span>{% endif %}
+  {% if post.quartile %}<span class="pub-quartile {{ post.quartile | downcase }}">{{ post.quartile }}</span>{% endif %}
+  <a href="{{ post.paperurl | default: post.url }}">{{ post.title }}</a><br>
+  <span style="font-size: 0.85em; color: var(--text-muted);">{{ post.venue }} &middot; <strong>{{ post.date | date: "%Y" }}</strong></span>
+</div>
+{% endfor %}
+<p style="font-size: 0.85em;"><a href="/publications/">View all publications →</a></p>

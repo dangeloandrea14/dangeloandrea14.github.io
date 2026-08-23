@@ -230,6 +230,304 @@ html[data-theme="dark"] .news-box {
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
+/* --- Featured highlight card (home page) — "Minimal Luxe" --- */
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin: 1.6rem 0 2rem;
+  padding: 1.6rem 0.4rem;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  text-decoration: none !important;
+  color: var(--text-main);
+  transition: padding 0.3s ease;
+}
+
+/* whole row eases gently inward on hover */
+.highlight-card:hover {
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+/* thin AU-blue rail */
+.highlight-card .highlight-rail {
+  flex-shrink: 0;
+  width: 2px;
+  align-self: stretch;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #0047ab, #002f7a);
+}
+
+.highlight-card img {
+  flex-shrink: 0;
+  height: 58px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* logo swaps with the theme: dark seal on light bg, white seal on dark bg */
+.highlight-card .au-seal-dark { display: none; }
+
+.highlight-card .highlight-kicker {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #0047ab;
+  margin-bottom: 0.1rem;
+}
+
+.highlight-card .highlight-title {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin: 0.3rem 0 0.18rem;
+}
+
+.highlight-card .highlight-sub {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.highlight-card .highlight-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+}
+
+.highlight-card .highlight-cta svg {
+  transition: transform 0.2s ease;
+}
+
+.highlight-card:hover .highlight-cta svg {
+  transform: translateX(4px);
+}
+
+/* Dark mode: soften hairlines, lighten the rail/accent, swap the seal */
+html[data-theme="dark"] .highlight-card {
+  border-top-color: #3a3a3a;
+  border-bottom-color: #3a3a3a;
+}
+
+html[data-theme="dark"] .highlight-card .highlight-rail {
+  background: linear-gradient(180deg, #7aa9ff, #3f6fd0);
+}
+
+html[data-theme="dark"] .highlight-card .highlight-kicker {
+  color: #7aa9ff;
+}
+
+html[data-theme="dark"] .highlight-card .au-seal-light { display: none; }
+html[data-theme="dark"] .highlight-card .au-seal-dark { display: inline; }
+
+@media (max-width: 600px) {
+  .highlight-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .highlight-card:hover { padding-left: 0.4rem; padding-right: 0.4rem; }
+  .highlight-card .highlight-rail { display: none; }
+}
+
+/* ==========================================================
+   SIDEBAR — "Minimal Luxe" author profile (matches the news card)
+   ========================================================== */
+/* subtle full-height vertical hairline sets the sidebar apart from the main column */
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    border-right: 1px solid #ddd;
+    padding-right: 1.6rem;
+  }
+  html[data-theme="dark"] .sidebar {
+    border-right-color: #3a3a3a;
+  }
+}
+
+.sidebar .author__avatar {
+  text-align: center;
+}
+
+.sidebar .author__avatar img {
+  display: block;
+  width: 112px;
+  height: 112px;
+  max-width: 112px;
+  margin: 0 auto;
+  object-fit: cover;
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+
+html[data-theme="dark"] .sidebar .author__avatar img {
+  border-color: #3a3a3a;
+}
+
+.sidebar .author__content {
+  text-align: center;
+}
+
+.sidebar .author__name {
+  font-size: 1.16rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin: 0.95rem 0 0.3rem;
+}
+
+/* thin AU-blue rule under the name */
+.sidebar .author__name::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  border-radius: 2px;
+  background: #0047ab;
+  margin: 0.5rem auto 0.1rem;
+}
+
+html[data-theme="dark"] .sidebar .author__name::after {
+  background: #7aa9ff;
+}
+
+.sidebar .author__pronouns {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0.1rem;
+}
+
+.sidebar .author__bio {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0.55rem 0 1rem;
+}
+
+/* location / employer meta rows */
+.sidebar .author__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0;
+}
+
+.sidebar .author__meta i {
+  color: var(--text-muted);
+  width: 15px;
+}
+
+/* "Connect" divider label with hairlines on each side */
+.sidebar .author__connect {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 1.3rem 0 0.5rem;
+}
+
+.sidebar .author__connect::before,
+.sidebar .author__connect::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+html[data-theme="dark"] .sidebar .author__connect::before,
+html[data-theme="dark"] .sidebar .author__connect::after {
+  background: #3a3a3a;
+}
+
+/* link rows */
+.sidebar .author__urls {
+  text-align: left;
+}
+
+.sidebar .author__urls li {
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.sidebar .author__urls li:last-child {
+  border-bottom: 0;
+}
+
+html[data-theme="dark"] .sidebar .author__urls li {
+  border-bottom-color: #3a3a3a;
+}
+
+.sidebar .author__urls a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.15rem;
+  margin-bottom: 0;
+  color: var(--text-main);
+  font-size: 0.83rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.sidebar .author__urls a i {
+  width: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+/* sliding arrow revealed on hover */
+.sidebar .author__urls a::after {
+  content: "\2192";
+  margin-left: auto;
+  color: #0047ab;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.sidebar .author__urls a:hover,
+.sidebar .author__urls a:hover i {
+  color: #0047ab;
+  text-decoration: none;
+}
+
+.sidebar .author__urls a:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html[data-theme="dark"] .sidebar .author__urls a::after {
+  color: #7aa9ff;
+}
+
+html[data-theme="dark"] .sidebar .author__urls a:hover,
+html[data-theme="dark"] .sidebar .author__urls a:hover i {
+  color: #7aa9ff;
+}
+
 /* --- Justify short bio text --- */
 .main-bio {
   text-align: justify;
@@ -303,6 +601,7 @@ a {
   font-size: 0.75em;
   font-weight: 600;
   color: #fff;
+  background-color: #555; /* readable fallback for any unmapped key */
   margin-right: 6px;
   vertical-align: middle;
 }
@@ -322,3 +621,78 @@ html[data-theme="dark"] .teaching-topic {
   background: #333;
   color: #ccc;
 }
+
+/* ==========================================================
+   PUBLICATIONS — headline figures
+   ========================================================== */
+.pub-stats {
+  display: flex;
+  margin: 1.4rem 0 1rem;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+html[data-theme="dark"] .pub-stats { border-color: #3a3a3a; }
+
+.pub-stat {
+  flex: 1;
+  text-align: center;
+  padding: 1.4rem 1rem;
+}
+.pub-stat + .pub-stat { border-left: 1px solid #ddd; }
+html[data-theme="dark"] .pub-stat + .pub-stat { border-left-color: #3a3a3a; }
+
+.pub-stat .n {
+  display: block;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-main);
+}
+.pub-stat .k {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 540px) {
+  .pub-stat { padding: 1.1rem 0.5rem; }
+  .pub-stat .n { font-size: 1.9rem; }
+  .pub-stat .k { font-size: 0.58rem; letter-spacing: 1px; }
+}
+
+/* A*/A venue lines under the figures */
+.pub-venues-group {
+  margin: 0 0 2.2rem;
+}
+.pub-venues {
+  text-align: center;
+  margin: 0.35rem 0;
+  font-size: 0.82rem;
+}
+.pub-venues-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: 0.7rem;
+}
+.pub-venue {
+  color: #0047ab;
+  font-weight: 600;
+  text-decoration: none;
+}
+.pub-venue:hover { text-decoration: underline; }
+.pub-venue + .pub-venue { margin-left: 0.55rem; }
+.pub-venue + .pub-venue::before {
+  content: "·";
+  color: var(--text-muted);
+  margin-right: 0.55rem;
+  font-weight: 400;
+}
+html[data-theme="dark"] .pub-venue { color: #7aa9ff; }

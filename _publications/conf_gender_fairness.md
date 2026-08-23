@@ -5,6 +5,7 @@ category: conferences
 permalink: /publication/ecsa_gender_fairness
 date: 2023-08-19
 venue: 'European Conference on Software Architecture'
+venue_short: 'ECSA 2023'
 tier: A
 paperurl: 'https://link.springer.com/chapter/10.1007/978-3-031-66326-0_6'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/ecsa_gender_fairness.bib'
