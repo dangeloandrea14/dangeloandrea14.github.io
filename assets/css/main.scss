@@ -270,6 +270,12 @@ html[data-theme="dark"] .news-box {
 /* logo swaps with the theme: dark seal on light bg, white seal on dark bg */
 .highlight-card .au-seal-dark { display: none; }
 
+/* text column (flex item beside the rail + logo) */
+.highlight-card .highlight-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .highlight-card .highlight-kicker {
   display: block;
   font-size: 0.66rem;
@@ -281,6 +287,7 @@ html[data-theme="dark"] .news-box {
 }
 
 .highlight-card .highlight-title {
+  display: block;
   font-family: "Newsreader", Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
   font-weight: 500;
