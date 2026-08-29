@@ -1540,3 +1540,299 @@ html[data-theme="dark"] .tch-btn--request { border-color: #4a4a4a; }
   }
   .tch-course__desc { font-size: 0.8rem; }
 }
+
+/* ==========================================================================
+   THESES — "The Register"  (see _pages/theses.html)
+
+   One list of every thesis — title, status and keywords, nothing more — open
+   topics first and completed ones greyed out beneath them, with a status rail
+   down the left of each row and a status filter over the top. Same Luxe
+   grammar as the Teaching page — hairlines, squared corners, Newsreader
+   titles — but tuned for density: this page is scanned, not read.
+
+   The one colour that is not AU blue is the "open" green. It is a semantic,
+   not a second accent: it says only "you can take this topic", and it is the
+   sole thing on the page allowed to use it.
+   ========================================================================== */
+
+:root {
+  --ths-open:      #1f6f52;
+  --ths-open-wash: rgba(31, 111, 82, 0.07);
+}
+html[data-theme="dark"] {
+  --ths-open:      #7fd0a8;
+  --ths-open-wash: rgba(127, 208, 168, 0.10);
+}
+
+/* --- the record at a glance ------------------------------------------- */
+.ths-summary {
+  /* two counts only — kept narrow and left-aligned so they read as a tally,
+     not as a dashboard stretched across the column */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  max-width: 340px;
+  gap: 1px;
+  background: #ddd;
+  border: 1px solid #ddd;
+  margin: 0 0 1.4rem;
+}
+html[data-theme="dark"] .ths-summary {
+  background: #3a3a3a;
+  border-color: #3a3a3a;
+}
+.ths-stat {
+  background: var(--bg-card);
+  padding: 0.85rem 1rem;
+}
+.ths-stat__n {
+  display: block;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+}
+.ths-stat--open .ths-stat__n { color: var(--ths-open); }
+.ths-stat__l {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.ths-intro {
+  max-width: 62ch;
+  margin: 0 0 1.4rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.ths-intro strong { color: var(--ths-open); font-weight: 600; }
+
+/* --- tab + search bar -------------------------------------------------- */
+.ths-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px solid #ddd;
+}
+html[data-theme="dark"] .ths-bar { border-bottom-color: #3a3a3a; }
+
+.ths-seg { display: flex; border: 1px solid #ddd; }
+html[data-theme="dark"] .ths-seg { border-color: #3a3a3a; }
+.ths-seg__btn {
+  margin: 0;
+  padding: 0.34rem 0.9rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.ths-seg__btn + .ths-seg__btn { border-left: 1px solid #ddd; }
+html[data-theme="dark"] .ths-seg__btn + .ths-seg__btn { border-left-color: #3a3a3a; }
+.ths-seg__btn:hover { color: var(--text-main); }
+.ths-seg__btn.is-on {
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-left);
+}
+html[data-theme="dark"] .ths-seg__btn.is-on { color: #10131a; }
+.ths-seg__btn:focus-visible {
+  outline: 2px solid var(--accent-left);
+  outline-offset: 2px;
+}
+
+.ths-search {
+  position: relative;
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+}
+.ths-search__icon {
+  position: absolute;
+  left: 0.55rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.ths-search__input {
+  width: 100%;
+  margin: 0;
+  padding: 0.42rem 0.6rem 0.42rem 2rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.84rem;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: none;
+}
+.ths-search__input::placeholder { color: var(--text-muted); }
+.ths-search__input:hover { border-color: #bbb; }
+.ths-search__input:focus {
+  outline: none;
+  border-color: var(--accent-left);
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+}
+html[data-theme="dark"] .ths-search__input { border-color: #3a3a3a; }
+html[data-theme="dark"] .ths-search__input:hover { border-color: #555; }
+html[data-theme="dark"] .ths-search__input:focus {
+  border-color: var(--accent-left);
+  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.16);
+}
+
+.ths-count {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* --- the table --------------------------------------------------------- */
+.ths-head,
+.ths-row {
+  display: grid;
+  grid-template-columns: 6px 1fr 150px 46px;
+  gap: 0 1rem;
+}
+.ths-head { align-items: center; }
+/* rows align to the top so the level / file link sits beside the title
+   rather than floating at the vertical centre of a tall row */
+.ths-row { align-items: start; }
+
+.ths-head {
+  padding: 0.6rem 0 0.45rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+html[data-theme="dark"] .ths-head { border-bottom-color: #3a3a3a; }
+.ths-head > span:last-child { text-align: right; }
+
+.ths-row {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.15s ease;
+}
+html[data-theme="dark"] .ths-row { border-bottom-color: #2c2c2c; }
+.ths-row[hidden] { display: none; }
+.ths-row:hover { background: rgba(0, 71, 171, 0.04); }
+html[data-theme="dark"] .ths-row:hover { background: rgba(122, 169, 255, 0.06); }
+
+.ths-row__rail {
+  align-self: stretch;
+  min-height: 34px;
+  background: var(--text-muted);
+  opacity: 0.3;
+}
+.ths-row--open .ths-row__rail {
+  background: var(--ths-open);
+  opacity: 1;
+}
+
+.ths-row__title {
+  margin: 0 0 0.2rem;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.28;
+  color: var(--text-main);
+}
+.ths-row__title a { color: var(--text-main); }
+.ths-row__title a:hover { color: var(--link-color); text-decoration: none; }
+
+.ths-row__sub {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.ths-sep { margin: 0 0.4rem; opacity: 0.5; }
+.ths-row__out { font-weight: 600; }
+
+.ths-badge {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 1px 6px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid currentColor;
+  vertical-align: 1px;
+}
+.ths-badge--open { color: var(--ths-open); background: var(--ths-open-wash); }
+
+/* the "Proposal" / "Outcome" link, inline at the end of the sub-line */
+.ths-row__file { font-weight: 600; }
+
+/* --- the university and year columns ----------------------------------- */
+.ths-row__uni {
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--text-muted);
+  padding-top: 3px;
+}
+.ths-row__year {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.1;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  padding-top: 1px;
+}
+
+/* --- empty state ------------------------------------------------------- */
+.ths-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.ths-empty[hidden] { display: none; }
+.ths-empty__rose {
+  @extend %rose-mask;
+  width: 40px;
+  height: 42px;
+  opacity: 0.3;
+}
+
+/* --- responsive -------------------------------------------------------- */
+@media (max-width: 620px) {
+  .ths-head { display: none; }
+  .ths-row {
+    grid-template-columns: 6px 1fr auto;
+    gap: 0 0.8rem;
+  }
+  /* university drops under the title; the year keeps its own right-hand slot */
+  .ths-row__uni {
+    grid-column: 2;
+    padding-top: 0.35rem;
+  }
+  .ths-row__year {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 0.9rem;
+  }
+}

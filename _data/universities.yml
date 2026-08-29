@@ -64,3 +64,15 @@ univaq:
   logo_height: 58
   tint: "#b08a12"
   tint_dark: "#f4c645"
+
+univurbino:
+  name: "University of Urbino"
+  full: "Università degli Studi di Urbino Carlo Bo"
+  city: "Urbino"
+  country: "Italy"
+  flag: "🇮🇹"
+  url: "https://www.uniurb.it/"
+  # No logo/mark yet: the Teaching wall skips institutions with zero courses,
+  # so this entry exists purely so the Theses page can name Urbino properly.
+  tint: "#8c2f39"
+  tint_dark: "#e8909a"

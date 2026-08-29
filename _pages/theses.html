@@ -7,30 +7,194 @@ author_profile: true
 
 {% include base_path %}
 
-<div class="teaching-section">
-  <div class="teaching-uni-header theses-header-available">
-    <span class="teaching-uni-name">📚 Available Theses</span>
+{% comment %}
+=============================================================================
+THESES — "The Register"
+
+One list, everything on it, the way a lab keeps its project register. Two
+things carry the state:
+
+  1. a status rail down the left of every row — open topics get the green
+     rail, completed ones a quiet grey, so what is available reads at a
+     glance without anyone having to parse a badge;
+  2. a status filter — All / Available / Completed — over a single list.
+     "All" is the default: open topics first, completed ones greyed out
+     beneath them, nothing hidden until someone asks for it.
+
+Columns are fixed: Topic, University, Year. A row carries a university
+whenever its `university_key` resolves in _data/universities.yml, so open
+topics can name a host institution too — set the key and the column fills.
+
+The filter and search are progressive enhancement: with JS off every thesis
+is listed, every badge still says which is which, and every link still works.
+=============================================================================
+{% endcomment %}
+
+{% assign available = site.theses | where: "availability", "available" | sort: "title" %}
+{% assign completed = site.theses | where: "availability", "complete" | sort: "date" | reverse %}
+
+<!-- ---------- 1. The record at a glance ---------- -->
+<div class="ths-summary">
+  <div class="ths-stat ths-stat--open">
+    <span class="ths-stat__n">{{ available.size }}</span>
+    <span class="ths-stat__l">Available now</span>
   </div>
-  {% assign available = site.theses | where: "availability", "available" %}
-  {% if available.size > 0 %}
-    {% for post in available reversed %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% else %}
-    <p><em>No available theses listed yet.</em></p>
-  {% endif %}
+  <div class="ths-stat">
+    <span class="ths-stat__n">{{ completed.size }}</span>
+    <span class="ths-stat__l">Completed</span>
+  </div>
 </div>
 
-<div class="teaching-section">
-  <div class="teaching-uni-header theses-header-complete">
-    <span class="teaching-uni-name">🎓 Completed Theses</span>
+<p class="ths-intro">
+  Send an email to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+  if you are interested in one of the available theses.
+</p>
+
+<!-- ---------- 2. Filter + search ---------- -->
+<div class="ths-bar">
+  <div class="ths-seg" role="group" aria-label="Filter theses by status">
+    <button type="button" class="ths-seg__btn is-on"
+            data-view="all" aria-pressed="true">All</button>
+    <button type="button" class="ths-seg__btn"
+            data-view="available" aria-pressed="false">Available</button>
+    <button type="button" class="ths-seg__btn"
+            data-view="completed" aria-pressed="false">Completed</button>
   </div>
-  {% assign completed = site.theses | where: "availability", "complete" | sort: "date" | reverse %}
-  {% if completed.size > 0 %}
-    {% for post in completed %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% else %}
-    <p><em>No completed theses listed yet.</em></p>
-  {% endif %}
+
+  <div class="ths-search">
+    <svg class="ths-search__icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
+    </svg>
+    <input type="search" id="ths-q" class="ths-search__input" autocomplete="off"
+           placeholder="Search a topic, a method, a year&hellip;" aria-label="Search theses">
+  </div>
+
+  <span class="ths-count" id="ths-count" aria-live="polite">{{ site.theses | size }} theses</span>
 </div>
+
+<!-- ---------- 3. The register ---------- -->
+<div class="ths-table" id="ths-table" data-view="all">
+
+  <div class="ths-head" aria-hidden="true">
+    <span></span>
+    <span>Topic</span>
+    <span>University</span>
+    <span>Year</span>
+  </div>
+
+  {% for post in available %}
+    {% assign uni = site.data.universities[post.university_key] %}
+    {% capture haystack %}{{ post.title }} {{ post.topics | join: " " }} {{ post.level }} {{ post.prerequisites }} {{ uni.name }} {{ uni.full }} {{ uni.city }} available open{% endcapture %}
+
+    <article class="ths-row ths-row--open"
+             data-status="available"
+             data-search="{{ haystack | downcase | strip_newlines | escape }}">
+      <span class="ths-row__rail" aria-hidden="true"></span>
+
+      <div class="ths-row__main">
+        <h3 class="ths-row__title">
+          <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+        </h3>
+        <p class="ths-row__sub">
+          <span class="ths-badge ths-badge--open">Available{% if post.level %} &middot; {{ post.level }}{% endif %}</span>
+          {%- if post.topics %}{{ post.topics | join: ", " }}{% endif -%}
+          {%- if post.prerequisites %}<span class="ths-sep">&middot;</span>{{ post.prerequisites }}{% endif -%}
+          {%- if post.slidesurl %}<span class="ths-sep">&middot;</span><a class="ths-row__file" href="{{ post.slidesurl | prepend: base_path }}" target="_blank" rel="noopener">Proposal</a>{% endif -%}
+        </p>
+      </div>
+
+      <span class="ths-row__uni">{{ uni.name | default: post.venue }}</span>
+      <span class="ths-row__year"></span>
+    </article>
+  {% endfor %}
+
+  {% for post in completed %}
+    {% assign uni  = site.data.universities[post.university_key] %}
+    {% assign year = post.date | date: "%Y" %}
+    {% capture haystack %}{{ post.title }} {{ post.topics | join: " " }} {{ post.level }} {{ post.student }} {{ uni.name }} {{ uni.full }} {{ uni.city }} {{ post.venue }} {{ year }} completed{% endcapture %}
+
+    <article class="ths-row"
+             data-status="completed"
+             data-search="{{ haystack | downcase | strip_newlines | escape }}">
+      <span class="ths-row__rail" aria-hidden="true"></span>
+
+      <div class="ths-row__main">
+        <h3 class="ths-row__title">
+          <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+        </h3>
+        <p class="ths-row__sub">
+          <span class="ths-badge">Completed{% if post.level %} &middot; {{ post.level }}{% endif %}</span>
+          {%- if post.topics %}{{ post.topics | join: ", " }}{% endif -%}
+          {%- if post.student %}<span class="ths-sep">&middot;</span>{{ post.student }}{% endif -%}
+          {%- if post.outcome_url %}<span class="ths-sep">&middot;</span><a class="ths-row__file" href="{{ post.outcome_url }}" target="_blank" rel="noopener">Outcome</a>{% endif -%}
+        </p>
+      </div>
+
+      <span class="ths-row__uni">{{ uni.name | default: post.venue }}</span>
+      <span class="ths-row__year">{{ year }}</span>
+    </article>
+  {% endfor %}
+
+</div>
+
+<p class="ths-empty" id="ths-empty" hidden>
+  <span class="ths-empty__rose" aria-hidden="true"></span>
+  Nothing here matches that search.
+</p>
+
+<script>
+/* Theses register: one list, with a status filter and a search over it.
+   "All" is the default, so open topics sit above the completed ones and
+   nothing is hidden until you ask. Everything is rendered server-side, so
+   with JS off the page is simply the full register. */
+(function () {
+  var table = document.getElementById('ths-table');
+  if (!table) return;
+
+  var rows   = Array.prototype.slice.call(table.querySelectorAll('.ths-row'));
+  var tabs   = Array.prototype.slice.call(document.querySelectorAll('.ths-seg__btn'));
+  var input  = document.getElementById('ths-q');
+  var count  = document.getElementById('ths-count');
+  var empty  = document.getElementById('ths-empty');
+  var view   = 'all';
+
+  function apply() {
+    var q = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+
+    rows.forEach(function (r) {
+      var okView = view === 'all' || r.getAttribute('data-status') === view;
+      var okQ    = !q || r.getAttribute('data-search').indexOf(q) !== -1;
+      var on     = okView && okQ;
+      r.hidden = !on;
+      if (on) { shown++; }
+    });
+
+    table.setAttribute('data-view', view);
+    empty.hidden = shown !== 0;
+    count.textContent = shown === 0
+      ? 'No matches'
+      : shown + (view === 'all' ? ' theses' : ' ' + view);
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      view = t.getAttribute('data-view');
+      tabs.forEach(function (o) {
+        var on = o === t;
+        o.classList.toggle('is-on', on);
+        o.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; apply(); }
+  });
+
+  apply();
+})();
+</script>
