@@ -6,7 +6,8 @@ permalink: /teaching/MOC_RL_univaq
 venue: "SoBigData Academy"
 date: 2024-01-01
 location: "Online"
-university_key: univaq
+university_key: sobigdata
+programme: "Open online course"
 description: "Co-creator of the MOC course on Reinforcement Learning for the SoBigData Academy, covering fundamental and advanced RL algorithms."
 topics: ["Reinforcement Learning", "MOC", "SoBigData"]
 ---

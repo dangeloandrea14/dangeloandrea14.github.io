@@ -7,6 +7,7 @@ venue: "LUISS University of Rome, Master in AI"
 date: 2026-02-01
 location: "Rome, Italy"
 university_key: luiss
+programme: "Master in Artificial Intelligence"
 description: "Course on big data management techniques and data mining methods for business decision-making in AI-driven environments."
 topics: ["Big Data", "Data Mining", "Machine Learning"]
 ---

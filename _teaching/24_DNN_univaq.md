@@ -8,6 +8,7 @@ date: 2024-01-01
 location: "L'Aquila, Italy"
 slidesurl: "https://github.com/dangeloandrea14/DNN-lectures"
 university_key: univaq
+programme: "M.Sc. Computer Science"
 description: "Lab course on deep neural network architectures, with hands-on implementations covering modern deep learning techniques."
 topics: ["Deep Learning", "Neural Networks", "PyTorch"]
 ---

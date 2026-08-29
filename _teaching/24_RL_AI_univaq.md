@@ -8,6 +8,7 @@ date: 2024-01-01
 location: "L'Aquila, Italy"
 slidesurl: "https://github.com/dangeloandrea14/RL_Laboratory_24_Univaq"
 university_key: univaq
+programme: "M.Sc. Computer Science · AI course"
 description: "Lab module on reinforcement learning algorithms and policy optimization, part of the AI Master's course."
 topics: ["Reinforcement Learning", "AI", "Policy Optimization"]
 ---

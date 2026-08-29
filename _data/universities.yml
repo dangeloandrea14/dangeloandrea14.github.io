@@ -1,0 +1,66 @@
+# Institutions where I have taught.
+#
+# Order matters: the Teaching page renders the institution wall in this order
+# (most recent affiliation first). The key must match the `university_key`
+# front-matter field of the entries in _teaching/.
+#
+# logo   — wide lockup or seal, shown on the institution plate
+# mark   — compact square-ish mark, shown as the chip on each course row
+# tint   — institutional colour; drives the plate's top rail and active state
+# where  — optional; overrides the default "{city}, {country}" line
+#
+# Adding an institution: drop its logo in /images/logos/ and add a block here.
+# The wall, the filter, the row chips and the counts all follow automatically.
+
+au:
+  name: "Aarhus University"
+  full: "Aarhus University, Department of Computer Science"
+  city: "Aarhus"
+  country: "Denmark"
+  flag: "🇩🇰"
+  url: "https://cs.au.dk/"
+  logo: "/images/au-logo-inv.svg"      # the dark seal already in /images, reused
+  mark: "/images/au-logo-inv.svg"
+  logo_height: 64
+  tint: "#003d73"
+  tint_dark: "#6ea8e0"
+
+luiss:
+  name: "LUISS Guido Carli"
+  full: "LUISS Guido Carli University of Rome"
+  city: "Rome"
+  country: "Italy"
+  flag: "🇮🇹"
+  url: "https://www.luiss.it/"
+  logo: "/images/logos/luiss.svg"
+  mark: "/images/logos/luiss-mark.svg"
+  logo_height: 32
+  tint: "#0b3a6b"
+  tint_dark: "#7aa9ff"
+
+sobigdata:
+  name: "SoBigData Academy"
+  full: "SoBigData++ European Research Infrastructure"
+  city: "Online"
+  country: "Europe"
+  where: "Online · European research infrastructure"
+  flag: "🇪🇺"
+  url: "https://sobigdata.eu/"
+  logo: "/images/logos/sobigdata.png"
+  mark: "/images/logos/sobigdata-mark.png"
+  logo_height: 34
+  tint: "#d8404d"
+  tint_dark: "#ff8a94"
+
+univaq:
+  name: "University of L'Aquila"
+  full: "Università degli Studi dell'Aquila"
+  city: "L'Aquila"
+  country: "Italy"
+  flag: "🇮🇹"
+  url: "https://www.univaq.it/"
+  logo: "/images/logos/univaq.svg"
+  mark: "/images/logos/univaq-mark.svg"
+  logo_height: 58
+  tint: "#b08a12"
+  tint_dark: "#f4c645"

@@ -7,20 +7,223 @@ author_profile: true
 
 {% include base_path %}
 
-{% assign teaching_by_uni = site.teaching | group_by: "university_key" | sort: "name" %}
+{% comment %}
+=============================================================================
+TEACHING — "Institution Wall + Year Rail"
 
-{% for group in teaching_by_uni %}
-  {% assign uni_name = group.items[0].venue | split: "," | first %}
-  {% assign uni_location = group.items[0].location %}
+Two reading axes, deliberately:
+  1. WHERE  — a wall of institution plates (real logos) doubles as a filter.
+  2. WHEN   — the course list below is grouped under oversized year numerals,
+              so a student can tell 2023 slides from 2024 slides at a glance.
 
-  <div class="teaching-section">
-    <div class="teaching-uni-header teaching-uni-{{ group.name }}">
-      <span class="teaching-uni-name">{{ uni_name }}</span>
-      <span class="teaching-uni-location">📍 {{ uni_location }}</span>
-    </div>
-    {% assign sorted_posts = group.items | sort: "date" | reverse %}
-    {% for post in sorted_posts %}
-      {% include archive-single.html %}
-    {% endfor %}
+Institution metadata lives in _data/universities.yml (ordered, newest first);
+each _teaching entry links to it through its `university_key` front matter.
+Filtering + search are progressive enhancement: with JS off, every course is
+visible and every "Slides" link still works.
+=============================================================================
+{% endcomment %}
+
+{% assign by_year      = site.teaching | group_by_exp: "c", "c.date | date: '%Y'" | sort: "name" | reverse %}
+{% assign n_courses    = site.teaching | size %}
+
+<!-- ---------- 1. Institution wall (also the filter) ---------- -->
+<h2 class="section-kicker">Institutions</h2>
+
+<div class="tch-wall" role="group" aria-label="Filter courses by institution">
+  {% for entry in site.data.universities %}
+    {% assign key = entry[0] %}
+    {% assign uni = entry[1] %}
+    {% assign uc  = site.teaching | where: "university_key", key %}
+    {% if uc.size == 0 %}{% continue %}{% endif %}
+    {% assign uyears = uc | group_by_exp: "c", "c.date | date: '%Y'" | sort: "name" %}
+    <button type="button"
+            class="tch-plate tch-plate--{{ key }}"
+            data-uni="{{ key }}"
+            aria-pressed="false"
+            style="--tint-l: {{ uni.tint | default: '#0047ab' }}; --tint-d: {{ uni.tint_dark | default: '#7aa9ff' }};"
+            title="Show only courses at {{ uni.name }}">
+      <span class="tch-plate__well">
+        <img src="{{ uni.logo | prepend: base_path }}" alt=""
+             style="height: {{ uni.logo_height | default: 36 }}px;">
+      </span>
+      <span class="tch-plate__name">{{ uni.name }}</span>
+      <span class="tch-plate__where">{{ uni.flag }} {% if uni.where %}{{ uni.where }}{% else %}{{ uni.city }}, {{ uni.country }}{% endif %}</span>
+      <span class="tch-plate__foot">
+        <span class="tch-plate__years">
+          {%- if uyears.size > 1 -%}
+            {{ uyears.first.name }}&ndash;{{ uyears.last.name }}
+          {%- else -%}
+            {{ uyears.first.name }}
+          {%- endif -%}
+        </span>
+        <span class="tch-plate__count">{{ uc.size }} course{% if uc.size != 1 %}s{% endif %}</span>
+      </span>
+    </button>
+  {% endfor %}
+</div>
+
+<!-- ---------- 2. Search + live result count ---------- -->
+<div class="tch-controls">
+  <div class="tch-search">
+    <svg class="tch-search__icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
+    </svg>
+    <input type="search" id="tch-q" class="tch-search__input" autocomplete="off"
+           placeholder="Search a course, a topic, a year&hellip;" aria-label="Search courses">
   </div>
+  <span class="sr-only" id="tch-status" aria-live="polite">{{ n_courses }} courses</span>
+  <button type="button" class="tch-clear" id="tch-clear" hidden>Clear filters</button>
+</div>
+
+<!-- ---------- 3. The list, grouped by year ---------- -->
+<div class="tch-list" id="tch-list">
+{% for yg in by_year %}
+  {% assign year = yg.name %}
+  <section class="tch-year" data-year="{{ year }}">
+    <div class="tch-year__rail">
+      <span class="tch-year__num">{{ year }}</span>
+    </div>
+
+    <div class="tch-year__items">
+    {% assign ycourses = yg.items | sort: "date" | reverse %}
+    {% for post in ycourses %}
+      {% assign uni = site.data.universities[post.university_key] %}
+      {% capture haystack %}{{ post.title }} {{ post.type }} {{ post.programme }} {{ post.venue }} {{ post.location }} {{ post.description }} {{ post.topics | join: " " }} {{ uni.name }} {{ uni.full }} {{ uni.city }} {{ year }}{% endcapture %}
+
+      <article class="tch-course tch-course--{{ post.university_key }}"
+               data-uni="{{ post.university_key }}"
+               data-year="{{ year }}"
+               data-search="{{ haystack | downcase | strip_newlines | escape }}">
+
+        {% if uni.mark %}
+          <span class="tch-course__chip" title="{{ uni.full | default: uni.name }}">
+            <img src="{{ uni.mark | prepend: base_path }}" alt="">
+          </span>
+        {% else %}
+          <span class="tch-course__chip tch-course__chip--none" aria-hidden="true"></span>
+        {% endif %}
+
+        <div class="tch-course__body">
+          <h3 class="tch-course__title">
+            <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+          </h3>
+          <p class="tch-course__meta">
+            <span class="tch-course__uni">{{ uni.name | default: post.venue }}</span>
+            {% if post.programme %}<span class="tch-sep">&middot;</span>{{ post.programme }}{% endif %}
+            <span class="tch-sep">&middot;</span>{{ post.type }}
+            {% if post.location %}<span class="tch-sep">&middot;</span>{{ post.location }}{% endif %}
+          </p>
+          {% if post.description %}
+            <p class="tch-course__desc">{{ post.description }}</p>
+          {% endif %}
+          {% if post.topics %}
+            <p class="tch-course__topics">
+              {% for topic in post.topics %}<span class="teaching-topic">{{ topic }}</span>{% endfor %}
+            </p>
+          {% endif %}
+        </div>
+
+        <div class="tch-course__actions">
+          <span class="tch-course__yearbadge" aria-hidden="true">{{ year }}</span>
+          {% if post.slidesurl %}
+            <a class="tch-btn tch-btn--slides" href="{{ post.slidesurl }}" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/>
+              </svg>
+              Slides
+            </a>
+          {% else %}
+            <a class="tch-btn tch-btn--request" href="mailto:{{ site.author.email }}?subject={{ post.title | uri_escape }}">
+              Slides on request
+            </a>
+          {% endif %}
+          <a class="tch-course__more" href="{{ post.url | prepend: base_path }}">Details &rarr;</a>
+        </div>
+      </article>
+    {% endfor %}
+    </div>
+  </section>
 {% endfor %}
+</div>
+
+<p class="tch-empty" id="tch-empty" hidden>
+  <span class="tch-empty__rose" aria-hidden="true"></span>
+  No course matches that search.
+</p>
+
+<script>
+/* Teaching page: institution plates toggle a filter, the search box narrows
+   further, and empty year groups fold away so the year rail never lies. */
+(function () {
+  var list = document.getElementById('tch-list');
+  if (!list) return;
+
+  var input   = document.getElementById('tch-q');
+  var status  = document.getElementById('tch-status');
+  var clear   = document.getElementById('tch-clear');
+  var empty   = document.getElementById('tch-empty');
+  var plates  = Array.prototype.slice.call(document.querySelectorAll('.tch-plate'));
+  var courses = Array.prototype.slice.call(list.querySelectorAll('.tch-course'));
+  var years   = Array.prototype.slice.call(list.querySelectorAll('.tch-year'));
+  var activeUni = null;
+
+  function apply() {
+    var q = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+
+    courses.forEach(function (c) {
+      var okUni = !activeUni || c.getAttribute('data-uni') === activeUni;
+      var okQ   = !q || c.getAttribute('data-search').indexOf(q) !== -1;
+      var on    = okUni && okQ;
+      c.hidden = !on;
+      if (on) { shown++; }
+    });
+
+    /* fold a year group away once all of its courses are hidden */
+    years.forEach(function (y) {
+      var any = Array.prototype.some.call(
+        y.querySelectorAll('.tch-course'), function (c) { return !c.hidden; });
+      y.hidden = !any;
+    });
+
+    empty.hidden = shown !== 0;
+    status.textContent = shown === 0
+      ? 'No matches'
+      : shown + ' course' + (shown === 1 ? '' : 's');
+    clear.hidden = !activeUni && !q;
+  }
+
+  plates.forEach(function (p) {
+    p.addEventListener('click', function () {
+      var key = p.getAttribute('data-uni');
+      activeUni = (activeUni === key) ? null : key;
+      plates.forEach(function (o) {
+        var on = o.getAttribute('data-uni') === activeUni;
+        o.classList.toggle('is-on', on);
+        o.classList.toggle('is-off', activeUni !== null && !on);
+        o.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      apply();
+    });
+  });
+
+  input.addEventListener('input', apply);
+  clear.addEventListener('click', function () {
+    input.value = '';
+    activeUni = null;
+    plates.forEach(function (o) {
+      o.classList.remove('is-on', 'is-off');
+      o.setAttribute('aria-pressed', 'false');
+    });
+    apply();
+    input.focus();
+  });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; apply(); }
+  });
+
+  apply();
+})();
+</script>

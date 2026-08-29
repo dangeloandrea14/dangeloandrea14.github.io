@@ -1080,3 +1080,463 @@ html[data-theme="dark"] .main-bio::before { opacity: 0.08; }
   color: var(--text-main);
 }
 .rose-404__sub { color: var(--text-muted); font-size: 0.95rem; }
+
+/* ==========================================================================
+   TEACHING — "Institution Wall + Year Rail"  (see _pages/teaching.html)
+
+   Two reading axes: a wall of institution plates (real logos, doubles as the
+   filter) over a course list grouped under oversized year numerals. Hairlines,
+   squared corners and the AU-blue accent keep it inside the Luxe language;
+   the scale of the year numerals is what makes it read differently.
+   ========================================================================== */
+
+/* --- institution wall ------------------------------------------------- */
+.tch-wall {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1.6rem;
+}
+
+.tch-plate {
+  --tint: var(--tint-l, #0047ab);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.28rem;
+  width: 100%;
+  margin: 0;
+  padding: 1.05rem 1.05rem 0.9rem;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+  border-top: 3px solid var(--tint);
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+              opacity 0.18s ease, border-color 0.18s ease;
+}
+html[data-theme="dark"] .tch-plate {
+  --tint: var(--tint-d, #7aa9ff);
+  border-color: #3a3a3a;
+  border-top-color: var(--tint);
+}
+
+.tch-plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--tint);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+.tch-plate:hover::after { opacity: 0.05; }
+.tch-plate.is-on::after { opacity: 0.07; }
+.tch-plate > * { position: relative; z-index: 1; }
+
+.tch-plate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="dark"] .tch-plate:hover { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45); }
+
+.tch-plate:focus-visible {
+  outline: 2px solid var(--accent-left);
+  outline-offset: 2px;
+}
+
+/* selected / dimmed states driven by the filter script */
+.tch-plate.is-on {
+  border-top-width: 5px;
+  border-color: var(--tint);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+}
+.tch-plate.is-off { opacity: 0.42; }
+.tch-plate.is-off:hover { opacity: 0.75; }
+
+/* the logo sits in its own light "well" so brand colours stay legible in
+   dark mode without inverting anyone's crest */
+.tch-plate__well {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 84px;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 0.55rem;
+  background: #fff;
+  border: 1px solid #eee;
+}
+html[data-theme="dark"] .tch-plate__well {
+  background: #f4f4f4;
+  border-color: #cfcfcf;
+}
+.tch-plate__well img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.tch-plate__name {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+.tch-plate__where {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+.tch-plate__foot {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  /* auto pushes the foot to the bottom of the plate, so the year/count rows
+     stay on one line across the wall even when a location wraps */
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid #eee;
+}
+html[data-theme="dark"] .tch-plate__foot { border-top-color: #333; }
+
+.tch-plate__years {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+.tch-plate__count {
+  margin-left: auto;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* --- search row ------------------------------------------------------- */
+.tch-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  padding-bottom: 0.9rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid #ddd;
+}
+html[data-theme="dark"] .tch-controls { border-bottom-color: #3a3a3a; }
+
+.tch-search {
+  position: relative;
+  flex: 1 1 260px;
+  display: flex;
+  align-items: center;
+}
+.tch-search__icon {
+  position: absolute;
+  left: 0.55rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.tch-search__input {
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.6rem 0.5rem 2rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.86rem;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: none;
+}
+.tch-search__input::placeholder { color: var(--text-muted); }
+.tch-search__input:hover { border-color: #bbb; }
+.tch-search__input:focus {
+  outline: none;
+  border-color: var(--accent-left);
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+}
+html[data-theme="dark"] .tch-search__input {
+  border-color: #3a3a3a;
+}
+html[data-theme="dark"] .tch-search__input:hover { border-color: #555; }
+html[data-theme="dark"] .tch-search__input:focus {
+  border-color: var(--accent-left);
+  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.16);
+}
+
+.tch-clear {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--accent-left);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+}
+
+/* --- year rail -------------------------------------------------------- */
+.tch-year {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 0 1.2rem;
+}
+.tch-year + .tch-year {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+html[data-theme="dark"] .tch-year + .tch-year { border-top-color: #3a3a3a; }
+.tch-year[hidden] { display: none; }
+
+.tch-year__rail {
+  position: sticky;
+  top: 1.4rem;
+  align-self: start;
+  padding-top: 0.55rem;
+  padding-right: 0.2rem;
+  text-align: right;
+}
+.tch-year__items {
+  border-left: 1px solid #ddd;
+  padding-left: 1.6rem;
+}
+html[data-theme="dark"] .tch-year__items { border-left-color: #3a3a3a; }
+
+.tch-year__num {
+  display: block;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 3.1rem;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  color: var(--accent-left);
+}
+/* --- one course ------------------------------------------------------- */
+.tch-course {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: start;
+  gap: 0 1.05rem;
+  padding: 1.05rem 0.6rem 1.05rem 0;
+  margin-left: -0.6rem;
+  padding-left: 0.6rem;
+  transition: background-color 0.15s ease;
+}
+.tch-course[hidden] { display: none; }
+.tch-course + .tch-course { border-top: 1px solid #eee; }
+html[data-theme="dark"] .tch-course + .tch-course { border-top-color: #2c2c2c; }
+.tch-course:hover { background: rgba(0, 71, 171, 0.035); }
+html[data-theme="dark"] .tch-course:hover { background: rgba(122, 169, 255, 0.06); }
+
+.tch-course__chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+html[data-theme="dark"] .tch-course__chip {
+  background: #f4f4f4;
+  border-color: #cfcfcf;
+}
+.tch-course__chip--none {
+  background: var(--bg-card);
+  border-style: dashed;
+}
+.tch-course__chip img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.tch-course__title {
+  margin: 0 0 0.22rem;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.14rem;
+  font-weight: 500;
+  line-height: 1.22;
+}
+.tch-course__title a {
+  color: var(--text-main);
+  font-family: "Newsreader", Georgia, "Times New Roman", serif !important;
+  font-weight: 500;
+}
+.tch-course__title a:hover { color: var(--link-color); text-decoration: none; }
+
+.tch-course__meta {
+  margin: 0 0 0.3rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.tch-course__uni { font-weight: 600; color: var(--text-main); }
+.tch-sep { margin: 0 0.4rem; opacity: 0.55; }
+
+.tch-course__desc {
+  margin: 0 0 0.4rem;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+.tch-course__topics { margin: 0; }
+
+/* --- actions column: the year, then the slides button ------------------ */
+.tch-course__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  padding-top: 0.15rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tch-course__yearbadge {
+  display: block;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #ddd;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1;
+  color: var(--text-muted);
+}
+html[data-theme="dark"] .tch-course__yearbadge { border-bottom-color: #3a3a3a; }
+.tch-btn { justify-content: center; }
+
+.tch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease,
+              border-color 0.15s ease, transform 0.15s ease;
+}
+.tch-btn--slides {
+  color: #fff !important;
+  background: var(--accent-left);
+  border-color: var(--accent-left);
+}
+.tch-btn--slides:hover {
+  background: var(--link-hover);
+  border-color: var(--link-hover);
+  color: #fff !important;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+html[data-theme="dark"] .tch-btn--slides {
+  color: #10131a !important;
+  background: var(--accent-left);
+}
+html[data-theme="dark"] .tch-btn--slides:hover {
+  background: #a5c5ff;
+  border-color: #a5c5ff;
+  color: #10131a !important;
+}
+
+.tch-btn--request {
+  color: var(--text-muted) !important;
+  background: transparent;
+  border-color: #ddd;
+}
+.tch-btn--request:hover {
+  color: var(--text-main) !important;
+  border-color: var(--text-muted);
+  text-decoration: none;
+}
+html[data-theme="dark"] .tch-btn--request { border-color: #4a4a4a; }
+
+.tch-course__more {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: var(--text-muted);
+}
+.tch-course__more:hover { color: var(--link-color); }
+
+/* --- empty state ------------------------------------------------------ */
+.tch-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.tch-empty[hidden] { display: none; }
+.tch-empty__rose {
+  @extend %rose-mask;
+  width: 40px;
+  height: 42px;
+  opacity: 0.3;
+}
+
+/* --- responsive ------------------------------------------------------- */
+@media (max-width: 560px) {
+  .tch-wall { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .tch-year {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .tch-year__rail {
+    position: static;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0 0 0.4rem;
+    text-align: left;
+    border-right: 0;
+    border-bottom: 2px solid var(--accent-left);
+    margin-bottom: 0.4rem;
+  }
+  .tch-year__num { font-size: 2.1rem; letter-spacing: -1px; }
+  .tch-year__items { border-left: 0; padding-left: 0; }
+}
+
+@media (max-width: 640px) {
+  .tch-course {
+    grid-template-columns: 40px 1fr;
+    gap: 0 0.8rem;
+  }
+  .tch-course__chip { width: 40px; height: 40px; padding: 4px; }
+  .tch-course__actions {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.65rem;
+  }
+  .tch-course__yearbadge {
+    order: 3;
+    margin-left: auto;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .tch-course__desc { font-size: 0.8rem; }
+}
