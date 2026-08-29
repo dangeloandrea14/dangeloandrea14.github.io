@@ -25,8 +25,13 @@ Columns are fixed: Topic, University, Year. A row carries a university
 whenever its `university_key` resolves in _data/universities.yml, so open
 topics can name a host institution too — set the key and the column fills.
 
-The filter and search are progressive enhancement: with JS off every thesis
-is listed, every badge still says which is which, and every link still works.
+A title that has body text behind it is a button: it opens the text in place,
+under the title, rather than sending anyone to a near-empty stub page. Titles
+with nothing to show are plain text.
+
+The filter, the search and the expanders are progressive enhancement: with JS
+off every thesis is listed with its badge, and the detail panels simply start
+open instead of closed (see the <noscript> rule below).
 =============================================================================
 {% endcomment %}
 
@@ -85,7 +90,7 @@ is listed, every badge still says which is which, and every link still works.
 
   {% for post in available %}
     {% assign uni = site.data.universities[post.university_key] %}
-    {% capture haystack %}{{ post.title }} {{ post.topics | join: " " }} {{ post.level }} {{ post.prerequisites }} {{ uni.name }} {{ uni.full }} {{ uni.city }} available open{% endcapture %}
+    {% capture haystack %}{{ post.title }} {{ post.content | strip_html }} {{ post.topics | join: " " }} {{ post.level }} {{ post.prerequisites }} {{ uni.name }} {{ uni.full }} {{ uni.city }} available open{% endcapture %}
 
     <article class="ths-row ths-row--open"
              data-status="available"
@@ -94,7 +99,14 @@ is listed, every badge still says which is which, and every link still works.
 
       <div class="ths-row__main">
         <h3 class="ths-row__title">
-          <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+          {%- if post.content != blank -%}
+            <button type="button" class="ths-row__toggle" aria-expanded="false"
+                    aria-controls="ths-d-{{ forloop.index }}-a">
+              <span class="ths-row__caret" aria-hidden="true"></span>{{ post.title }}
+            </button>
+          {%- else -%}
+            {{ post.title }}
+          {%- endif -%}
         </h3>
         <p class="ths-row__sub">
           <span class="ths-badge ths-badge--open">Available{% if post.level %} &middot; {{ post.level }}{% endif %}</span>
@@ -102,6 +114,11 @@ is listed, every badge still says which is which, and every link still works.
           {%- if post.prerequisites %}<span class="ths-sep">&middot;</span>{{ post.prerequisites }}{% endif -%}
           {%- if post.slidesurl %}<span class="ths-sep">&middot;</span><a class="ths-row__file" href="{{ post.slidesurl | prepend: base_path }}" target="_blank" rel="noopener">Proposal</a>{% endif -%}
         </p>
+        {% if post.content != blank %}
+          <div class="ths-row__detail" id="ths-d-{{ forloop.index }}-a" hidden>
+            {{ post.content }}
+          </div>
+        {% endif %}
       </div>
 
       <span class="ths-row__uni">{{ uni.name | default: post.venue }}</span>
@@ -112,7 +129,7 @@ is listed, every badge still says which is which, and every link still works.
   {% for post in completed %}
     {% assign uni  = site.data.universities[post.university_key] %}
     {% assign year = post.date | date: "%Y" %}
-    {% capture haystack %}{{ post.title }} {{ post.topics | join: " " }} {{ post.level }} {{ post.student }} {{ uni.name }} {{ uni.full }} {{ uni.city }} {{ post.venue }} {{ year }} completed{% endcapture %}
+    {% capture haystack %}{{ post.title }} {{ post.content | strip_html }} {{ post.topics | join: " " }} {{ post.level }} {{ post.student }} {{ uni.name }} {{ uni.full }} {{ uni.city }} {{ post.venue }} {{ year }} completed{% endcapture %}
 
     <article class="ths-row"
              data-status="completed"
@@ -121,7 +138,14 @@ is listed, every badge still says which is which, and every link still works.
 
       <div class="ths-row__main">
         <h3 class="ths-row__title">
-          <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+          {%- if post.content != blank -%}
+            <button type="button" class="ths-row__toggle" aria-expanded="false"
+                    aria-controls="ths-d-{{ forloop.index }}-c">
+              <span class="ths-row__caret" aria-hidden="true"></span>{{ post.title }}
+            </button>
+          {%- else -%}
+            {{ post.title }}
+          {%- endif -%}
         </h3>
         <p class="ths-row__sub">
           <span class="ths-badge">Completed{% if post.level %} &middot; {{ post.level }}{% endif %}</span>
@@ -129,6 +153,11 @@ is listed, every badge still says which is which, and every link still works.
           {%- if post.student %}<span class="ths-sep">&middot;</span>{{ post.student }}{% endif -%}
           {%- if post.outcome_url %}<span class="ths-sep">&middot;</span><a class="ths-row__file" href="{{ post.outcome_url }}" target="_blank" rel="noopener">Outcome</a>{% endif -%}
         </p>
+        {% if post.content != blank %}
+          <div class="ths-row__detail" id="ths-d-{{ forloop.index }}-c" hidden>
+            {{ post.content }}
+          </div>
+        {% endif %}
       </div>
 
       <span class="ths-row__uni">{{ uni.name | default: post.venue }}</span>
@@ -137,6 +166,14 @@ is listed, every badge still says which is which, and every link still works.
   {% endfor %}
 
 </div>
+
+<noscript>
+  <style>
+    /* nothing can open these without JS, so show them */
+    .ths-row__detail[hidden] { display: block; }
+    .ths-row__caret { display: none; }
+  </style>
+</noscript>
 
 <p class="ths-empty" id="ths-empty" hidden>
   <span class="ths-empty__rose" aria-hidden="true"></span>
@@ -194,6 +231,18 @@ is listed, every badge still says which is which, and every link still works.
   input.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { input.value = ''; apply(); }
   });
+
+  /* a title with body text behind it opens that text in place */
+  Array.prototype.forEach.call(
+    table.querySelectorAll('.ths-row__toggle'), function (btn) {
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!panel) return;
+      btn.addEventListener('click', function () {
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        panel.hidden = open;
+      });
+    });
 
   apply();
 })();

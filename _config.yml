@@ -287,6 +287,13 @@ defaults:
       layout: single
       author_profile: true
       share: true
+  # _theses
+  - scope:
+      path: ""
+      type: theses
+    values:
+      layout: single
+      author_profile: true
   # _talks
   - scope:
       path: ""
