@@ -202,6 +202,14 @@
     z-index: 100;
   }
 
+  /* The toggle is taken out of flow, so reserve its footprint on the link row.
+     Without this the title and the theme toggle -- both .persist, so the
+     script can never move them into the dropdown -- run underneath the opaque
+     button on narrow screens. */
+  button:not(.hidden) ~ .visible-links {
+    padding-right: 4rem;
+  }
+
   .visible-links {
     display: table;
 
@@ -268,8 +276,17 @@
     padding: 5px;
     border: 1px solid var(--global-border-color);
     border-radius: $border-radius;
-    background: #fff;
+    background: var(--global-bg-color);
     box-shadow: 0 0 10px rgba(#000, 0.25);
+
+    /* On a short screen (landscape phones especially) the menu is taller than
+       what is left below the masthead -- let it scroll rather than run off the
+       bottom of a fixed masthead where it cannot be reached. Scrolling clips
+       the little notch below, so the panel reads as a plain floating card. */
+    max-width: calc(100vw - 2em);
+    max-height: calc(100vh - var(--masthead-height, #{$masthead-height}) - 30px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
     a {
       margin: 0;
@@ -303,7 +320,7 @@
       width: 0;
       border-style: solid;
       border-width: 0 10px 10px;
-      border-color: #fff transparent;
+      border-color: var(--global-bg-color) transparent;
       display: block;
       z-index: 1;
     }

@@ -10,6 +10,13 @@
   -webkit-transform: translate3d(0, 0 , 0);
           transform: translate3d(0, 0 , 0);
 
+  /* transform above makes this a stacking context, which traps the z-index on
+     .author__urls-wrapper inside it -- so the whole sidebar has to sit above
+     later siblings (e.g. the Leaflet map on /talks/) for the "Follow" panel to
+     open over the page. Stays under the masthead, which is z-index 20. */
+  position: relative;
+  z-index: 10;
+
   @include clearfix();
   margin-bottom: 1em;
 
@@ -18,10 +25,21 @@
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
+    /* Sticky (not fixed) so the sidebar stays inside #main: it follows the
+       scroll while there is content beside it, then stops at the end of the
+       main column instead of running on under the footer. --masthead-height
+       is kept up to date by the greedy-nav script, which remeasures the
+       masthead whenever it reflows. */
+    $sidebar-slot: calc(100vh - var(--masthead-height, #{$masthead-height}) - 2em);
+
+    position: sticky;
+    top: calc(var(--masthead-height, #{$masthead-height}) + 1em);
+    /* Fill the slot so the column hairline still runs the full height. */
+    min-height: $sidebar-slot;
+    max-height: $sidebar-slot;
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
-    position: fixed;
-    padding-top: $masthead-height;
+    overflow-x: hidden;             // ...but never a second, horizontal one
+    scrollbar-width: thin;
   }
 
   @include breakpoint($large) {
@@ -235,7 +253,7 @@
     width: 0;
     border-style: solid;
     border-width: 0 10px 10px;
-    border-color: #fff transparent;
+    border-color: var(--global-bg-color) transparent;
     z-index: 1;
 
     @include breakpoint($large) {

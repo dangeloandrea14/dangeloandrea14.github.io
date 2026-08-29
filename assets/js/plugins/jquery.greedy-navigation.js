@@ -58,14 +58,12 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 
-  // update masthead height and the body/sidebar top padding
+  // update masthead height and the body top padding
   var mastheadHeight = $('.masthead').height();
   $('body').css('padding-top', mastheadHeight + 'px');
-  if ($(".author__urls-wrapper button").is(":visible")) {
-    $(".sidebar").css("padding-top", "");
-  } else {
-    $(".sidebar").css("padding-top", mastheadHeight + "px");
-  }
+  // the sticky sidebar offsets itself off this, so it never slides under the
+  // masthead when the nav wraps onto a second line
+  document.documentElement.style.setProperty('--masthead-height', mastheadHeight + 'px');
 
 }
 

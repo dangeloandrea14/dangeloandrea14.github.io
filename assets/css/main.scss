@@ -357,7 +357,9 @@ html[data-theme="dark"] .highlight-card .au-seal-dark { display: inline; }
 @media screen and (min-width: 1024px) {
   .sidebar {
     border-right: 1px solid #ddd;
-    padding-right: 1.6rem;
+    /* The column is 2-of-12 of #main; keep the inner gutter tight so the name
+       and affiliation still sit on one line. */
+    padding-right: 0.9rem;
   }
   html[data-theme="dark"] .sidebar {
     border-right-color: #3a3a3a;
