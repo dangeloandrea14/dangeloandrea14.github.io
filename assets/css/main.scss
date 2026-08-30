@@ -441,38 +441,6 @@ html[data-theme="dark"] .sidebar .author__name::after {
   width: 15px;
 }
 
-/* "Connect" divider label with hairlines on each side */
-.sidebar .author__connect {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-size: 0.64rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 1.3rem 0 0.5rem;
-}
-
-.sidebar .author__connect::before,
-.sidebar .author__connect::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #ddd;
-}
-
-html[data-theme="dark"] .sidebar .author__connect::before,
-html[data-theme="dark"] .sidebar .author__connect::after {
-  background: #3a3a3a;
-}
-
-/* On mobile the social links collapse into the "Follow" dropdown, so the
-   "Connect" divider would label nothing — hide it below the sidebar breakpoint. */
-@media screen and (max-width: 1023px) {
-  .sidebar .author__connect { display: none; }
-}
-
 /* link rows */
 .sidebar .author__urls {
   text-align: left;

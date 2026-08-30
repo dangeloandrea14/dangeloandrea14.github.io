@@ -23,8 +23,10 @@ main:
   - title: "Service"
     url: /service/
 
+  # /awards/ is only a jekyll-redirect-from stub for this page; linking it made
+  # the browser paint the unstyled "Redirecting..." interstitial for a frame.
   - title: "Awards"
-    url: /awards/
+    url: /award
         
   - title: "Blog Posts"
     url: /year-archive/

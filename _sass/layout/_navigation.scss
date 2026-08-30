@@ -213,6 +213,14 @@
   .visible-links {
     display: table;
 
+    /* Measurement state toggled by the greedy-nav script: the title is allowed
+       to wrap (see li:first-child below), which would otherwise let the row
+       report a width that fits while a link is actually being squeezed off the
+       masthead. Suppressing the wrap exposes the row's true natural width. */
+    &.measuring li:first-child {
+      text-wrap: nowrap;
+    }
+
     li {
       display: table-cell;
       vertical-align: middle;

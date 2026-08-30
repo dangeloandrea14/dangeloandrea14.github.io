@@ -13,16 +13,27 @@ var $hlinks = $('#site-nav .hidden-links');
 
 var breaks = [];
 
+/* The site title is allowed to wrap on narrow screens, so the link row can
+   report a width that fits while a link is really being squeezed out -- the
+   title just takes a second line instead. Measure with wrapping suppressed so
+   overflow is judged on the row's natural, single-line width. */
+function visibleLinksWidth() {
+  $vlinks.addClass("measuring");
+  var width = $vlinks.width();
+  $vlinks.removeClass("measuring");
+  return width;
+}
+
 function updateNav() {
 
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 
   // The visible list is overflowing the nav
-  if ($vlinks.width() > availableSpace) {
+  if (visibleLinksWidth() > availableSpace) {
 
-    while ($vlinks.width() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
+    while (visibleLinksWidth() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
       // Record the width of the list
-      breaks.push($vlinks.width());
+      breaks.push(visibleLinksWidth());
 
       // Move item to the hidden list
       $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
