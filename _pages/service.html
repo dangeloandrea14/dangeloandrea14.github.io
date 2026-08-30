@@ -7,47 +7,127 @@ author_profile: true
 
 {% include base_path %}
 
-<h2 class="section-kicker">Organization</h2>
+{% comment %}
+=============================================================================
+SERVICE — "The Record"
 
-{% assign organized = site.service | sort: "date" | reverse %}
-{% for post in organized %}
-<div class="archive__item">
-  <h2 class="archive__item-title" style="margin-top: 0.5em;">
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  </h2>
-  <p class="archive__item-excerpt">
-    <strong>{{ post.role }}</strong> &mdash; {{ post.venue }}{% if post.location %}, {{ post.location }}{% endif %}
-  </p>
-</div>
+The page used to render every commitment at the same weight, so a proceedings
+chairship read exactly like a workshop committee seat, and the reviewing
+history was eleven rows of "years / conference" that nobody parses. Two moves
+fix that:
+
+  1. ORGANISING is a weighted list. A year rail down the left, the title in
+     Newsreader, and a chip on the right that names the contribution —
+     "Proceedings Chair" for the two chairships, "Workshop / Tutorial /
+     Session / Event Organization" for the rest, so the chip alone says the
+     event was run, not attended. The chip label is derived: a role naming a
+     Proceedings Chair wins, otherwise it comes from the entry's `type`.
+     Within a year the chairships are listed first — the date alone would
+     bury a proceedings chairship under workshops that fall later that year.
+
+  2. REVIEWING is a matrix, not a list. One row per venue, one column per
+     year in the span, a filled cell where the seat was served — so three
+     years running on the same programme committee reads as a horizontal run.
+     The Distinguished Reviewer cell is gold rather than a parenthesis.
+
+The matrix and the journal list come from _data/service.yml; the organising
+list comes from the _service collection. The year columns are derived from the
+data, so adding a 2028 seat grows the matrix on its own.
+
+Everything here is rendered server-side: there is no JavaScript on this page.
+=============================================================================
+{% endcomment %}
+
+{% assign by_year = site.service | group_by_exp: "s", "s.date | date: '%Y'" | sort: "name" | reverse %}
+
+<!-- ---------- 1. Organising ---------- -->
+<h2 class="section-kicker">Organising</h2>
+
+{% for yg in by_year %}
+  {% assign items = yg.items | sort: "date" | reverse %}
+
+  {%- comment -%}
+    Two passes over the year: the chairships first, then everything else.
+    Sorting on the date alone would bury the WSDM 2026 proceedings chairship
+    under three workshops that happen to fall later in the same year.
+  {%- endcomment -%}
+
+  {% for post in items %}
+    {% if post.role contains "Proceedings Chair" %}
+      {% include service-row.html post=post %}
+    {% endif %}
+  {% endfor %}
+
+  {% for post in items %}
+    {% unless post.role contains "Proceedings Chair" %}
+      {% include service-row.html post=post %}
+    {% endunless %}
+  {% endfor %}
 {% endfor %}
 
 
-<h2 class="section-kicker">Journal Reviews</h2>
+<!-- ---------- 2. Programme committees, as a venue x year matrix ---------- -->
+{% assign committees = site.data.service.committees %}
 
-<table>
-  <thead><tr><th>Year</th><th>Journal</th></tr></thead>
-  <tbody>
-    <tr><td>2026</td><td>Springer Artificial Intelligence Review</td></tr>
-    <tr><td>2026</td><td>Automated Software Engineering (ASE)</td></tr>
-  </tbody>
-</table>
+{%- comment -%}
+  The year columns are derived rather than hard-coded: every `years` entry is
+  appended into one string, split back into a list and sorted, and the first
+  and last become the ends of the column range. Four-digit years sort the same
+  as strings and as numbers, and `| plus: 0` casts them back to integers so
+  the range below is numeric. Add a 2028 seat to _data/service.yml and the
+  matrix grows a column by itself.
+{%- endcomment -%}
+{% assign year_str = "" %}
+{% for c in committees %}{% for y in c.years %}{% assign year_str = year_str | append: y | append: "," %}{% endfor %}{% endfor %}
+{% assign span = year_str | split: "," | sort %}
+{% assign y_first = span | first | plus: 0 %}
+{% assign y_last = span | last | plus: 0 %}
+
+<h2 class="section-kicker">Program committees</h2>
+
+<div class="svc-matrix-scroll">
+  <div class="svc-matrix" style="--svc-years: {{ y_last | minus: y_first | plus: 1 }};">
+    <span class="svc-matrix__head">Venue</span>
+    {% for year in (y_first..y_last) %}
+      <span class="svc-matrix__head">{{ year }}</span>
+    {% endfor %}
+
+    {% for c in committees %}
+      <span class="svc-matrix__venue">
+        {{ c.venue }}{% if c.note %} <small>{{ c.note }}</small>{% endif %}
+      </span>
+      {% for year in (y_first..y_last) %}
+        {%- assign served = false -%}
+        {%- if c.years contains year %}{% assign served = true %}{% endif -%}
+        {%- assign awarded = false -%}
+        {%- if c.award and c.award == year %}{% assign awarded = true %}{% endif -%}
+        <span class="svc-matrix__cell{% if served %} is-served{% endif %}{% if awarded %} is-award{% endif %}"
+              {% if served %}title="{{ c.venue }} {{ year }}{% if awarded %} — Distinguished Reviewer{% endif %}"{% endif %}>
+          <i aria-hidden="true"></i>
+          {%- if served -%}
+            <span class="sr-only">{{ c.venue }} {{ year }}{% if awarded %}, Distinguished Reviewer{% endif %}</span>
+          {%- endif -%}
+        </span>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
+<p class="svc-legend">
+  <span><i class="is-served"></i> Programme committee</span>
+  <span><i class="is-award"></i> Distinguished Reviewer award</span>
+  <span><i></i> Not served</span>
+</p>
 
 
-<h2 class="section-kicker">Program Committee Member</h2>
+<!-- ---------- 3. Journals ---------- -->
+<h2 class="section-kicker">Journal reviewing</h2>
 
-<table>
-  <thead><tr><th>Year</th><th>Conference</th></tr></thead>
-  <tbody>
-    <tr><td>2027</td><td>AAAI</td></tr>
-    <tr><td>2026</td><td>ITADATA</td></tr>
-    <tr><td>2025, 2026</td><td>KDD Datasets &amp; Benchmarks</td></tr>
-    <tr><td>2025, 2026</td><td>ECML-PKDD</td></tr>
-    <tr><td>2025</td><td>WWW</td></tr>
-    <tr><td>2025</td><td>ICPE Data Challenge</td></tr>
-    <tr><td>2024, 2025, 2026</td><td>CIKM &mdash; <strong>Distinguished Reviewer</strong> award in 2024</td></tr>
-    <tr><td>2024, 2026</td><td>LL4MSE Workshop</td></tr>
-    <tr><td>2024</td><td>DELTA Workshop @ KDD 2024</td></tr>
-    <tr><td>2024</td><td>MIDAS Workshop @ ECML-PKDD 2024</td></tr>
-    <tr><td>2023</td><td>BIAS Workshop @ ECIR 2023</td></tr>
-  </tbody>
-</table>
+<div class="svc-journals">
+  {% for j in site.data.service.journals %}
+    <div class="svc-journal">
+      <strong>{{ j.name }}</strong>
+      <span>{{ j.publisher }}{% if j.since %} &middot; since {{ j.since }}{% endif %}</span>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,63 @@
+{% comment %}
+  One row of the Service page's organising list. Rendered twice per year by
+  _pages/service.html — chairships first, then everything else — so the row
+  markup lives in one place.
+
+  The chip names the contribution rather than the event type: a role naming a
+  Proceedings Chair wins and gets the filled accent chip; otherwise the label
+  comes from the entry's `type` and says "… Organization", so the chip alone
+  makes clear the event was run and not merely attended.
+
+  Expects: include.post
+{% endcomment %}
+
+{%- assign post = include.post -%}
+{%- assign today = 'now' | date: "%Y-%m-%d" -%}
+{%- assign posted = post.date | date: "%Y-%m-%d" -%}
+{%- assign year = post.date | date: "%Y" -%}
+
+{%- assign chip_lead = false -%}
+{%- if post.role contains "Proceedings Chair" -%}
+  {%- assign chip = "Proceedings Chair" -%}
+  {%- assign chip_lead = true -%}
+{%- else -%}
+  {%- case post.type -%}
+    {%- when "Workshop" -%}         {%- assign chip = "Workshop Organization" -%}
+    {%- when "Tutorial" -%}         {%- assign chip = "Tutorial Organization" -%}
+    {%- when "Parallel Session" -%} {%- assign chip = "Session Organization" -%}
+    {%- when "Event" -%}            {%- assign chip = "Event Organization" -%}
+    {%- else -%}                    {%- assign chip = post.type -%}
+  {%- endcase -%}
+{%- endif -%}
+
+{%- comment -%}
+  The venue is dropped when the title already names it (a conference is its own
+  venue), and the date is dropped when it would only repeat a year the venue
+  line has already said — "at ECML-PKDD 2026 · 2026" reads as a stutter.
+{%- endcomment -%}
+{%- assign show_venue = true -%}
+{%- if post.title contains post.venue %}{% assign show_venue = false %}{% endif -%}
+
+{%- if post.date_display %}{% assign when = post.date_display %}
+{%- else %}{% assign when = post.date | date: "%B %Y" %}{% endif -%}
+{%- assign show_when = true -%}
+{%- if when == year and show_venue and post.venue contains year %}{% assign show_when = false %}{% endif -%}
+
+<div class="svc-row{% if posted > today %} svc-row--soon{% endif %}">
+  <span class="svc-row__year">{{ year }}</span>
+
+  <div class="svc-row__main">
+    <h3 class="svc-row__title">
+      <a href="{{ post.url | prepend: base_path }}">{{ post.title }}</a>
+    </h3>
+    <p class="svc-row__meta">
+      <strong>{{ post.role }}</strong>
+      {%- if show_venue %}<span class="svc-sep">&middot;</span>at {{ post.venue }}{% endif -%}
+      {%- if post.location and post.location != "TBA" %}<span class="svc-sep">&middot;</span>{{ post.location }}{% endif -%}
+      {%- if show_when %}<span class="svc-sep">&middot;</span>{{ when }}{% endif -%}
+      {%- if post.websiteurl %}<span class="svc-sep">&middot;</span><a href="{{ post.websiteurl }}" target="_blank" rel="noopener">Website &rarr;</a>{% endif -%}
+    </p>
+  </div>
+
+  <span class="svc-chip{% if chip_lead %} svc-chip--lead{% endif %}">{{ chip }}</span>
+</div>

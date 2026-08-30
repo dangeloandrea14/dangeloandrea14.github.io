@@ -1,0 +1,72 @@
+# Reviewing service — the source for the two lower blocks of /service/.
+#
+# The Service page renders `committees` as a venue x year matrix rather than a
+# list of "years / conference" rows: one row per venue, one column per year in
+# the span, a filled cell where the seat was served. Sustained service on a
+# programme committee then reads as a horizontal run instead of a repeated
+# venue name.
+#
+# committees
+#   venue  — the row label
+#   note   — optional smaller text after the venue (the sub-venue, the track)
+#   years  — every year the seat was served; the column range is derived from
+#            the union of these, so adding a 2028 seat grows the matrix by
+#            itself. Keep them as plain integers.
+#   award  — optional year whose cell is marked as an award instead of a
+#            plain seat. Only put an award here if the cell is also in `years`.
+#
+# Order is the reading order on the page: the venues whose committees carry the
+# most weight first, workshops last.
+
+committees:
+  - venue: "AAAI"
+    years: [2027]
+
+  - venue: "CIKM"
+    note: "Distinguished Reviewer 2024"
+    years: [2024, 2025, 2026]
+    award: 2024
+
+  - venue: "ECML-PKDD"
+    years: [2025, 2026]
+
+  - venue: "KDD"
+    note: "Datasets &amp; Benchmarks"
+    years: [2025, 2026]
+
+  - venue: "The Web Conference"
+    note: "WWW"
+    years: [2025]
+
+  - venue: "ITADATA"
+    years: [2026]
+
+  - venue: "ICPE"
+    note: "Data Challenge"
+    years: [2025]
+
+  - venue: "LL4MSE"
+    note: "workshop"
+    years: [2024, 2026]
+
+  - venue: "DELTA"
+    note: "@ KDD"
+    years: [2024]
+
+  - venue: "MIDAS"
+    note: "@ ECML-PKDD"
+    years: [2024]
+
+  - venue: "BIAS"
+    note: "@ ECIR"
+    years: [2023]
+
+# Journals reviewed for. `since` is the first year a manuscript was handled.
+journals:
+  - name: "Artificial Intelligence Review"
+    publisher: "Springer"
+    since: 2026
+
+  - name: "Automated Software Engineering"
+    publisher: "Springer"
+    since: 2026
