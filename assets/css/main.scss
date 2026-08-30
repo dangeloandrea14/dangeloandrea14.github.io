@@ -1859,3 +1859,332 @@ html[data-theme="dark"] .ths-row__detail { border-left-color: #3a3a3a; }
     font-size: 0.9rem;
   }
 }
+
+/* ==========================================================================
+   BLOG — "The Wall"  (see _pages/year-archive.html)
+
+   The other archives are quiet on purpose: Teaching has its institution wall,
+   Theses its status rail, and both are scanned rather than read. The blog is
+   the one page here that is allowed to be loud, so an entry is a poster band
+   — oversized headline, a cover, a ghost numeral cropped by the band edge,
+   sides alternating down the page.
+
+   Hovering inverts a band: a deep blue field sweeps across it, the type goes
+   white and the cover comes up from muted to full colour. That blue is fixed
+   in both themes rather than taken from --accent-left, because the dark
+   theme's accent is a pale blue that white type cannot sit on.
+   ========================================================================== */
+
+:root {
+  --wl-rule:   #e2e2e2;
+  --wl-ink-1:  #0b2f7a;      /* the wipe, dark end   */
+  --wl-ink-2:  #0047ab;      /* the wipe, light end  */
+}
+html[data-theme="dark"] {
+  --wl-rule:   #2c2c2c;
+  --wl-ink-1:  #12315f;
+  --wl-ink-2:  #1d54ad;
+}
+
+/* --- masthead ----------------------------------------------------------- */
+.wl-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 2px solid var(--text-main);
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.wl-head__feed {
+  margin-left: auto;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--accent-left);
+}
+
+/* --- search ------------------------------------------------------------- */
+.wl-search { position: relative; flex: 0 1 260px; display: flex; align-items: center; }
+.wl-search__icon { position: absolute; left: 0.7rem; color: var(--text-muted); pointer-events: none; }
+.wl-search__input {
+  width: 100%;
+  margin: 0;
+  padding: 0.36rem 0.7rem 0.36rem 2.1rem;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--wl-rule);
+  border-radius: 999px;
+  box-shadow: none;
+}
+.wl-search__input::placeholder { color: var(--text-muted); }
+.wl-search__input:focus {
+  outline: none;
+  border-color: var(--wl-ink-2);
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+}
+
+/* --- year marker -------------------------------------------------------- */
+.wl-year {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 1.8rem 0 0.9rem;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.wl-year[hidden] { display: none; }
+.wl-year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--wl-rule);
+}
+.wl-year:first-child { margin-top: 0; }
+
+/* --- the band ----------------------------------------------------------- */
+.wl-band {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 42%) 1fr;
+  gap: 0 2.2rem;
+  align-items: center;
+  padding: 1.8rem;
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--wl-rule);
+  transition: border-color 0.38s ease,
+              transform 0.38s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.wl-band[hidden] { display: none; }
+.wl-band:hover { text-decoration: none; }
+.wl-band--flip .wl-cover { order: 2; }
+.wl-band--flip .wl-body  { order: 1; }
+
+/* the wipe: a colour field that sweeps across on hover */
+.wl-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(115deg, var(--wl-ink-1), var(--wl-ink-2));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.wl-band--flip::before { transform-origin: right center; }
+.wl-band:hover::before,
+.wl-band:focus-visible::before { transform: scaleX(1); }
+.wl-band:hover,
+.wl-band:focus-visible { border-color: transparent; transform: translateY(-3px); }
+.wl-band > * { position: relative; z-index: 1; }
+
+.wl-band:hover .wl-title, .wl-band:focus-visible .wl-title,
+.wl-band:hover .wl-desc,  .wl-band:focus-visible .wl-desc,
+.wl-band:hover .wl-meta,  .wl-band:focus-visible .wl-meta,
+.wl-band:hover .wl-go,    .wl-band:focus-visible .wl-go,
+.wl-band:hover .wl-num,   .wl-band:focus-visible .wl-num { color: #fff; }
+.wl-band:hover .wl-flag,  .wl-band:focus-visible .wl-flag {
+  background: #fff;
+  color: var(--wl-ink-2);
+}
+
+/* --- the ghost numeral -------------------------------------------------- */
+/* It sits at the bottom right of the body, whichever side the body is on:
+   the text there is left-aligned and short, so the corner is free and the
+   numeral is never clipped by the band edge. */
+.wl-ghost {
+  position: absolute;
+  z-index: 0;
+  right: 0;
+  bottom: -0.06em;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.78;
+  color: var(--text-main);
+  opacity: 0.075;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.38s ease, opacity 0.38s ease;
+}
+.wl-band:hover .wl-ghost, .wl-band:focus-visible .wl-ghost { color: #fff; opacity: 0.17; }
+
+/* --- the cover ---------------------------------------------------------- */
+.wl-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--wl-rule);
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.3s ease;
+}
+.wl-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* muted at rest so the wall reads as one piece, full colour on hover */
+  filter: saturate(0.25) contrast(0.95) brightness(1.04);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.4s ease;
+}
+/* a figure on a white ground glares against the dark theme — sit it back */
+html[data-theme="dark"] .wl-cover img { filter: saturate(0.25) contrast(0.95) brightness(0.82); }
+html[data-theme="dark"] .wl-band:hover .wl-cover img,
+html[data-theme="dark"] .wl-band:focus-visible .wl-cover img { filter: brightness(0.94); }
+
+.wl-band:hover .wl-cover, .wl-band:focus-visible .wl-cover {
+  transform: scale(1.025);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.wl-band:hover .wl-cover img, .wl-band:focus-visible .wl-cover img {
+  transform: scale(1.06);
+  filter: none;
+}
+
+/* a post with no figure gets its title, set large, and nothing else */
+.wl-cover--type {
+  display: flex;
+  align-items: flex-end;
+  padding: 1.1rem;
+  background: linear-gradient(150deg, var(--wl-ink-1), var(--wl-ink-2));
+  border-color: transparent;
+}
+.wl-cover__set {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.wl-cover--sm .wl-cover__set { font-size: clamp(1.15rem, 2.9vw, 1.7rem); }
+/* on a hovered band the field would sit blue-on-blue — darken it instead */
+.wl-band:hover .wl-cover--type, .wl-band:focus-visible .wl-cover--type {
+  background: linear-gradient(150deg, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.12));
+  border-color: rgba(255, 255, 255, 0.35);
+}
+/* a fine rule texture, so a flat field is not quite flat */
+.wl-cover__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 4px);
+}
+
+/* --- band body ---------------------------------------------------------- */
+/* the body carries the numeral behind its text */
+.wl-body { position: relative; display: block; }
+.wl-body > *:not(.wl-ghost) { position: relative; z-index: 1; }
+.wl-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+.wl-flag {
+  padding: 0.16rem 0.45rem;
+  background: var(--wl-ink-2);
+  color: #fff;
+  letter-spacing: 1.6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.wl-num { color: var(--accent-left); transition: color 0.3s ease; }
+.wl-dot { width: 3px; height: 3px; background: currentColor; opacity: 0.5; }
+
+.wl-title {
+  display: block;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+.wl-desc {
+  display: block;
+  /* short of the numeral's corner, so the two never collide */
+  max-width: 38ch;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+.wl-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--accent-left);
+  transition: color 0.3s ease;
+}
+.wl-arrow { transition: transform 0.3s ease; }
+.wl-band:hover .wl-arrow, .wl-band:focus-visible .wl-arrow { transform: translateX(6px); }
+
+/* --- reveal on scroll (added by JS, so nothing hides without it) -------- */
+.wl-wall--reveal .wl-band {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+              border-color 0.38s ease;
+}
+.wl-wall--reveal .wl-band.is-in { opacity: 1; transform: none; }
+.wl-wall--reveal .wl-band.is-in:hover { transform: translateY(-3px); }
+
+/* --- empty state -------------------------------------------------------- */
+.wl-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.wl-empty[hidden] { display: none; }
+.wl-empty__rose {
+  @extend %rose-mask;
+  width: 40px;
+  height: 42px;
+  opacity: 0.3;
+}
+
+/* --- responsive --------------------------------------------------------- */
+@media (max-width: 720px) {
+  .wl-band { grid-template-columns: 1fr; gap: 1.1rem; padding: 1.2rem; }
+  .wl-band--flip .wl-cover { order: 1; }
+  .wl-band--flip .wl-body  { order: 2; }
+  .wl-ghost { font-size: 5rem; opacity: 0.06; }
+  .wl-search { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wl-band, .wl-band::before, .wl-cover, .wl-cover img, .wl-arrow { transition: none; }
+  .wl-band:hover, .wl-band:focus-visible { transform: none; }
+}

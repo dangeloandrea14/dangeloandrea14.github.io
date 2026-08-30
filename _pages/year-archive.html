@@ -8,12 +8,198 @@ redirect_from:
 ---
 
 {% include base_path %}
-{% capture written_year %}'None'{% endcapture %}
+
+{% comment %}
+=============================================================================
+BLOG — "The Wall"
+
+Every entry is a poster band: an oversized headline beside a cover, sides
+alternating down the page, a giant ghost numeral cropped by the band edge.
+Hovering one inverts it — a deep blue field sweeps across, the type goes
+white, the cover comes up from muted to full colour and lifts.
+
+COVERS come from the post itself. If the body has a figure, that figure is
+the cover; if it has none, the title is set large on a blue field. A cover is
+allowed to be beautiful for its own sake — it states the title and nothing
+else, so there is nothing to decode.
+
+SEARCH matches titles only — the point is finding the entry you remember,
+not full-text retrieval. It and the scroll-reveal are progressive
+enhancement: with JS off every entry is on the page, fully styled, and the
+reveal never runs.
+
+To give an entry a cover, put a figure in the post — the first one wins.
+=============================================================================
+{% endcomment %}
+
+{% assign n_posts = site.posts | size %}
+
+<div class="wl-head">
+  <div class="wl-search">
+    <svg class="wl-search__icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
+    </svg>
+    <input type="search" id="wl-q" class="wl-search__input" autocomplete="off"
+           placeholder="Search titles&hellip;" aria-label="Search entries by title">
+  </div>
+  <a class="wl-head__feed" href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">RSS</a>
+</div>
+
+<!-- ---------- the wall ---------- -->
+<div class="wl-wall" id="wl-wall">
+{% assign written_year = '' %}
 {% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    {% capture written_year %}{{ year }}{% endcapture %}
+  {% assign year  = post.date | date: '%Y' %}
+  {% assign words = post.content | number_of_words %}
+  {% assign mins  = words | divided_by: 200 | plus: 1 %}
+  {% assign num   = n_posts | minus: forloop.index0 %}
+
+  {%- comment -%}
+    The cover: `header.teaser` in the post's front matter if it names one,
+    otherwise the first figure in the body. Split on the first `<img`, then
+    close the tag at its own `>` before reading src — without that, a later
+    image in the post wins instead of this one.
+  {%- endcomment -%}
+  {% assign cover = '' %}
+  {% if post.content contains '<img' %}
+    {% assign after = post.content | split: '<img' %}
+    {% assign tag   = after[1] | split: '>' | first %}
+    {% if tag contains 'src="' %}
+      {% assign cover = tag | split: 'src="' | last | split: '"' | first %}
+    {% endif %}
   {% endif %}
-  {% include archive-single.html %}
+  {% if cover contains '<' %}{% assign cover = '' %}{% endif %}
+  {% if post.header.teaser %}{% assign cover = post.header.teaser %}{% endif %}
+
+  {% if year != written_year %}
+    {% unless forloop.first %}{% endunless %}
+    <p class="wl-year"><span>{{ year }}</span></p>
+    {% assign written_year = year %}
+  {% endif %}
+
+  <a class="wl-band{% cycle '', ' wl-band--flip' %}"
+     href="{{ base_path }}{{ post.url }}"
+     data-search="{{ post.title | downcase | strip_newlines | escape }}">
+
+    {% if cover != '' %}
+      <span class="wl-cover">
+        <img src="{% unless cover contains '://' %}{{ base_path }}{% endunless %}{{ cover }}" alt="" loading="lazy">
+        <span class="wl-cover__grain" aria-hidden="true"></span>
+      </span>
+    {% else %}
+      <span class="wl-cover wl-cover--type{% if post.title.size > 34 %} wl-cover--sm{% endif %}">
+        <span class="wl-cover__set">{{ post.title }}</span>
+        <span class="wl-cover__grain" aria-hidden="true"></span>
+      </span>
+    {% endif %}
+
+    <span class="wl-body">
+      {%- comment -%}
+        The numeral sits inside the body, bottom right: the body's text is
+        left-aligned and short, so that corner is always free — and the
+        numeral is never clipped by the band edge.
+      {%- endcomment -%}
+      <span class="wl-ghost" aria-hidden="true">{% if num < 10 %}0{% endif %}{{ num }}</span>
+
+      <span class="wl-meta">
+        {% if forloop.first %}<span class="wl-flag">Latest</span>{% endif %}
+        <span class="wl-num">&#8470;&nbsp;{% if num < 10 %}0{% endif %}{{ num }}</span>
+        <span class="wl-dot" aria-hidden="true"></span>{{ post.date | date: "%-d %b %Y" }}
+        <span class="wl-dot" aria-hidden="true"></span>{{ mins }} min read
+      </span>
+
+      <span class="wl-title">{{ post.title }}</span>
+
+      {% if post.description %}
+        <span class="wl-desc">{{ post.description }}</span>
+      {% elsif post.excerpt %}
+        <span class="wl-desc">{{ post.excerpt | strip_html | truncate: 170 }}</span>
+      {% endif %}
+
+      <span class="wl-go">Read the entry <span class="wl-arrow" aria-hidden="true">&rarr;</span></span>
+    </span>
+  </a>
 {% endfor %}
+</div>
+
+<p class="wl-empty" id="wl-empty" hidden>
+  <span class="wl-empty__rose" aria-hidden="true"></span>
+  Nothing here matches that search.
+</p>
+
+<noscript>
+  <style>
+    .wl-search { display: none; }       /* nothing can search without JS */
+    .wl-band { opacity: 1; transform: none; }   /* never wait for a reveal */
+  </style>
+</noscript>
+
+<script>
+/* Search over the wall, and a reveal as bands come into view. Titles only —
+   everything is rendered server-side, so this just hides and shows. */
+(function () {
+  var wall = document.getElementById('wl-wall');
+  if (!wall) { return; }
+
+  var bands = Array.prototype.slice.call(wall.querySelectorAll('.wl-band'));
+  var years = Array.prototype.slice.call(wall.querySelectorAll('.wl-year'));
+  var input = document.getElementById('wl-q');
+  var empty = document.getElementById('wl-empty');
+
+  function apply() {
+    var q = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+
+    bands.forEach(function (b) {
+      var on = !q || b.getAttribute('data-search').indexOf(q) !== -1;
+      b.hidden = !on;
+      if (on) { shown++; }
+    });
+
+    /* a year marker with nothing left under it goes too */
+    years.forEach(function (y) {
+      var any = false, el = y.nextElementSibling;
+      while (el && !el.classList.contains('wl-year')) {
+        if (el.classList.contains('wl-band') && !el.hidden) { any = true; break; }
+        el = el.nextElementSibling;
+      }
+      y.hidden = !any;
+    });
+
+    /* the sides alternate over what is visible, not over what was printed */
+    var i = 0;
+    bands.forEach(function (b) {
+      if (b.hidden) { return; }
+      b.classList.toggle('wl-band--flip', i % 2 === 1);
+      i++;
+    });
+
+    empty.hidden = shown !== 0;
+  }
+
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { input.value = ''; apply(); }
+  });
+
+  apply();
+
+  /* --- reveal on scroll ------------------------------------------------- */
+  var still = window.matchMedia &&
+              window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still || !('IntersectionObserver' in window)) {
+    bands.forEach(function (b) { b.classList.add('is-in'); });
+    return;
+  }
+  wall.classList.add('wl-wall--reveal');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) { return; }
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  bands.forEach(function (b) { io.observe(b); });
+})();
+</script>

@@ -4,6 +4,8 @@ description: 'Introduction to Machine Unlearning in trustworthy AI. Machine Unle
 date: 2025-10-25
 permalink: /posts/2025/10/what_is_mu/
 mathjax: true
+header:
+  teaser: /images/posts/MU_Workflow_new.png
 tags:
   - Machine Unlearning
   - Trustworthy AI
