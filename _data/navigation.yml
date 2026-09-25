@@ -28,9 +28,6 @@ main:
   - title: "Awards"
     url: /award
         
-  - title: "Blog Posts"
-    url: /year-archive/
-    
   - title: "CV"
     url: /files/Academic_CV.pdf
     
