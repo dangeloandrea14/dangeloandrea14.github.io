@@ -559,6 +559,7 @@ a {
 .talks-header-invited  { border-left-color: #0047ab; }
 .talks-header-paper    { border-left-color: #b5651d; }
 .talks-header-tutorial { border-left-color: #2a7f7f; }
+.talks-header-outreach { border-left-color: #6b5b95; }
 .talk-badge-invited   { background-color: #0047ab; }
 .talk-badge-paper     { background-color: #b5651d; }
 .theses-header-available { border-left-color: #2a7f7f; }
@@ -878,6 +879,7 @@ a.talkmap-popup__title:hover { color: var(--link-hover); }
 .talkmap-tag--invited  { background: #0047ab; }
 .talkmap-tag--paper    { background: #b5651d; }
 .talkmap-tag--tutorial { background: #2a7f7f; }
+.talkmap-tag--outreach { background: #6b5b95; }
 .talkmap-tag--talk     { background: #555; }
 
 /* Leaflet attribution/controls — quieten to match the palette */

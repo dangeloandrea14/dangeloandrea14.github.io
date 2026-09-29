@@ -107,7 +107,7 @@ window.TALK_MARKERS = [
     });
   }
 
-  var TYPE_LABEL = { invited: 'Invited', paper: 'Paper', tutorial: 'Tutorial', talk: 'Talk' };
+  var TYPE_LABEL = { invited: 'Invited', paper: 'Paper', tutorial: 'Tutorial', outreach: 'Outreach', talk: 'Talk' };
 
   function popupHtml(m) {
     var head = '<span class="talkmap-popup__city">' + esc(m.city) + '</span>';
@@ -225,5 +225,19 @@ window.TALK_MARKERS = [
     {% endfor %}
   {% else %}
     <p><em>No tutorials listed yet.</em></p>
+  {% endif %}
+</div>
+
+<div class="teaching-section">
+  <div class="teaching-uni-header talks-header-outreach">
+    <span class="teaching-uni-name">🏫 Outreach</span>
+  </div>
+  {% assign outreach_talks = site.talks | where: "talktype", "outreach" | sort: "date" | reverse %}
+  {% if outreach_talks.size > 0 %}
+    {% for post in outreach_talks %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% else %}
+    <p><em>No outreach talks listed yet.</em></p>
   {% endif %}
 </div>

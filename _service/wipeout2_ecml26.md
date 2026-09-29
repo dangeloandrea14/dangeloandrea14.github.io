@@ -6,9 +6,8 @@ permalink: /service/wipeout2_ecml26
 role: "Co-Organizer"
 eventtype: workshop
 venue: "ECML-PKDD 2026"
-date: 2026-09-01
-location: "TBA"
-date_display: "2026"   # ECML-PKDD 2026 dates are not fixed yet
+date: 2026-09-07
+location: "Naples, Italy"
 websiteurl: "https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation.html"
 ---
 

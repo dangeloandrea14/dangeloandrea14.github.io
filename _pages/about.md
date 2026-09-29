@@ -28,7 +28,8 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 
 | Year | Achievement |
 |------|--------------|
-| 2026 | 📘 Published at **EMNLP 2026 Findings** |
+| 2026 | 📘 Accepted at **NeurIPS 2026** |
+| 2026 | 📘 Accepted at **EMNLP 2026 Findings** |
 |2026 | 🏅 Awarded a **DDSA Postdoc** grant on *Robust Graph Unlearning* (Danish Data Science Academy) |
 | 2026 | 📘 Published in **Springer's Machine Learning Journal**, ECML-PKDD 2026 Journal track |
 |2026 | 🏅 Won a Postdoc position at **University of Aarhus** |
@@ -43,17 +44,27 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
 
   <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
-    <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" style="flex-shrink: 0;">
-      <img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="height:70px; width:auto;">
+    <a href="https://github.com/dangeloandrea14/Lethe" target="_blank" style="flex-shrink: 0;">
+      <img src="images/Lethe_logo.png" alt="Lethe" style="width:150px; height:70px; object-fit:contain; display:block;">
     </a>
     <div>
-      <strong>WIPE-OUT 2</strong> — Workshop on Machine Unlearning and Privacy Preservation, <span style="font-size: 0.92em;">To be held at <strong>ECML-PKDD 2026</strong>. <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank">View Website →</a> </span>
+      <strong>Lethe</strong> — Benchmark for Edge Unlearning in Graph Neural Networks<br>
+      <span style="font-size: 0.92em;">Link inference attacks for evaluating edge unlearning methods. Accepted at <strong>NeurIPS 2026</strong>. <a href="https://github.com/dangeloandrea14/Lethe" target="_blank">View on GitHub →</a></span>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
+    <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" style="flex-shrink: 0;">
+      <img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="width:150px; height:70px; object-fit:contain; display:block;">
+    </a>
+    <div>
+      <strong>WIPE-OUT 2</strong> — Workshop on Machine Unlearning and Privacy Preservation, <span style="font-size: 0.92em;">Held at <strong>ECML-PKDD 2026</strong>, Naples. <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank">View Website →</a> </span>
     </div> 
   </div>
 
   <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
     <a href="https://github.com/aiim-research/ERASURE" target="_blank" style="flex-shrink: 0;">
-      <img src="images/ERASURE_LOGO.png" alt="ERASURE" style="height:70px; width:auto;">
+      <img src="images/ERASURE_LOGO.png" alt="ERASURE" style="width:150px; height:70px; object-fit:contain; display:block;">
     </a>
     <div>
       <strong>ERASURE</strong> — Extendible Machine Unlearning Framework<br>

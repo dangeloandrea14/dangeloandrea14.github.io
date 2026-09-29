@@ -1,5 +1,5 @@
 ---
-title: "HybridKAN: Leveraging Multi-Sized Sub-MLPs for Enhanced Performances"
+title: "HybridKAN: Leveraging Multi-Sized Sub-MLPs for Enhanced Performance"
 collection: theses
 type: "Theses"
 permalink: /theses/hybridkan

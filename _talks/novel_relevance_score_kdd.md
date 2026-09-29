@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /talks/kdd_relevance_score
 venue: "KDD 2024"
-date: 2024-07-01
+date: 2024-08-25
 talktype: paper
 location: "Barcelona, Spain"
 slidesurl: "/files/talks/kdd_novel_score.pdf"

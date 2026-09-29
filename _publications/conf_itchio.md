@@ -1,5 +1,5 @@
 ---
-title: "On the Need for Reproducibility Guidelines for Open-Source Games: A itch. io Case Study"
+title: "On the Need for Reproducibility Guidelines for Open-Source Games: A itch.io Case Study"
 collection: publications
 category: conferences
 permalink: /publication/itchio

@@ -38,24 +38,12 @@ open instead of closed (see the <noscript> rule below).
 {% assign available = site.theses | where: "availability", "available" | sort: "title" %}
 {% assign completed = site.theses | where: "availability", "complete" | sort: "date" | reverse %}
 
-<!-- ---------- 1. The record at a glance ---------- -->
-<div class="ths-summary">
-  <div class="ths-stat ths-stat--open">
-    <span class="ths-stat__n">{{ available.size }}</span>
-    <span class="ths-stat__l">Available now</span>
-  </div>
-  <div class="ths-stat">
-    <span class="ths-stat__n">{{ completed.size }}</span>
-    <span class="ths-stat__l">Completed</span>
-  </div>
-</div>
-
 <p class="ths-intro">
   Send an email to <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
   if you are interested in one of the available theses.
 </p>
 
-<!-- ---------- 2. Filter + search ---------- -->
+<!-- ---------- 1. Filter + search ---------- -->
 <div class="ths-bar">
   <div class="ths-seg" role="group" aria-label="Filter theses by status">
     <button type="button" class="ths-seg__btn is-on"
@@ -78,7 +66,7 @@ open instead of closed (see the <noscript> rule below).
   <span class="ths-count" id="ths-count" aria-live="polite">{{ site.theses | size }} theses</span>
 </div>
 
-<!-- ---------- 3. The register ---------- -->
+<!-- ---------- 2. The register ---------- -->
 <div class="ths-table" id="ths-table" data-view="all">
 
   <div class="ths-head" aria-hidden="true">
