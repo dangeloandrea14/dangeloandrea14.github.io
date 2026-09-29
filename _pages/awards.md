@@ -10,9 +10,14 @@ redirect_from:
 | Year | Award |
 |------|--------|
 | 2026 | DDSA Postdoc Grant — *Robust Graph Unlearning* (1,365,000 DKK / ~€183,000, 2 years, Aarhus University) |
-| 2025 | Awarded ERASMUS Traineeship Grant for European mobility |
-| 2024 | CIKM 2024 Distinguished Reviewer Award |
 | 2024 | EUGAIN Virtual Mobility Grant |
+
+## Other Grants & Recognitions
+
+| Year | Award |
+|------|--------|
+| 2025 | ERASMUS Traineeship Grant for European mobility |
+| 2024 | CIKM 2024 Distinguished Reviewer Award |
 | 2024 | KDD 2024 Mobility Grant |
 | 2024 | ICPE 2024 Best Short Paper |
 | 2022 | Publicly-funded Ph.D. Scholarship, University of L'Aquila |
