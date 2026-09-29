@@ -41,34 +41,35 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 
 <h2 class="section-kicker">Projects</h2>
 
-<div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem;">
+<div class="proj-list">
 
-  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
-    <a href="https://github.com/dangeloandrea14/Lethe" target="_blank" style="flex-shrink: 0;">
-      <img src="images/Lethe_logo.png" alt="Lethe" style="width:150px; height:70px; object-fit:contain; display:block;">
-    </a>
-    <div>
-      <strong>Lethe</strong> — Benchmark for Edge Unlearning in Graph Neural Networks<br>
-      <span style="font-size: 0.92em;">Link inference attacks for evaluating edge unlearning methods. Accepted at <strong>NeurIPS 2026</strong>. <a href="https://github.com/dangeloandrea14/Lethe" target="_blank">View on GitHub →</a></span>
+  <div class="proj-card">
+    <a class="proj-card__logo" href="https://github.com/dangeloandrea14/Lethe" target="_blank" rel="noopener"><img src="images/Lethe_logo.png" alt="Lethe"></a>
+    <div class="proj-card__body">
+      <span class="proj-card__name">Lethe</span>
+      <span class="proj-card__tag">Benchmark for Edge Unlearning in Graph Neural Networks</span>
+      <span class="proj-card__desc">Link inference attacks for evaluating edge unlearning methods. Accepted at <strong>NeurIPS 2026</strong>.</span>
+      <a class="proj-card__cta" href="https://github.com/dangeloandrea14/Lethe" target="_blank" rel="noopener">View on GitHub <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 
-  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
-    <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" style="flex-shrink: 0;">
-      <img src="images/WIPE-OUT.png" alt="WIPE-OUT" style="width:150px; height:70px; object-fit:contain; display:block;">
-    </a>
-    <div>
-      <strong>WIPE-OUT 2</strong> — Workshop on Machine Unlearning and Privacy Preservation, <span style="font-size: 0.92em;">Held at <strong>ECML-PKDD 2026</strong>, Naples. <a href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank">View Website →</a> </span>
-    </div> 
+  <div class="proj-card">
+    <a class="proj-card__logo" href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" rel="noopener"><img src="images/WIPE-OUT.png" alt="WIPE-OUT"></a>
+    <div class="proj-card__body">
+      <span class="proj-card__name">WIPE-OUT 2</span>
+      <span class="proj-card__tag">Workshop on Machine Unlearning and Privacy Preservation</span>
+      <span class="proj-card__desc">Held at <strong>ECML-PKDD 2026</strong>, Naples.</span>
+      <a class="proj-card__cta" href="https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation" target="_blank" rel="noopener">Workshop website <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
   </div>
 
-  <div style="display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 1.2rem; border: 1px solid #ddd; border-radius: 0;">
-    <a href="https://github.com/aiim-research/ERASURE" target="_blank" style="flex-shrink: 0;">
-      <img src="images/ERASURE_LOGO.png" alt="ERASURE" style="width:150px; height:70px; object-fit:contain; display:block;">
-    </a>
-    <div>
-      <strong>ERASURE</strong> — Extendible Machine Unlearning Framework<br>
-      <span style="font-size: 0.92em;">An open-source framework for Machine Unlearning research. <a href="https://github.com/aiim-research/ERASURE" target="_blank">View on GitHub →</a></span>
+  <div class="proj-card">
+    <a class="proj-card__logo" href="https://github.com/aiim-research/ERASURE" target="_blank" rel="noopener"><img src="images/ERASURE_LOGO.png" alt="ERASURE"></a>
+    <div class="proj-card__body">
+      <span class="proj-card__name">ERASURE</span>
+      <span class="proj-card__tag">Extendible Machine Unlearning Framework</span>
+      <span class="proj-card__desc">An open-source framework for Machine Unlearning research.</span>
+      <a class="proj-card__cta" href="https://github.com/aiim-research/ERASURE" target="_blank" rel="noopener">View on GitHub <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 
