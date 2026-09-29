@@ -3,7 +3,7 @@ title: "Echocardiographic Epicardial Adipose Tissue Quantification: Challenges a
 collection: talks
 type: "Talk"
 permalink: /talks/perfail
-venue: "Perfail @ Percom 2024"
+venue: "PerFail @ PerCom 2024"
 date: 2024-03-11
 talktype: paper
 location: "Biarritz, France"
