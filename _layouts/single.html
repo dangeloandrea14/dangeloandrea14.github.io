@@ -38,7 +38,7 @@ layout: default
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.venue and page.date %}
           {% if page.authors %}
-            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0.2rem 0;">{{ page.authors }}</p>
+            <p style="font-size: 0.9em; color: var(--text-muted); margin: 0.2rem 0;">{{ page.authors | replace: "Andrea D'Angelo", "<strong>Andrea D'Angelo</strong>" }}</p>
           {% endif %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
