@@ -142,9 +142,7 @@ a:hover {
 /* ==========================================================
    SMALL BADGES
    ========================================================== */
-.pub-index,
-.pub-quartile,
-.pub-tier {
+.pub-index {
   display: inline-block;
   border-radius: 4px;
   padding: 2px 6px;
@@ -158,14 +156,6 @@ a:hover {
   color: #333;
   font-size: 0.8em;
 }
-.pub-quartile.q1 { background-color: #2ecc71; }
-.pub-quartile.q2 { background-color: #f1c40f; }
-.pub-quartile.q3 { background-color: #e67e22; }
-.pub-quartile.q4 { background-color: #e74c3c; }
-.pub-tier.a { background-color: #2ecc71; }
-.pub-tier.astar { background-color: #1abc9c; }
-.pub-tier.b { background-color: #f1c40f; }
-.pub-tier.workshop { background-color: #95a5a6; }
 
 /* ==========================================================
    TYPOGRAPHY (for academic look)

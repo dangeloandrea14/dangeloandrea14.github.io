@@ -80,8 +80,6 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 {% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
 {% for post in selected_pubs %}
 <div style="margin-bottom: 0.6rem;">
-  {% if post.tier %}<span class="pub-tier {{ post.tier | replace: '*','star' | downcase }}">{{ post.tier }}</span>{% endif %}
-  {% if post.quartile %}<span class="pub-quartile {{ post.quartile | downcase }}">{{ post.quartile }}</span>{% endif %}
   <a href="{{ post.paperurl | default: post.url }}">{{ post.title }}</a><br>
   <span style="font-size: 0.85em; color: var(--text-muted);">{{ post.venue }} &middot; <strong>{{ post.date | date: "%Y" }}</strong></span>
 </div>

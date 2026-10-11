@@ -34,12 +34,6 @@
       {% if post.index %}
         <span class="pub-index">{{ post.index }}</span>
       {% endif %}
-      {% if post.quartile %}
-        <span class="pub-quartile {{ post.quartile | downcase }}">{{ post.quartile }}</span>
-      {% endif %}
-      {% if post.tier %}
-        <span class="pub-tier {{ post.tier | replace: '*','star' | downcase }}">{{ post.tier }}</span>
-      {% endif %}
     {% endif %}
 
 
