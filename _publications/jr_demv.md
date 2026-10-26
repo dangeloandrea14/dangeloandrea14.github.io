@@ -1,5 +1,5 @@
 ---
-title: "Debiaser for Multiple Variables to enhance fairness in classification tasks"
+title: "Debiaser for Multiple Variables to Enhance Fairness in Classification Tasks"
 collection: publications
 category: manuscripts
 permalink: /publication/demv

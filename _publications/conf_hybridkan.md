@@ -4,7 +4,7 @@ collection: publications
 category: conferences
 permalink: /publication/hybridkan
 date: 2025-09-01
-venue: 'ITADATA (Italian Conference on Big Data and Data Science) 2025'
+venue: 'ITADATA 2025 (Italian Conference on Big Data and Data Science)'
 paperurl: 'https://ceur-ws.org/Vol-4152/paper60.pdf'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/conf/hybridkan.bib'
 authors: "Fabio D'Andreamatteo, Andrea D'Angelo, Giovanni Stilo"

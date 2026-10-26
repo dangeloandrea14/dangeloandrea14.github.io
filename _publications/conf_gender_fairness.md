@@ -1,5 +1,5 @@
 ---
-title: "Data-driven analysis of gender fairness in the software engineering academic landscape"
+title: "Data-Driven Analysis of Gender Fairness in the Software Engineering Academic Landscape"
 collection: publications
 category: conferences
 permalink: /publication/ecsa_gender_fairness

@@ -6,6 +6,6 @@ permalink: /talks/territoriaperti
 venue: "Territori Aperti"
 date: 2024-01-01
 talktype: invited
-location: "Napoli, Italy"
+location: "Naples, Italy"
 slidesurl: "/files/talks/TA2024.pdf"
 ---

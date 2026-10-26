@@ -1,5 +1,5 @@
 ---
-title: "WIPE-OUT 2025: Workshop on Machine Unlearning"
+title: "WIPE-OUT 2025: Workshop on Innovations, Privacy-preservation, and Evaluations of machine Unlearning Techniques"
 collection: service
 type: "Workshop"
 permalink: /service/wipeout_ecml25

@@ -1,5 +1,5 @@
 ---
-title: "Exploiting spatial relations for grammar-based specification of multidimensional languages"
+title: "Exploiting Spatial Relations for Grammar-Based Specification of Multidimensional Languages"
 collection: publications
 category: manuscripts
 permalink: /publication/grammar

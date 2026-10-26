@@ -1,5 +1,5 @@
 ---
-title: "Grammar-based anomaly detection of microservice systems execution traces"
+title: "Grammar-Based Anomaly Detection of Microservice Systems Execution Traces"
 collection: publications
 category: conferences
 permalink: /publication/grammar_execution

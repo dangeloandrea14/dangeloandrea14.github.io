@@ -1,9 +1,9 @@
 ---
-title: "Big data management: data mining and analysis for management decisions"
+title: "Big Data Management: Data Mining and Analysis for Management Decisions"
 collection: teaching
 type: "Master's course"
 permalink: /teaching/BigData26_Luiss
-venue: "LUISS University of Rome, Master in AI"
+venue: "LUISS Guido Carli University, Master in AI"
 date: 2026-02-01
 location: "Rome, Italy"
 university_key: luiss

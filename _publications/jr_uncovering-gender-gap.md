@@ -1,5 +1,5 @@
 ---
-title: "Uncovering gender gap in academia: A comprehensive analysis within the software engineering community"
+title: "Uncovering Gender Gap in Academia: A Comprehensive Analysis within the Software Engineering Community"
 collection: publications
 category: manuscripts
 permalink: /publication/uncovering_gender_gap

@@ -1,5 +1,5 @@
 ---
-title: "Unraveling Graph Counterfactual Explainability: from Theoretical Foundations to Technical Mastery"
+title: "Unraveling Graph Counterfactual Explainability: From Theoretical Foundations to Technical Mastery"
 collection: talks
 type: "Talk"
 permalink: /talks/tutorial_graph_counterfactual

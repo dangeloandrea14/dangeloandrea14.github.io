@@ -3,7 +3,7 @@ title: "Privacy Preservation for Machine Learning"
 collection: teaching
 type: "Summer school lecture"
 permalink: /teaching/PrivacyML26_Engage
-venue: "Engage.EU Summer School, LUISS University of Rome"
+venue: "Engage.EU Summer School, LUISS Guido Carli University"
 date: 2026-07-16
 location: "Rome, Italy"
 university_key: luiss

@@ -9,7 +9,8 @@ redirect_from:
 
 | Year | Award |
 |------|--------|
-| 2026 | DDSA Postdoc Grant — *Robust Graph Unlearning* (1,365,000 DKK / ~€183,000, 2 years, Aarhus University) |
+| 2026 | DAAD AInet Fellowship — Postdoc-NeT-AI Virtual Networking Week on *Reliable AI* (incl. funded networking visit to Germany) |
+| 2026 | DDSA Postdoctoral Fellowship — *Robust Graph Unlearning* (1,365,000 DKK / ~€183,000, 2 years, Aarhus University) |
 | 2024 | EUGAIN Virtual Mobility Grant |
 
 ## Other Grants & Recognitions

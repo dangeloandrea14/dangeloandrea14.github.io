@@ -8,7 +8,7 @@ eventtype: conference
 venue: "WSDM 2026"
 date: 2025-12-31
 date_display: "February 2026"   # event was 22-26 Feb 2026; date files the chairship under 2025, the year the service was done (as in the CV)
-location: "Boise, Idaho, USA"
+location: "Boise, USA"
 ---
 
 **Role:** Proceedings Chair

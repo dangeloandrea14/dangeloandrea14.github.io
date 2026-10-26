@@ -3,7 +3,7 @@ title: "Trustworthy AI and the Right to be Forgotten: The Role of Machine Unlear
 collection: talks
 type: "Talk"
 permalink: /talks/luiss_trustworthy_ai
-venue: "LUISS Guido Carli"
+venue: "LUISS Guido Carli University"
 date: 2026-07-15
 talktype: invited
 location: "Rome, Italy"

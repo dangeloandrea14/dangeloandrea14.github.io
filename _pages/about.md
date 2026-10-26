@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Hello!"
-description: "Andrea D'Angelo — DDSA Postdoc at Aarhus University working on Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten. Creator of the ERASURE framework. Published at IJCAI, CIKM, Springer Machine Learning."
+description: "Andrea D'Angelo — DDSA Postdoctoral Fellow at Aarhus University working on Machine Unlearning, Trustworthy AI, and GDPR right to be forgotten. Creator of the ERASURE framework. Published at IJCAI, CIKM, Springer Machine Learning."
 keywords: "Andrea D'Angelo, Andrea D Angelo, machine unlearning, trustworthy AI, GDPR right to be forgotten, privacy-preserving machine learning, ERASURE framework, Aarhus University"
 author_profile: true
 redirect_from: 
@@ -13,7 +13,7 @@ redirect_from:
   <div class="main-bio" markdown="1">
 
 <div style="line-height: 1.8; font-size: 1.05em;">
-I’m a <strong>DDSA Postdoc</strong> at <a href="https://cs.au.dk/">Aarhus University</a> 🇩🇰, working on <strong>Robust Graph Unlearning</strong>.
+I’m a <strong>DDSA Postdoctoral Fellow</strong> at <a href="https://cs.au.dk/">Aarhus University</a> 🇩🇰, working on <strong>Robust Graph Unlearning</strong>.
 <br><br>
 My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and <strong>Machine Unlearning</strong>. I have published papers at EMNLP, IJCAI, CIKM, and Springer’s Machine Learning, among others.
 </div>
@@ -30,14 +30,15 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 |------|--------------|
 | 2026 | 📘 Accepted at **NeurIPS 2026** |
 | 2026 | 📘 Accepted at **EMNLP 2026 Findings** |
-|2026 | 🏅 Awarded a **DDSA Postdoc** grant on *Robust Graph Unlearning* (Danish Data Science Academy) |
+| 2026 | 🏅 Selected as a **DAAD AInet Fellow** — Postdoc-NeT-AI on *Reliable AI* |
+|2026 | 🏅 Awarded a **DDSA Postdoctoral Fellowship** on *Robust Graph Unlearning* (Danish Data Science Academy) |
 | 2026 | 📘 Published in **Springer's Machine Learning Journal**, ECML-PKDD 2026 Journal track |
-|2026 | 🏅 Won a Postdoc position at **University of Aarhus** |
-| 2026 | 🎓 Defended my Ph.D. **cum Laude** with **Doctor Europaeus** distinction! |
+|2026 | 🏅 Won a Postdoc position at **Aarhus University** |
+| 2026 | 🎓 Defended my Ph.D. **cum laude** with **Doctor Europaeus** distinction! |
 | 2025 | 📘 Published in **Springer's Machine Learning Journal** |
 | 2025 | 👥 Hosted WIPE-OUT, a Workshop on *Machine Unlearning* at **ECML-PKDD 2025** |
 | 2025 | 📘 Published at **IJCAI 2025 Demo**, **CIKM 2025** |
-| 2025 | 🌍 Visiting Ph.D. — **University of Aarhus**, Denmark |
+| 2025 | 🌍 Visiting Ph.D. — **Aarhus University**, Denmark |
 
 <h2 class="section-kicker">Projects</h2>
 

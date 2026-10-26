@@ -1,5 +1,5 @@
 ---
-title: "PlayMyData: a curated dataset of multi-platform video games"
+title: "PlayMyData: A Curated Dataset of Multi-Platform Video Games"
 collection: publications
 category: conferences
 permalink: /publication/playmydata

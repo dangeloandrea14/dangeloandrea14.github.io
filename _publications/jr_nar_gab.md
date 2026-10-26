@@ -1,5 +1,5 @@
 ---
-title: "A method to comprehensively identify germline SNVs, INDELs and CNVs from whole exome sequencing data of BRCA1/2 negative breast cancer patients"
+title: "A Method to Comprehensively Identify Germline SNVs, INDELs and CNVs from Whole Exome Sequencing Data of BRCA1/2 Negative Breast Cancer Patients"
 collection: publications
 category: manuscripts
 permalink: /publication/nar-gab

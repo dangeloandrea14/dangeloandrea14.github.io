@@ -1,5 +1,5 @@
 ---
-title: "The Forget-set Identification Problem"
+title: "The Forget-Set Identification Problem"
 collection: publications
 category: manuscripts
 permalink: /publication/the-forget-set-identification-problem

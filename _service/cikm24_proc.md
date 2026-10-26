@@ -7,7 +7,7 @@ role: "Proceedings Chair"
 eventtype: conference
 venue: "CIKM 2024"
 date: 2024-10-21
-location: "Boise, Idaho, USA"
+location: "Boise, USA"
 ---
 
 **Role:** Proceedings Chair

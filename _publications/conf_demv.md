@@ -1,5 +1,5 @@
 ---
-title: "Enhancing fairness in classification tasks with multiple variables: a data-and model-agnostic approach"
+title: "Enhancing Fairness in Classification Tasks with Multiple Variables: A Data- and Model-Agnostic Approach"
 collection: publications
 category: conferences
 permalink: /publication/demv_conf

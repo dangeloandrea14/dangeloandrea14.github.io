@@ -1,5 +1,5 @@
 ---
-title: "ERASURE: a Modular and Extensible Framework for Machine Unlearning"
+title: "ERASURE: A Modular and Extensible Framework for Machine Unlearning"
 collection: publications
 category: conferences
 permalink: /publication/erasure_cikm
