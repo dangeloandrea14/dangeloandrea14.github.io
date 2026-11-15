@@ -28,6 +28,7 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
 
 | Year | Achievement |
 |------|--------------|
+| 2026 | 📘 Published in **Elsevier's Applied Soft Computing** |
 | 2026 | 📘 Accepted at **NeurIPS 2026** |
 | 2026 | 📘 Accepted at **EMNLP 2026 Findings** |
 | 2026 | 🏅 Selected as a **DAAD AInet Fellow** — Postdoc-NeT-AI on *Reliable AI* |
