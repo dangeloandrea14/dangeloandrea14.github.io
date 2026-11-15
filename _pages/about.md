@@ -15,7 +15,7 @@ redirect_from:
 <div style="line-height: 1.8; font-size: 1.05em;">
 I’m a <strong>DDSA Postdoctoral Fellow</strong> at <a href="https://cs.au.dk/">Aarhus University</a> 🇩🇰, working on <strong>Robust Graph Unlearning</strong>.
 <br><br>
-My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and <strong>Machine Unlearning</strong>. I have published papers at EMNLP, IJCAI, CIKM, and Springer’s Machine Learning, among others.
+My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and <strong>Machine Unlearning</strong>. I have published papers at NeurIPS, EMNLP, and Springer’s Machine Learning, among others.
 </div>
 
 <div class="highlight-card-wrap">
