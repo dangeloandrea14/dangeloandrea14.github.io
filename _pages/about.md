@@ -75,14 +75,3 @@ My research focuses on <strong>Privacy-Preserving Machine Learning</strong> and 
   </div>
 
 </div>
-
-<h2 class="section-kicker">Selected Publications</h2>
-
-{% assign selected_pubs = site.publications | where: "selected", true | sort: "date" | reverse %}
-{% for post in selected_pubs %}
-<div style="margin-bottom: 0.6rem;">
-  <a href="{{ post.paperurl | default: post.url }}">{{ post.title }}</a><br>
-  <span style="font-size: 0.85em; color: var(--text-muted);">{{ post.venue }} &middot; <strong>{{ post.date | date: "%Y" }}</strong></span>
-</div>
-{% endfor %}
-<p style="font-size: 0.85em;"><a href="/publications/">View all publications →</a></p>
