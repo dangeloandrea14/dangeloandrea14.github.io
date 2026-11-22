@@ -2489,3 +2489,295 @@ html[data-theme="dark"] .svc-matrix > * { border-bottom-color: #3a3a3a; }
     margin-top: 0.4rem;
   }
 }
+
+/* ==========================================================================
+   PUBLICATIONS — "Folio"  (see _pages/publications.html,
+   _includes/pub-entry.html, _layouts/publication.html)
+
+   The list groups papers by year; posters get their own section after the
+   last year. Each entry: a text venue tag on the left, then title, short
+   author list and small square toggles (Abs / Bib / Paper / Code / Page)
+   that unfold the abstract or BibTeX in place. The paper page puts the
+   facts in a side rail and the abstract and citation in the main column.
+   ========================================================================== */
+
+$pub-hair-soft:      #ececec;
+$pub-hair-soft-dark: #404040;
+$pub-award:          #8a6400;   /* readable gold on white */
+$pub-award-dark:     #f4c645;   /* the L'Aquila gold of the footer rose */
+
+/* --- year (and Posters) headers --------------------------------------- */
+.pubs-yr {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--text-main);
+  border-bottom: 1px solid #ddd;
+  padding: 0 0 0.45rem;
+  margin: 2.4rem 0 0.3rem;
+}
+.pubs-yr:first-child { margin-top: 0.4rem; }
+html[data-theme="dark"] .pubs-yr { border-bottom-color: #3a3a3a; }
+
+/* --- one entry ---------------------------------------------------------- */
+.pub {
+  display: grid;
+  grid-template-columns: 8.2rem minmax(0, 1fr);
+  gap: 1.3rem;
+  padding: 1.05rem 0;
+}
+.pub + .pub { border-top: 1px solid $pub-hair-soft; }
+html[data-theme="dark"] .pub + .pub { border-top-color: $pub-hair-soft-dark; }
+
+.pub__tag {
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding-top: 0.1rem;
+  text-align: center;
+}
+.pub__venue {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--accent-left);
+}
+.pub__year {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pub__body { min-width: 0; }
+.pub__title {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-main);
+}
+.pub__title:hover { color: var(--accent-left); text-decoration: none; }
+
+.pub-award {
+  display: inline-block;
+  margin-left: 0.45rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: 2px;
+  color: $pub-award;
+}
+html[data-theme="dark"] .pub-award { color: $pub-award-dark; }
+
+.pub__authors {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+.pub-me { font-weight: 600; color: var(--text-main); }
+.pub-more { white-space: nowrap; }
+
+/* --- square toggles ----------------------------------------------------- */
+.pub__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0.16rem 0.55rem;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+.pub-btn:hover,
+.pub-btn:focus-visible { border-color: var(--accent-left); color: var(--accent-left); text-decoration: none; }
+.pub-btn[aria-expanded="true"] {
+  background: var(--accent-left);
+  border-color: var(--accent-left);
+  color: #fff;
+}
+html[data-theme="dark"] .pub-btn { border-color: #3a3a3a; }
+html[data-theme="dark"] .pub-btn[aria-expanded="true"] { border-color: var(--accent-left); color: #1d1d1d; }
+.pub-arrow { display: inline-block; transition: transform 0.18s ease; }
+.pub-btn--page:hover .pub-arrow { transform: translateX(3px); }
+
+/* --- unfolded panels ---------------------------------------------------- */
+.pub__panel { margin-top: 0.7rem; }
+.pub__panel[hidden] { display: none; }
+.pub__panel p {
+  margin: 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--accent-left);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--text-main);
+}
+
+/* BibTeX block (list panels and the paper page) */
+.pub-bib {
+  position: relative;
+  margin: 0;
+  padding: 0.9rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid #ddd;
+}
+html[data-theme="dark"] .pub-bib { border-color: #3a3a3a; }
+.pub-bib pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+.pub-bib code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  background: transparent;
+}
+.pub-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  background: var(--bg-card);
+  box-shadow: none;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.pub-copy:hover { border-color: var(--accent-left); color: var(--accent-left); }
+html[data-theme="dark"] .pub-copy { border-color: #3a3a3a; }
+
+@media (max-width: 600px) {
+  .pub { grid-template-columns: 1fr; gap: 0.45rem; }
+  .pub__tag { flex-direction: row; align-items: baseline; gap: 0.6rem; text-align: left; }
+}
+
+/* --- paper page --------------------------------------------------------- */
+.pubp__back {
+  display: inline-block;
+  margin-bottom: 1.4rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.pubp__back:hover { color: var(--accent-left); text-decoration: none; }
+.pubp__back:hover .pub-arrow { transform: translateX(-3px); }
+
+.pubp {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr);
+  gap: 2.2rem;
+}
+.pubp__rail {
+  align-self: start;
+  position: sticky;
+  top: 5.5rem;
+  border-top: 2px solid var(--accent-left);
+  padding-top: 0.5rem;
+}
+.pubp__rail > div {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--text-main);
+}
+.pubp__rail > div:last-child { border-bottom: 0; }
+html[data-theme="dark"] .pubp__rail > div { border-bottom-color: #3a3a3a; }
+.pubp__rail small {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.pubp__rail .pub-award { margin: 0.3rem 0 0; }
+.pubp__links a { display: block; font-size: 0.82rem; font-weight: 600; }
+
+.pubp__main { min-width: 0; }
+.pubp__title {
+  margin: 0 0 0.7rem;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-main);
+  text-wrap: balance;
+}
+.pubp__authors {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.pubp__lede {
+  margin: 1.5rem 0 0;
+  max-width: 62ch;
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-main);
+}
+.pubp__main .section-kicker,
+.pubp__main .section-kicker:first-of-type { margin: 2.2rem 0 0.9rem; }
+.pubp__abstract {
+  margin: 0;
+  max-width: 66ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+@media (max-width: 760px) {
+  .pubp { grid-template-columns: 1fr; gap: 1.6rem; }
+  .pubp__rail { position: static; order: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub-btn, .pub-arrow { transition: none; }
+}

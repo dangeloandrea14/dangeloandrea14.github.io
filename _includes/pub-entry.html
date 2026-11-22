@@ -1,0 +1,47 @@
+{%- comment -%}
+  One publication on /publications/. Expects `post`; pass poster=true for the
+  Posters section (the tag then shows the year, since posters are not grouped
+  by year). Toggles are wired up by assets/js/publications.js.
+{%- endcomment -%}
+{%- include base_path -%}
+{%- assign p = post -%}
+{%- assign bib = "" -%}
+{%- if p.bibtexurl -%}{%- assign bib = p.bibtexurl | split: "/bibs/" | last | prepend: "/bibs/" | prepend: base_path -%}{%- endif -%}
+<article class="pub" id="{{ p.slug }}">
+  <div class="pub__tag">
+    <span class="pub__venue">{{ p.venue_short | default: p.venue }}</span>
+    {%- if include.poster %}<span class="pub__year">{{ p.date | date: "%Y" }}</span>{% endif %}
+  </div>
+  <div class="pub__body">
+    <a class="pub__title" href="{{ base_path }}{{ p.url }}">{{ p.title }}</a>
+    {%- if p.award %} <span class="pub-award">&#9733; {{ p.award }}</span>{% endif %}
+    {%- if p.authors %}
+    <div class="pub__authors">{% include pub-authors.html authors=p.authors max=5 %}</div>
+    {%- endif %}
+    <div class="pub__actions">
+      {%- if p.abstract %}
+      <button type="button" class="pub-btn" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Abs</button>
+      {%- elsif p.description %}
+      <button type="button" class="pub-btn" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Summary</button>
+      {%- endif %}
+      {%- if bib != "" %}
+      <a class="pub-btn" href="{{ bib }}" aria-expanded="false" aria-controls="bib-{{ p.slug }}" data-bib="{{ bib }}">Bib</a>
+      {%- endif %}
+      {%- if p.paperurl %}
+      <a class="pub-btn" href="{{ p.paperurl }}" target="_blank" rel="noopener">{% if p.paperurl contains "arxiv.org" %}arXiv{% else %}Paper{% endif %}</a>
+      {%- endif %}
+      {%- if p.codeurl %}
+      <a class="pub-btn" href="{{ p.codeurl }}" target="_blank" rel="noopener">Code</a>
+      {%- endif %}
+      <a class="pub-btn pub-btn--page" href="{{ base_path }}{{ p.url }}">Page <span class="pub-arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+    {%- if p.abstract or p.description %}
+    <div class="pub__panel" id="abs-{{ p.slug }}" hidden><p>{{ p.abstract | default: p.description | escape }}</p></div>
+    {%- endif %}
+    {%- if bib != "" %}
+    <div class="pub__panel" id="bib-{{ p.slug }}" hidden>
+      <div class="pub-bib"><button type="button" class="pub-copy" data-copy="bib-{{ p.slug }}-code">Copy</button><pre><code id="bib-{{ p.slug }}-code"></code></pre></div>
+    </div>
+    {%- endif %}
+  </div>
+</article>

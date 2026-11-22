@@ -7,26 +7,40 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+{% comment %}
+=============================================================================
+PUBLICATIONS — "Folio"
+
+Papers are grouped by year, newest first. Posters are not papers, so they
+sit in their own section after the last year. Each entry carries its venue
+tag, title, a short author list and toggles that unfold the abstract or the
+BibTeX in place (assets/js/publications.js). The full record lives on the
+paper's own page (_layouts/publication.html).
+
+Front matter used: venue_short (the tag), authors, abstract (falls back to
+description), award, paperurl, codeurl, bibtexurl.
+=============================================================================
+{% endcomment %}
+
+{% assign pubs    = site.publications | sort: "date" | reverse %}
+{% assign papers  = pubs | where_exp: "p", "p.category != 'posters'" %}
+{% assign posters = pubs | where: "category", "posters" %}
+{% assign years   = papers | group_by_exp: "p", "p.date | date: '%Y'" %}
+
+<div class="pubs">
+{% for y in years %}
+  <h2 class="pubs-yr" id="y{{ y.name }}">{{ y.name }}</h2>
+  {% for post in y.items %}
+    {% include pub-entry.html %}
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+{% endfor %}
+
+{% if posters.size > 0 %}
+  <h2 class="pubs-yr" id="posters">Posters</h2>
+  {% for post in posters %}
+    {% include pub-entry.html poster=true %}
   {% endfor %}
 {% endif %}
+</div>
 
-
-
+<script src="{{ base_path }}/assets/js/publications.js" defer></script>

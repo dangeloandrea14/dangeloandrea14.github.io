@@ -1,0 +1,24 @@
+{%- comment -%}
+  Author list with Andrea in bold. Pass max=N to show at most N names
+  ("+ k more" after them). Andrea always stays visible: when the name
+  falls beyond the cut, it takes the last visible slot.
+  Usage: {% include pub-authors.html authors=post.authors max=5 %}
+{%- endcomment -%}
+{%- assign _names = include.authors | split: ", " -%}
+{%- assign _n = _names | size -%}
+{%- assign _max = include.max | default: 0 | plus: 0 -%}
+{%- assign _me = -1 -%}
+{%- for _a in _names -%}{%- if _a contains "Andrea D'Angelo" -%}{%- assign _me = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- if _max > 0 and _n > _max -%}
+  {%- assign _show = _max -%}
+{%- else -%}
+  {%- assign _show = _n -%}
+{%- endif -%}
+{%- for _i in (1.._show) -%}
+  {%- assign _idx = _i | minus: 1 -%}
+  {%- if _i == _show and _show < _n and _me >= _show -%}{%- assign _idx = _me -%}{%- endif -%}
+  {%- assign _a = _names[_idx] -%}
+  {%- if _a contains "Andrea D'Angelo" -%}<strong class="pub-me">{{ _a }}</strong>{%- else -%}{{ _a }}{%- endif -%}
+  {%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}
+{%- if _show < _n %} <span class="pub-more">+&nbsp;{{ _n | minus: _show }}&nbsp;more</span>{%- endif -%}

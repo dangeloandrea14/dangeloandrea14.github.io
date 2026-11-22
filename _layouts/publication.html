@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% comment %}
+=============================================================================
+PAPER PAGE — "Folio"
+
+A side rail holds the facts (venue, date, type, links); the main column
+holds the title, the full author list, the one-line summary, the abstract
+and the citation. The BibTeX is read from /bibs/ by
+assets/js/publications.js; without JS the rail still links the .bib file.
+=============================================================================
+{% endcomment %}
+
+{%- assign bib = "" -%}
+{%- if page.bibtexurl -%}{%- assign bib = page.bibtexurl | split: "/bibs/" | last | prepend: "/bibs/" | prepend: base_path -%}{%- endif -%}
+{%- case page.category -%}
+  {%- when "conferences" -%}{%- assign pub_type = "Conference paper" -%}
+  {%- when "manuscripts" -%}{%- assign pub_type = "Journal article" -%}
+  {%- when "books" -%}{%- assign pub_type = "Book chapter" -%}
+  {%- when "posters" -%}{%- assign pub_type = "Poster" -%}
+  {%- else -%}{%- assign pub_type = "Publication" -%}
+{%- endcase -%}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <meta itemprop="headline" content="{{ page.title | escape_once }}">
+    {% if page.description %}<meta itemprop="description" content="{{ page.description | escape_once }}">{% endif %}
+    <meta itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
+
+    <div class="page__inner-wrap">
+      <a class="pubp__back" href="{{ base_path }}/publications/"><span class="pub-arrow" aria-hidden="true">&larr;</span> All publications</a>
+
+      <div class="pubp">
+        <aside class="pubp__rail">
+          <div><small>Venue</small>{{ page.venue }}</div>
+          <div><small>Published</small>{{ page.date | date: "%B %Y" }}</div>
+          <div><small>Type</small>{{ pub_type }}{% if page.award %}<br><span class="pub-award">&#9733; {{ page.award }}</span>{% endif %}</div>
+          {%- if page.paperurl or page.codeurl or page.slidesurl or bib != "" %}
+          <div class="pubp__links"><small>Links</small>
+            {%- if page.paperurl %}<a href="{{ page.paperurl }}" target="_blank" rel="noopener">{% if page.paperurl contains "arxiv.org" %}arXiv{% else %}Paper{% endif %} &#8599;</a>{% endif %}
+            {%- if page.codeurl %}<a href="{{ page.codeurl }}" target="_blank" rel="noopener">Code &#8599;</a>{% endif %}
+            {%- if page.slidesurl %}<a href="{{ page.slidesurl }}" target="_blank" rel="noopener">Slides &#8599;</a>{% endif %}
+            {%- if bib != "" %}<a href="{{ bib }}">BibTeX file</a>{% endif %}
+          </div>
+          {%- endif %}
+        </aside>
+
+        <div class="pubp__main">
+          <h1 class="pubp__title" itemprop="name">{{ page.title }}</h1>
+          {% if page.authors %}<p class="pubp__authors">{% include pub-authors.html authors=page.authors %}</p>{% endif %}
+
+          {% if page.abstract and page.description %}
+            <p class="pubp__lede">{{ page.description | escape }}</p>
+          {% endif %}
+
+          {% if page.abstract %}
+            <h2 class="section-kicker">Abstract</h2>
+            <p class="pubp__abstract" itemprop="abstract">{{ page.abstract | escape }}</p>
+          {% elsif page.description %}
+            <h2 class="section-kicker">Summary</h2>
+            <p class="pubp__abstract">{{ page.description | escape }}</p>
+          {% endif %}
+
+          {{ content }}
+
+          {% if bib != "" %}
+            <h2 class="section-kicker">Cite</h2>
+            <div class="pub-bib" data-bib-autoload="{{ bib }}">
+              <button type="button" class="pub-copy" data-copy="pubp-bib-code">Copy</button>
+              <pre><code id="pubp-bib-code"><a href="{{ bib }}">Open the BibTeX file</a></code></pre>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script src="{{ base_path }}/assets/js/publications.js" defer></script>
