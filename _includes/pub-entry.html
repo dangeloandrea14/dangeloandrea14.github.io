@@ -21,8 +21,6 @@
     <div class="pub__actions">
       {%- if p.abstract %}
       <button type="button" class="pub-btn" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Abs</button>
-      {%- elsif p.description %}
-      <button type="button" class="pub-btn" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Summary</button>
       {%- endif %}
       {%- if bib != "" %}
       <a class="pub-btn" href="{{ bib }}" aria-expanded="false" aria-controls="bib-{{ p.slug }}" data-bib="{{ bib }}">Bib</a>
@@ -35,8 +33,8 @@
       {%- endif %}
       <a class="pub-btn pub-btn--page" href="{{ base_path }}{{ p.url }}">Page <span class="pub-arrow" aria-hidden="true">&rarr;</span></a>
     </div>
-    {%- if p.abstract or p.description %}
-    <div class="pub__panel" id="abs-{{ p.slug }}" hidden><p>{{ p.abstract | default: p.description | escape }}</p></div>
+    {%- if p.abstract %}
+    <div class="pub__panel" id="abs-{{ p.slug }}" hidden><p>{{ p.abstract | escape }}</p></div>
     {%- endif %}
     {%- if bib != "" %}
     <div class="pub__panel" id="bib-{{ p.slug }}" hidden>
