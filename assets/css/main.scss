@@ -37,15 +37,24 @@
    VARIABLES
    ========================================================== */
 
+/* AU blue: Aarhus University's official identity colour (Pantone 287,
+   RGB 0 61 115), from AU's design guide and LaTeX colour package.
+   Every accent on the site derives from these four values, so a palette
+   change is made here and nowhere else. */
+$au-blue:            #003d73;  /* AUblue, the light-theme accent */
+$au-blue-dark:       #002546;  /* AUblueDark, hover and gradient ends */
+$au-blue-light:      #6ea8e0;  /* readable AU blue for the dark theme */
+$au-blue-lighter:    #a3c8ee;  /* dark-theme hover */
+
 /* Light mode */
 :root {
   --bg-card: #fafafa;
   --text-main: #222;
   --text-muted: #555;
-  --link-color: #0047ab;
-  --link-hover: #002f6c;
+  --link-color: #{$au-blue};
+  --link-hover: #{$au-blue-dark};
   --border-card: #ccc;
-  --accent-left: #0047ab;
+  --accent-left: #{$au-blue};
 }
 
 /* Dark mode */
@@ -53,10 +62,10 @@ html[data-theme="dark"] {
   --bg-card: #1e1e1e;
   --text-main: #fafafa;
   --text-muted: #bbb;
-  --link-color: #7aa9ff;
-  --link-hover: #a5c5ff;
+  --link-color: #{$au-blue-light};
+  --link-hover: #{$au-blue-lighter};
   --border-card: #333;
-  --accent-left: #7aa9ff;
+  --accent-left: #{$au-blue-light};
 }
 
 /* ==========================================================
@@ -186,7 +195,7 @@ body {
 
 .news-box {
   background: #fafafa;
-  border-left: 4px solid #0047ab;
+  border-left: 4px solid $au-blue;
   padding: 0.8rem 1rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -215,7 +224,7 @@ body {
 /* Dark mode support */
 html[data-theme="dark"] .news-box {
   background: #1f1f1f;
-  border-left-color: #7aa9ff;
+  border-left-color: $au-blue-light;
   color: #ddd;
   box-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
@@ -247,7 +256,7 @@ html[data-theme="dark"] .news-box {
   width: 2px;
   align-self: stretch;
   border-radius: 2px;
-  background: linear-gradient(180deg, #0047ab, #002f7a);
+  background: linear-gradient(180deg, $au-blue, $au-blue-dark);
 }
 
 .highlight-card img {
@@ -272,7 +281,7 @@ html[data-theme="dark"] .news-box {
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #0047ab;
+  color: $au-blue;
   margin-bottom: 0.1rem;
 }
 
@@ -319,11 +328,11 @@ html[data-theme="dark"] .highlight-card {
 }
 
 html[data-theme="dark"] .highlight-card .highlight-rail {
-  background: linear-gradient(180deg, #7aa9ff, #3f6fd0);
+  background: linear-gradient(180deg, $au-blue-light, #3f6fd0);
 }
 
 html[data-theme="dark"] .highlight-card .highlight-kicker {
-  color: #7aa9ff;
+  color: $au-blue-light;
 }
 
 html[data-theme="dark"] .highlight-card .au-seal-light { display: none; }
@@ -486,12 +495,12 @@ html[data-theme="dark"] .sidebar .author__avatar img {
   width: 34px;
   height: 2px;
   border-radius: 2px;
-  background: #0047ab;
+  background: $au-blue;
   margin: 0.5rem auto 0.1rem;
 }
 
 html[data-theme="dark"] .sidebar .author__name::after {
-  background: #7aa9ff;
+  background: $au-blue-light;
 }
 
 .sidebar .author__pronouns {
@@ -567,7 +576,7 @@ html[data-theme="dark"] .sidebar .author__urls li {
 .sidebar .author__urls a::after {
   content: "\2192";
   margin-left: auto;
-  color: #0047ab;
+  color: $au-blue;
   opacity: 0;
   transform: translateX(-4px);
   transition: opacity 0.18s ease, transform 0.18s ease;
@@ -575,7 +584,7 @@ html[data-theme="dark"] .sidebar .author__urls li {
 
 .sidebar .author__urls a:hover,
 .sidebar .author__urls a:hover i {
-  color: #0047ab;
+  color: $au-blue;
   text-decoration: none;
 }
 
@@ -585,12 +594,12 @@ html[data-theme="dark"] .sidebar .author__urls li {
 }
 
 html[data-theme="dark"] .sidebar .author__urls a::after {
-  color: #7aa9ff;
+  color: $au-blue-light;
 }
 
 html[data-theme="dark"] .sidebar .author__urls a:hover,
 html[data-theme="dark"] .sidebar .author__urls a:hover i {
-  color: #7aa9ff;
+  color: $au-blue-light;
 }
 
 /* --- Justify short bio text --- */
@@ -638,11 +647,11 @@ a {
 .teaching-uni-luiss  { border-left-color: #5c2d82; }
 .teaching-uni-univaq { border-left-color: #1a6b3a; }
 .teaching-uni-engage { border-left-color: #007a8a; }
-.talks-header-invited  { border-left-color: #0047ab; }
+.talks-header-invited  { border-left-color: $au-blue; }
 .talks-header-paper    { border-left-color: #b5651d; }
 .talks-header-tutorial { border-left-color: #2a7f7f; }
 .talks-header-outreach { border-left-color: #6b5b95; }
-.talk-badge-invited   { background-color: #0047ab; }
+.talk-badge-invited   { background-color: $au-blue; }
 .talk-badge-paper     { background-color: #b5651d; }
 .theses-header-available { border-left-color: #2a7f7f; }
 .theses-header-complete  { border-left-color: #555; }
@@ -750,7 +759,7 @@ html[data-theme="dark"] .pub-stat + .pub-stat { border-left-color: #3a3a3a; }
   margin-right: 0.7rem;
 }
 .pub-venue {
-  color: #0047ab;
+  color: $au-blue;
   font-weight: 600;
   text-decoration: none;
 }
@@ -762,7 +771,7 @@ html[data-theme="dark"] .pub-stat + .pub-stat { border-left-color: #3a3a3a; }
   margin-right: 0.55rem;
   font-weight: 400;
 }
-html[data-theme="dark"] .pub-venue { color: #7aa9ff; }
+html[data-theme="dark"] .pub-venue { color: $au-blue-light; }
 
 /* ==========================================================
    TALK MAP — "Minimal Luxe" Leaflet map (see _pages/talks.html)
@@ -827,8 +836,8 @@ html[data-theme="dark"] .talkmap { border-color: #3a3a3a; }
   height: 18px;
   margin: 4px;
   border-radius: 50%;
-  background: #0047ab;
-  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.18), 0 0 0 1px #fff;
+  background: $au-blue;
+  box-shadow: 0 0 0 3px rgba($au-blue, 0.18), 0 0 0 1px #fff;
   color: #fff;
   font-size: 0.66rem;
   font-weight: 700;
@@ -841,15 +850,15 @@ html[data-theme="dark"] .talkmap { border-color: #3a3a3a; }
 }
 .talkmap-pin:hover .talkmap-pin__dot {
   transform: scale(1.12);
-  box-shadow: 0 0 0 5px rgba(0, 71, 171, 0.22), 0 0 0 1px #fff;
+  box-shadow: 0 0 0 5px rgba($au-blue, 0.22), 0 0 0 1px #fff;
 }
 html[data-theme="dark"] .talkmap-pin__dot {
-  background: #7aa9ff;
+  background: $au-blue-light;
   color: #10131a;
-  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.20), 0 0 0 1px #10131a;
+  box-shadow: 0 0 0 3px rgba($au-blue-light, 0.20), 0 0 0 1px #10131a;
 }
 html[data-theme="dark"] .talkmap-pin:hover .talkmap-pin__dot {
-  box-shadow: 0 0 0 5px rgba(122, 169, 255, 0.26), 0 0 0 1px #10131a;
+  box-shadow: 0 0 0 5px rgba($au-blue-light, 0.26), 0 0 0 1px #10131a;
 }
 
 /* --- Cluster bubble --- */
@@ -863,18 +872,18 @@ html[data-theme="dark"] .talkmap-pin:hover .talkmap-pin__dot {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(0, 71, 171, 0.92);
+  background: rgba($au-blue, 0.92);
   color: #fff;
   font-size: 0.82rem;
   font-weight: 700;
   border: 2px solid #fff;
-  box-shadow: 0 0 0 4px rgba(0, 71, 171, 0.16);
+  box-shadow: 0 0 0 4px rgba($au-blue, 0.16);
 }
 html[data-theme="dark"] .talkmap-cluster span {
-  background: rgba(122, 169, 255, 0.92);
+  background: rgba($au-blue-light, 0.92);
   color: #10131a;
   border-color: #10131a;
-  box-shadow: 0 0 0 4px rgba(122, 169, 255, 0.18);
+  box-shadow: 0 0 0 4px rgba($au-blue-light, 0.18);
 }
 
 /* --- Hover tooltip (city name) --- */
@@ -958,7 +967,7 @@ a.talkmap-popup__title:hover { color: var(--link-hover); }
   border-radius: 3px;
   vertical-align: middle;
 }
-.talkmap-tag--invited  { background: #0047ab; }
+.talkmap-tag--invited  { background: $au-blue; }
 .talkmap-tag--paper    { background: #b5651d; }
 .talkmap-tag--tutorial { background: #2a7f7f; }
 .talkmap-tag--outreach { background: #6b5b95; }
@@ -979,7 +988,7 @@ html[data-theme="dark"] .talkmap .leaflet-control-attribution {
   color: var(--text-main);
   border-bottom-color: #ddd;
 }
-.talkmap .leaflet-bar a:hover { background: rgba(0, 71, 171, 0.08); }
+.talkmap .leaflet-bar a:hover { background: rgba($au-blue, 0.08); }
 html[data-theme="dark"] .talkmap .leaflet-bar a { border-bottom-color: #3a3a3a; }
 
 /* ==========================================================
@@ -1151,7 +1160,7 @@ html[data-theme="dark"] .main-bio::before { opacity: 0.08; }
 }
 
 .tch-plate {
-  --tint: var(--tint-l, #0047ab);
+  --tint: var(--tint-l, #{$au-blue});
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1174,7 +1183,7 @@ html[data-theme="dark"] .main-bio::before { opacity: 0.08; }
               opacity 0.18s ease, border-color 0.18s ease;
 }
 html[data-theme="dark"] .tch-plate {
-  --tint: var(--tint-d, #7aa9ff);
+  --tint: var(--tint-d, #{$au-blue-light});
   border-color: #3a3a3a;
   border-top-color: var(--tint);
 }
@@ -1312,7 +1321,7 @@ html[data-theme="dark"] .tch-controls { border-bottom-color: #3a3a3a; }
 .tch-search__input:focus {
   outline: none;
   border-color: var(--accent-left);
-  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+  box-shadow: 0 0 0 3px rgba($au-blue, 0.12);
 }
 html[data-theme="dark"] .tch-search__input {
   border-color: #3a3a3a;
@@ -1320,7 +1329,7 @@ html[data-theme="dark"] .tch-search__input {
 html[data-theme="dark"] .tch-search__input:hover { border-color: #555; }
 html[data-theme="dark"] .tch-search__input:focus {
   border-color: var(--accent-left);
-  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba($au-blue-light, 0.16);
 }
 
 .tch-clear {
@@ -1388,8 +1397,8 @@ html[data-theme="dark"] .tch-year__items { border-left-color: #3a3a3a; }
 .tch-course[hidden] { display: none; }
 .tch-course + .tch-course { border-top: 1px solid #eee; }
 html[data-theme="dark"] .tch-course + .tch-course { border-top-color: #2c2c2c; }
-.tch-course:hover { background: rgba(0, 71, 171, 0.035); }
-html[data-theme="dark"] .tch-course:hover { background: rgba(122, 169, 255, 0.06); }
+.tch-course:hover { background: rgba($au-blue, 0.035); }
+html[data-theme="dark"] .tch-course:hover { background: rgba($au-blue-light, 0.06); }
 
 .tch-course__chip {
   display: flex;
@@ -1502,8 +1511,8 @@ html[data-theme="dark"] .tch-btn--slides {
   background: var(--accent-left);
 }
 html[data-theme="dark"] .tch-btn--slides:hover {
-  background: #a5c5ff;
-  border-color: #a5c5ff;
+  background: $au-blue-lighter;
+  border-color: $au-blue-lighter;
   color: #10131a !important;
 }
 
@@ -1735,13 +1744,13 @@ html[data-theme="dark"] .ths-seg__btn.is-on { color: #10131a; }
 .ths-search__input:focus {
   outline: none;
   border-color: var(--accent-left);
-  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+  box-shadow: 0 0 0 3px rgba($au-blue, 0.12);
 }
 html[data-theme="dark"] .ths-search__input { border-color: #3a3a3a; }
 html[data-theme="dark"] .ths-search__input:hover { border-color: #555; }
 html[data-theme="dark"] .ths-search__input:focus {
   border-color: var(--accent-left);
-  box-shadow: 0 0 0 3px rgba(122, 169, 255, 0.16);
+  box-shadow: 0 0 0 3px rgba($au-blue-light, 0.16);
 }
 
 .ths-count {
@@ -1784,8 +1793,8 @@ html[data-theme="dark"] .ths-head { border-bottom-color: #3a3a3a; }
 }
 html[data-theme="dark"] .ths-row { border-bottom-color: #2c2c2c; }
 .ths-row[hidden] { display: none; }
-.ths-row:hover { background: rgba(0, 71, 171, 0.04); }
-html[data-theme="dark"] .ths-row:hover { background: rgba(122, 169, 255, 0.06); }
+.ths-row:hover { background: rgba($au-blue, 0.04); }
+html[data-theme="dark"] .ths-row:hover { background: rgba($au-blue-light, 0.06); }
 
 .ths-row__rail {
   align-self: stretch;
@@ -1961,8 +1970,8 @@ html[data-theme="dark"] .ths-row__detail { border-left-color: #3a3a3a; }
 
 :root {
   --wl-rule:   #e2e2e2;
-  --wl-ink-1:  #0b2f7a;      /* the wipe, dark end   */
-  --wl-ink-2:  #0047ab;      /* the wipe, light end  */
+  --wl-ink-1:  #{$au-blue-dark};      /* the wipe, dark end   */
+  --wl-ink-2:  #{$au-blue};      /* the wipe, light end  */
 }
 html[data-theme="dark"] {
   --wl-rule:   #2c2c2c;
@@ -2011,7 +2020,7 @@ html[data-theme="dark"] {
 .wl-search__input:focus {
   outline: none;
   border-color: var(--wl-ink-2);
-  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+  box-shadow: 0 0 0 3px rgba($au-blue, 0.12);
 }
 
 /* --- year marker -------------------------------------------------------- */
@@ -2309,8 +2318,8 @@ html[data-theme="dark"] {
   transition: background-color 0.15s ease;
 }
 html[data-theme="dark"] .svc-row { border-bottom-color: #3a3a3a; }
-.svc-row:hover { background: rgba(0, 71, 171, 0.04); }
-html[data-theme="dark"] .svc-row:hover { background: rgba(122, 169, 255, 0.06); }
+.svc-row:hover { background: rgba($au-blue, 0.04); }
+html[data-theme="dark"] .svc-row:hover { background: rgba($au-blue-light, 0.06); }
 
 .svc-row__year {
   font-family: "Newsreader", Georgia, "Times New Roman", serif;
