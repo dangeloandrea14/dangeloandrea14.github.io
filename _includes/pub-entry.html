@@ -15,9 +15,6 @@
   <div class="pub__body">
     <a class="pub__title" href="{{ base_path }}{{ p.url }}">{{ p.title }}</a>
     {%- if p.award %} <span class="pub-award">&#9733; {{ p.award }}</span>{% endif %}
-    {%- if p.authors %}
-    <div class="pub__authors">{% include pub-authors.html authors=p.authors max=5 %}</div>
-    {%- endif %}
     <div class="pub__actions">
       {%- if p.abstract %}
       <button type="button" class="pub-btn" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Abs</button>

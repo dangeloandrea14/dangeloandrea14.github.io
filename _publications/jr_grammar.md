@@ -8,5 +8,5 @@ venue: 'Knowledge and Information Systems'
 paperurl: 'https://link.springer.com/article/10.1007/s10115-023-01879-6'
 bibtexurl: 'https://dangeloandrea14.github.io/bibs/journals/grammar.bib'
 authors: "Giuseppe Della Penna, Sergio Orefice, Andrea D'Angelo"
-venue_short: "Knowl. & Inf. Systems"
+venue_short: "Knowledge and Information Systems"
 ---

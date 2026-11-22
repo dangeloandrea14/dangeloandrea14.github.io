@@ -2495,8 +2495,8 @@ html[data-theme="dark"] .svc-matrix > * { border-bottom-color: #3a3a3a; }
    _includes/pub-entry.html, _layouts/publication.html)
 
    The list groups papers by year; posters get their own section after the
-   last year. Each entry: a text venue tag on the left, then title, short
-   author list and small square toggles (Abs / Bib / Paper / Code / Page)
+   last year. Each entry: a text venue tag on the left, then title and small
+   square toggles (Abs / Bib / Paper / Code / Page)
    that unfold the abstract or BibTeX in place. The paper page puts the
    facts in a side rail and the abstract and citation in the main column.
    ========================================================================== */
@@ -2525,7 +2525,7 @@ html[data-theme="dark"] .pubs-yr { border-bottom-color: #3a3a3a; }
 /* --- one entry ---------------------------------------------------------- */
 .pub {
   display: grid;
-  grid-template-columns: 8.2rem minmax(0, 1fr);
+  grid-template-columns: 9rem minmax(0, 1fr);
   gap: 1.3rem;
   padding: 1.05rem 0;
 }
@@ -2547,6 +2547,7 @@ html[data-theme="dark"] .pub + .pub { border-top-color: $pub-hair-soft-dark; }
   font-weight: 500;
   line-height: 1.15;
   color: var(--accent-left);
+  text-wrap: balance;          /* full journal names wrap onto even lines */
 }
 .pub__year {
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -2581,12 +2582,6 @@ html[data-theme="dark"] .pub + .pub { border-top-color: $pub-hair-soft-dark; }
 }
 html[data-theme="dark"] .pub-award { color: $pub-award-dark; }
 
-.pub__authors {
-  margin-top: 0.3rem;
-  font-size: 0.82rem;
-  line-height: 1.45;
-  color: var(--text-muted);
-}
 .pub-me { font-weight: 600; color: var(--text-main); }
 .pub-more { white-space: nowrap; }
 
